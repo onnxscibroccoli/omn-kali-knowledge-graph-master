@@ -1,0 +1,19 @@
+name: broccoli-core
+url: https://github.com/onnxscibroccoli/broccoli-core
+kind: omnikali-repo
+license: UNKNOWN
+ecosystem: GitHub
+maturity: experimental
+visibility: public
+role: "Historical OmniKali origin"
+state: "HISTORICAL / EXPERIMENTAL"
+statusTag: OBSERVED
+description: "Broccoli Core - Android Automation Framework"
+languages: ["Python"]
+owners: [onnxscibroccoli]
+dependsOn: []
+relatedExternal: []
+openIssues: 45
+defaultBranch: main
+integrationNotes: "Evidence only. Do not treat as current architecture."
+lastUpdated: 2026-09-28

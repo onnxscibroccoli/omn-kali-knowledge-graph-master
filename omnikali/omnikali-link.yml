@@ -1,0 +1,19 @@
+name: omnikali-link
+url: https://github.com/onnxscibroccoli/omnikali-link
+kind: omnikali-repo
+license: UNKNOWN
+ecosystem: GitHub
+maturity: deprecated
+visibility: public
+role: "Legacy public pointer"
+state: "MAINTENANCE / LEGACY"
+statusTag: OBSERVED
+description: "Public dynamic-DNS pointer for https://omnikali.vercel.app"
+languages: ["HTML"]
+owners: [onnxscibroccoli]
+dependsOn: []
+relatedExternal: ["vercel"]
+openIssues: 6
+defaultBranch: main
+integrationNotes: "Do not add core runtime logic here."
+lastUpdated: 2026-09-28

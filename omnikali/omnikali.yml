@@ -1,0 +1,19 @@
+name: omnikali
+url: https://github.com/onnxscibroccoli/omnikali
+kind: omnikali-repo
+license: UNKNOWN
+ecosystem: GitHub
+maturity: beta
+visibility: public
+role: "Public discovery / edge"
+state: "ACTIVE PRODUCTION-EDGE"
+statusTag: OBSERVED
+description: "Permanent GitHub Pages door for OmniKali Track B. Health-aware discovery only."
+languages: ["HTML"]
+owners: [onnxscibroccoli]
+dependsOn: ["helix"]
+relatedExternal: []
+openIssues: 0
+defaultBranch: main
+integrationNotes: "Must fail closed on stale or unverified endpoints."
+lastUpdated: 2026-09-28

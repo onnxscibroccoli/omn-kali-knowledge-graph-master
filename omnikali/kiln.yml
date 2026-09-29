@@ -1,0 +1,19 @@
+name: kiln
+url: https://github.com/onnxscibroccoli/kiln
+kind: omnikali-repo
+license: UNKNOWN
+ecosystem: GitHub
+maturity: experimental
+visibility: public
+role: "Browser-contained workstation"
+state: "FUNCTIONAL PROTOTYPE"
+statusTag: OBSERVED
+description: "Kiln — a Linux desktop in the browser."
+languages: ["TypeScript"]
+owners: [onnxscibroccoli]
+dependsOn: []
+relatedExternal: ["v86"]
+openIssues: 0
+defaultBranch: main
+integrationNotes: "Separate from persistent Kali/KVM architecture."
+lastUpdated: 2026-09-28

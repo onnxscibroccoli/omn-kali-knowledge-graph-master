@@ -1,0 +1,19 @@
+name: kali-node
+url: https://github.com/onnxscibroccoli/kali-node
+kind: omnikali-repo
+license: UNKNOWN
+ecosystem: GitHub
+maturity: beta
+visibility: private
+role: "Persistent Kali workstation"
+state: "ACTIVE INTEGRATION / PRODUCTION LAB"
+statusTag: OBSERVED
+description: "Kali Linux desktop node with AGENTS contract and session notes."
+languages: ["TypeScript"]
+owners: [onnxscibroccoli]
+dependsOn: ["helix"]
+relatedExternal: ["qemu", "novnc"]
+openIssues: 4
+defaultBranch: main
+integrationNotes: "Protect validated workstation and recovery state."
+lastUpdated: 2026-09-28

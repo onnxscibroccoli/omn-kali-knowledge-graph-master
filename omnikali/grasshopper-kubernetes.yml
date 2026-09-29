@@ -1,0 +1,19 @@
+name: grasshopper-kubernetes
+url: https://github.com/onnxscibroccoli/grasshopper-kubernetes
+kind: omnikali-repo
+license: UNKNOWN
+ecosystem: GitHub
+maturity: beta
+visibility: private
+role: "Scalable Kubernetes desktop platform"
+state: "ACTIVE INFRA / ACCEPTANCE"
+statusTag: OBSERVED
+description: "Isolated Kali desktops through Apache Guacamole."
+languages: ["TypeScript"]
+owners: [onnxscibroccoli]
+dependsOn: ["helix", "kali-node"]
+relatedExternal: ["guacamole", "novnc", "frp", "kubernetes"]
+openIssues: 1
+defaultBranch: main
+integrationNotes: "Verify entire dependency chain, not pod health alone."
+lastUpdated: 2026-09-28

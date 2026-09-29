@@ -1,0 +1,21 @@
+name: Grasshopper
+url: https://github.com/onnxscibroccoli/Grasshopper
+kind: omnikali-repo
+license: UNKNOWN
+ecosystem: GitHub
+maturity: beta
+visibility: public
+role: "Control-plane reference / reconstruction"
+state: "ACTIVE REFERENCE / FORMALIZATION"
+statusTag: OBSERVED
+description: "Reference OmniKali implementation and production reconstruction control plane."
+languages: ["JavaScript"]
+owners: [onnxscibroccoli]
+dependsOn: ["helix"]
+relatedExternal: []
+openIssues: 7
+defaultBranch: main
+evidence:
+  - path: onnxscibroccoli/Grasshopper/.omnikali/project-knowledge-graph.md
+integrationNotes: "Highest architectural coordination authority. Not permission to replace validated production behavior."
+lastUpdated: 2026-09-28

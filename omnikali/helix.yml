@@ -1,0 +1,23 @@
+name: helix
+url: https://github.com/onnxscibroccoli/helix
+kind: omnikali-repo
+license: UNKNOWN
+ecosystem: GitHub
+maturity: beta
+visibility: public
+role: "Cloud desktop control plane"
+state: "ACTIVE PRODUCTION RECONSTRUCTION / VALIDATION"
+statusTag: OBSERVED
+description: "Persistent cloud desktop control plane with workers and authenticated APIs."
+languages: ["TypeScript"]
+owners: [onnxscibroccoli]
+dependsOn: ["kali-node", "Grasshopper"]
+relatedExternal: ["postgresql", "qemu"]
+openIssues: 12
+defaultBranch: main
+evidence:
+  - path: onnxscibroccoli/helix/.omnikali/PROJECT_KNOWLEDGE_GRAPH.md
+integrationNotes: "Runtime source for validated control-plane behavior. Re-verify after changes."
+recommendations:
+  - Re-run live acceptance before promoting statusTag to PROVEN.
+lastUpdated: 2026-09-28

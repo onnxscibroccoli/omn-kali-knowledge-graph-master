@@ -1,0 +1,32 @@
+updated: 2026-09-28
+note: Candidates are HYPOTHESIS unless named in existing OmniKali graphs.
+groups:
+  - relatedTo: kali-node
+    candidates:
+      - {name: QEMU, url: https://gitlab.com/qemu-project/qemu, license: GPL-2.0-only, statusTag: OBSERVED}
+      - {name: noVNC, url: https://github.com/novnc/noVNC, license: MPL-2.0, statusTag: OBSERVED}
+      - {name: Apache Guacamole, url: https://guacamole.apache.org/, license: Apache-2.0, statusTag: OBSERVED}
+  - relatedTo: grasshopper-kubernetes
+    candidates:
+      - {name: Kubernetes, url: https://kubernetes.io/, license: Apache-2.0, statusTag: OBSERVED}
+      - {name: FRP, url: https://github.com/fatedier/frp, license: Apache-2.0, statusTag: OBSERVED}
+      - {name: Harbor, url: https://github.com/goharbor/harbor, license: Apache-2.0, statusTag: HYPOTHESIS}
+      - {name: MetalLB, url: https://github.com/metallb/metallb, license: Apache-2.0, statusTag: HYPOTHESIS}
+  - relatedTo: helix
+    candidates:
+      - {name: PostgreSQL, url: https://www.postgresql.org/, license: PostgreSQL, statusTag: OBSERVED}
+      - {name: Terraform, url: https://github.com/hashicorp/terraform, license: BUSL-1.1, statusTag: HYPOTHESIS}
+  - relatedTo: kiln
+    candidates:
+      - {name: v86, url: https://github.com/copy/v86, license: BSD-2-Clause, statusTag: HYPOTHESIS}
+      - {name: WebVM, url: https://github.com/leaningtech/webvm, license: Apache-2.0, statusTag: HYPOTHESIS}
+  - relatedTo: dectalk-live
+    candidates:
+      - {name: "@echogarden/dectalk-wasm", url: https://www.npmjs.com/package/@echogarden/dectalk-wasm, license: UNKNOWN, statusTag: OBSERVED}
+  - relatedTo: Grasshopper
+    candidates:
+      - {name: Model Context Protocol, url: https://github.com/modelcontextprotocol, license: MIT, statusTag: OBSERVED}
+  - relatedTo: broccoli-core
+    candidates:
+      - {name: Appium, url: https://github.com/appium/appium, license: Apache-2.0, statusTag: HYPOTHESIS}
+      - {name: Shizuku, url: https://github.com/RikkaApps/Shizuku, license: Apache-2.0, statusTag: HYPOTHESIS}
