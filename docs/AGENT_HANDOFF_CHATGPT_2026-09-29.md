@@ -1,4 +1,4 @@
-# Agent handoff for ChatGPT — 2026-09-29 18:19 UTC
+# Agent handoff for ChatGPT — 2026-09-29 18:31 UTC
 
 Copy everything below the line into a new ChatGPT session. Work agentically. Do not invent production proof.
 
@@ -14,10 +14,10 @@ Implementation owner for BIST: `onnxscibroccoli/Grasshopper`.
 
 ## Mission now
 
-1. Land or refine Grasshopper PR #71 (`feat/bist-json-schema-v1`) if still open.
-2. Keep BIST machine-readable and schema-valid.
+1. Keep BIST machine-readable and schema-valid after the merged schema contract.
+2. Keep local BIST execution explicitly controllable and non-recursive.
 3. Do **not** mark production desktop, database write-path, worker recovery, or executor side-effects PROVEN.
-4. Next implementation after schema merge: wire `scripts/bist.mjs` so `includeLocal` is honored (currently destructured and unused), optionally emit `phase`, then produce a clean-host dry-run evidence bundle. Guest-desktop live acceptance remains helix #21.
+4. Next implementation gate: produce a clean-host dry-run evidence bundle, then continue toward helix #21 for live desktop acceptance. Guest-desktop live acceptance remains helix #21.
 
 ## Hard constraints
 
@@ -49,19 +49,18 @@ Statuses: `PASS | FAIL | NOT_PROVEN | NOT_APPLICABLE`
 Overall today: `FAIL` or `PASS_WITH_NOT_PROVEN` only.
 Exit code: `1` if overall `FAIL`, else `0`.
 
-Known unused option: `runBist({ includeLocal })` is accepted but **not applied**. Local `npm test` and `npm run verify:reference` always run. Fix this carefully: if tests call `runBist()` and `npm test` is inside BIST, recursion is possible. Honor `includeLocal=false` and/or `OMNIKALI_BIST_SKIP_LOCAL=1`.
+Skip-local control is now implemented on Grasshopper main: `runBist({ includeLocal: false })` and `OMNIKALI_BIST_SKIP_LOCAL=1` both skip local unit/reference checks. Skipped checks are `NOT_APPLICABLE` and non-blocking. This prevents BIST contract tests from recursively launching `npm test`.
 
 Production checks default to `NOT_PROVEN` unless `evidence/bist-production.json` or `OMNIKALI_BIST_EVIDENCE` supplies both `acceptanceId` and a valid status.
 
 `production.kubernetes` is `NOT_APPLICABLE`.
 
-### Schema work just added (not yet on Grasshopper main)
+### Schema work merged on Grasshopper main
 
 PR: https://github.com/onnxscibroccoli/Grasshopper/pull/71
-Branch: `feat/bist-json-schema-v1`
-HEAD: `33b3e499dac78b1b0bfd8d820a4cc7721d4f75a7`
-Base: `main` @ `8ecc552ae59c0da0f808ce26ce507ddde2660e97`
-State at handoff: open, mergeable_state=clean, not merged.
+Merged commit: `afb6086d73b34afe40a431b0ddba77d2057c2bcc`.
+Schema branch HEAD before merge: `33b3e499dac78b1b0bfd8d820a4cc7721d4f75a7`.
+
 
 Files on that branch:
 
@@ -80,7 +79,7 @@ Graph copies already on KG main:
 - `docs/BIST_JSON_SCHEMA.md`
 - this handoff file
 
-Isolated schema tests passed 5/5 locally. Full Grasshopper `npm test` was **not** run against the PR branch in the previous session because BIST itself invokes `npm test`.
+PR #71's GitHub Actions were inspected and successful for the BIST and Reference tests workflows. PR #72 then added skip-local behavior and a dedicated environment-control test; its BIST, Reference tests, Agentic Reference Control Plane, and Agentic MVP Reproducibility workflows all completed successfully before merge.
 
 ### Tracking issues
 
@@ -102,7 +101,7 @@ Isolated schema tests passed 5/5 locally. Full Grasshopper `npm test` was **not*
 
 ## Recommended next actions (in order)
 
-### Gate C.1 — merge hygiene for PR #71
+### Gate C.1 — merge hygiene for PR #71 (complete)
 
 1. Checkout `feat/bist-json-schema-v1`.
 2. Run:
@@ -115,7 +114,7 @@ Isolated schema tests passed 5/5 locally. Full Grasshopper `npm test` was **not*
 3. Review `scripts/bist.mjs` output against the schema. If live emitter output has extra fields, either add them to the schema or stop emitting them. Schema currently `additionalProperties: false` on the report object. Current emitter fields are exactly: `schema`, `timestamp`, `checks`, `summary`, `overall`. Checks have `id`, `status`, `detail`, `blocking`.
 4. Merge PR #71 only after tests you actually ran are green. Do not claim CI is green unless you inspected checks.
 
-### Gate C.2 — make BIST non-recursive
+### Gate C.2 — make BIST non-recursive (complete)
 
 In `scripts/bist.mjs`:
 
@@ -167,13 +166,13 @@ OMNIKALI_BIST_SKIP_LOCAL=1 npm run bist
 
 ## Definition of done for this handoff thread
 
-Done when:
+The schema/skip-local gates are complete. The next agent should continue at Gate B.
 
-- PR #71 is merged **or** you recorded a concrete review blocker.
-- Schema tests pass on the branch you touched.
-- `includeLocal` / skip-local is implemented and tested, or explicitly deferred with a reason.
+- PR #71 is merged.
+- PR #72 (`fix(bist): honor skip-local execution controls`) is merged as `8ef386fb349da7874500109bce037c4e5f9b3456`.
+- Schema and skip-local tests passed in GitHub Actions.
 - No document claims production guest desktop is PROVEN.
-- KG graph/docs updated if schema ownership or PR state changed.
+- Next gate: clean-host reconstruction evidence, then helix #21 live desktop acceptance.
 
 ## Out of scope unless the user asks again
 
