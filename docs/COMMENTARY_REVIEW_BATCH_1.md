@@ -1,36 +1,28 @@
 # Commentary review batch 1
 
-**Status: WAITING FOR OPERATOR APPROVAL. Nothing in this file has been deleted.**
+**Status: APPLIED 2026-09-29 after operator approval (batch one green).**
 
-Account-wide code search found **zero** classic guideline-refusal strings (`as an AI`, `I cannot assist`, `against my guidelines`, `language model`).
+No source comments deleted. No `AI model instructions` removed. No graph-tag footers removed.
 
-What exists instead is repeated agent-contract prose and a few stale architecture sentences that can confuse future agents.
+## Applied
 
-## Keep unless you say otherwise
+1. `grasshopper-kubernetes/README.md` — commit `a16f0f4f`
+   - Lead warning: not the CloudFront origin
+   - Diagram relabeled **Target runtime (not current public path)**
+   - Bottom line: prototype relative to Helix
 
-These look like project rules, not foreign safety boilerplate:
+2. `kali-node/README.md` — commit `8b2f727f`
+   - Current path is CloudFront /auth/login → Helix → guest
+   - `/novnc/vnc.html` kept as hypervisor console
+   - GitHub Pages kept as discovery door
 
-- Helix / Grasshopper / kali-node / kiln / omnikali / omnikali-link README sections titled `AI model instructions`
-- Grasshopper `BASE_SYSTEM_PROTECTION.md` and incident docs
-- Graph tag / restore-point paragraphs added 2026-09-28
+3. helix README — already current from the docs pass. No further change.
 
-## Batch 1 candidates (wording, not mass-delete)
+4. GRAPH TAG footers — kept.
 
-Approve with `approve batch 1` to let the orchestrator apply only these edits.
+## Still not touched
 
-1. **grasshopper-kubernetes/README.md** — architecture diagram still presents FRP/K8s as the runtime path. Should lead with “prototype / not CloudFront origin”. Risk: low. Proposed: add one warning paragraph at top; keep the intended-runtime diagram labeled TARGET.
-
-2. **kali-node/README.md** architecture diagram starts at GitHub Pages and omits CloudFront/Helix. Risk: low. Proposed: insert CloudFront as current edge; keep Pages as discovery.
-
-3. **helix/README.md** — already updated this pass. No further strip.
-
-4. **Duplicated GRAPH TAG footer** on every README — useful, not guideline refuse-text. Proposed: keep.
-
-## Not in batch 1
-
-- Any deletion of comments inside `src/`
-- Any change to `AGENTS.md` contracts
-- Lane B broccoli-core milestone issue text
+- Comments inside `src/`
+- `AGENTS.md` contracts
+- Lane B broccoli-core issue text
 - Shizuku app copy
-
-Reply `approve batch 1` or edit the list.
