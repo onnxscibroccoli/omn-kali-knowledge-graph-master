@@ -12,12 +12,14 @@ description: "Persistent cloud desktop control plane with workers and authentica
 languages: ["TypeScript"]
 owners: [onnxscibroccoli]
 dependsOn: ["kali-node", "Grasshopper"]
-relatedExternal: ["postgresql", "qemu"]
+relatedExternal: ["@novnc/novnc", "pg", "jose", "better-auth", "ws", "kysely"]
 openIssues: 12
 defaultBranch: main
 evidence:
   - path: onnxscibroccoli/helix/.omnikali/PROJECT_KNOWLEDGE_GRAPH.md
+  - path: onnxscibroccoli/helix/package.json
+  - note: "package.json declares @novnc/novnc and pg. That is dependency evidence, not live desktop proof."
 integrationNotes: "Runtime source for validated control-plane behavior. Re-verify after changes."
 recommendations:
   - Re-run live acceptance before promoting statusTag to PROVEN.
-lastUpdated: 2026-09-28
+lastUpdated: 2026-09-29
