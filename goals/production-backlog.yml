@@ -1,0 +1,82 @@
+version: 2026-09-29
+graphTag: OMNIKALI-KG-2026-09-29-GOALS
+authority: live-acceptance-over-readme
+protectedCore:
+  path: CloudFront -> nginx :80 -> Helix :8092 -> libvirt/QEMU -> helix-omnikali
+  hypervisorConsole: CloudFront /novnc/vnc.html -> websockify :6080 -> host VNC :5900
+  incidentConstraint: "Grasshopper #62 — do not bind Traefik/public ingress to host 80/443"
+
+gates:
+  - id: A
+    name: Proven core
+    status: OBSERVED
+    owners: [helix, Grasshopper, kali-node]
+    next: "Replay authenticated /auth/login -> ticketed WSS -> guest desktop"
+    issues:
+      - https://github.com/onnxscibroccoli/helix/issues/21
+      - https://github.com/onnxscibroccoli/helix/issues/6
+  - id: B
+    name: Clean reconstruction
+    status: PLANNED
+    owners: [Grasshopper, helix]
+    next: "Produce clean-host dry-run evidence bundle with secret references only"
+    commands:
+      - npm run verify:clean-host-dryrun
+      - npm run verify:agentic-reproducibility
+    issues:
+      - https://github.com/onnxscibroccoli/Grasshopper/issues/65
+  - id: C
+    name: Machine-readable BIST
+    status: PLANNED
+    owners: [Grasshopper, grasshopper-kubernetes]
+    next: "npm run bist emits PASS|FAIL|NOT_PROVEN|NOT_APPLICABLE JSON"
+    commands:
+      - npm run bist
+    issues:
+      - https://github.com/onnxscibroccoli/Grasshopper/issues/65
+      - https://github.com/onnxscibroccoli/grasshopper-kubernetes/issues/1
+      - https://github.com/onnxscibroccoli/Grasshopper/issues/64
+  - id: D
+    name: Bounded self-repair
+    status: PLANNED
+    owners: [Grasshopper, helix]
+    next: "Map eight live-acceptance scenarios to approved repair actions"
+    commands:
+      - npm run verify:live-acceptance
+    issues:
+      - https://github.com/onnxscibroccoli/Grasshopper/issues/65
+  - id: E
+    name: Terminal independence
+    status: PLANNED
+    owners: [Grasshopper, broccoli-core]
+    next: "Second non-browser client against the same task contract"
+  - id: F
+    name: Second executor
+    status: PLANNED
+    owners: [Grasshopper]
+    next: "Add executor without changing PENDING->RUNNING->COMPLETED|FAILED"
+  - id: G
+    name: Second substrate
+    status: PLANNED
+    owners: [grasshopper-kubernetes, helix]
+    next: "Isolated K3s/GKE acceptance off the production origin"
+  - id: H
+    name: Autonomous operations
+    status: PLANNED
+    owners: [Grasshopper, omn-kali-knowledge-graph-master]
+    next: "Scoped sub-bots only after ownership collisions are resolved"
+
+blockedByOperator:
+  - id: backup-retention-14d
+    status: BLOCKED
+    reason: AWS FreeTierRestrictionError on RDS BackupRetentionPeriod=14
+    issues:
+      - https://github.com/onnxscibroccoli/Grasshopper/issues/13
+      - https://github.com/onnxscibroccoli/Grasshopper/issues/26
+  - id: runner-node-24
+    status: OPEN
+    issues:
+      - https://github.com/onnxscibroccoli/helix/issues/13
+  - id: authenticated-browser-session
+    status: OPEN
+    reason: Fresh guest-desktop acceptance requires an operator browser session
