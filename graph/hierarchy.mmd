@@ -1,0 +1,47 @@
+flowchart LR
+  subgraph OMNIKALI[OMNIKALI System]
+    direction TB
+    subgraph Provenance[Historical / Provenance]
+      BCore[broccoli-core]
+      GPTOmniKali[GPTOmniKali-full-stack]
+    end
+    subgraph ControlPlane[Control Plane / Architecture]
+      Grasshopper[Grasshopper]
+    end
+    subgraph CloudRuntime[Cloud Runtime]
+      Helix[helix]
+    end
+    subgraph PersistentWorkstation[Persistent Remote VM]
+      KaliNode[kali-node]
+    end
+    subgraph ScalableCluster[Scalable Remote Desktops]
+      GrassKube[grasshopper-kubernetes]
+    end
+    subgraph PublicEdge[Public Edge]
+      OmniPublic[omnikali]
+      OmniLink[omnikali-link]
+      Pages[onnxscibroccoli.github.io]
+    end
+    subgraph Experimental[Independent / Experimental]
+      Kiln[kiln]
+      Lattice[lattice]
+      Audit[lattice-audit]
+      HalfMile[half-a-mile]
+      NewsDesk[newsroom-desk]
+      DecTalk[dectalk-live]
+      Shizuku[Shizuku repos empty]
+    end
+    BCore --> Grasshopper
+    GPTOmniKali --> Grasshopper
+    Grasshopper --> Helix
+    Grasshopper --> KaliNode
+    Grasshopper --> GrassKube
+    Helix --> KaliNode
+    Helix --> GrassKube
+    GrassKube --> KaliNode
+    OmniPublic --> GrassKube
+    OmniPublic --> Helix
+    OmniLink --> Grasshopper
+    GrassKube --> Pages
+    KaliNode --> Pages
+  end
