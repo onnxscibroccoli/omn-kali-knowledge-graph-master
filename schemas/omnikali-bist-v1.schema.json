@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/onnxscibroccoli/Grasshopper/blob/main/schemas/omnikali-bist-v1.schema.json",
+  "title": "OmniKali BIST report",
+  "description": "Canonical copy of the Grasshopper BIST report schema. Implementation owner is onnxscibroccoli/Grasshopper.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "timestamp", "checks", "summary", "overall"],
+  "properties": {
+    "schema": { "const": "omnikali-bist/v1" },
+    "timestamp": { "type": "string", "format": "date-time" },
+    "repo": { "type": "string" },
+    "commit": { "type": "string" },
+    "checks": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/check" }
+    },
+    "summary": { "$ref": "#/$defs/summary" },
+    "overall": {
+      "type": "string",
+      "enum": ["PASS", "PASS_WITH_NOT_PROVEN", "FAIL"]
+    }
+  },
+  "$defs": {
+    "status": {
+      "type": "string",
+      "enum": ["PASS", "FAIL", "NOT_PROVEN", "NOT_APPLICABLE"]
+    },
+    "check": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "status", "detail"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "status": { "$ref": "#/$defs/status" },
+        "detail": { "type": "string" },
+        "blocking": { "type": "boolean" },
+        "phase": {
+          "type": "string",
+          "enum": ["auth", "provisioning", "connectivity", "interactive", "recreation", "runtime", "source", "local", "reconstruction", "production"]
+        },
+        "acceptanceId": { "type": "string", "minLength": 1 }
+      }
+    },
+    "summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["pass", "fail", "not_proven", "not_applicable"],
+      "properties": {
+        "pass": { "type": "integer", "minimum": 0 },
+        "fail": { "type": "integer", "minimum": 0 },
+        "not_proven": { "type": "integer", "minimum": 0 },
+        "not_applicable": { "type": "integer", "minimum": 0 }
+      }
+    }
+  }
+}
