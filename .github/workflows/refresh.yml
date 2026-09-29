@@ -1,0 +1,33 @@
+name: refresh-graph
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 2 * * 1"
+
+permissions:
+  contents: read
+
+jobs:
+  validate-and-crawl:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install
+        run: python -m pip install -r scripts/requirements.txt
+      - name: Validate schema
+        run: python scripts/validate_schema.py
+      - name: Rank candidates
+        run: python scripts/rank_candidates.py
+      - name: Crawl public inventory
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python scripts/crawl_omnikali.py --owner onnxscibroccoli --out inventory
+      - name: Upload inventory artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: inventory
+          path: inventory/
