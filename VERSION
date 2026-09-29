@@ -1,0 +1,4 @@
+omn-kali-kg-v2026-09-28
+commit: 4c3fc4eb02b5f2da60888346925498c287120f3b
+restore-branch: omn-kali-kg-v2026-09-28
+note: GitHub connector has list/get release tools but no create-tag/create-release tool. Restore point is this branch plus VERSION file.

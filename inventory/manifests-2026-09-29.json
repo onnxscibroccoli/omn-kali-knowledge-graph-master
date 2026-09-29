@@ -1,0 +1,37 @@
+{
+  "capturedAt": "2026-09-29T04:20:00Z",
+  "method": "GitHub get_file_contents for package.json",
+  "findings": [
+    {
+      "repo": "helix",
+      "manifest": "package.json",
+      "name": "app-builder-workspace",
+      "observedDeps": ["@novnc/novnc", "pg", "jose", "better-auth", "ws", "kysely", "@electric-sql/pglite"],
+      "statusTag": "OBSERVED"
+    },
+    {
+      "repo": "grasshopper-kubernetes",
+      "manifest": "package.json",
+      "name": "app-builder-workspace",
+      "observedDeps": ["pg", "jose", "better-auth", "kysely", "@electric-sql/pglite"],
+      "missingFromDeclaredDeps": ["guacamole client package not present in root package.json"],
+      "statusTag": "OBSERVED"
+    },
+    {
+      "repo": "kiln",
+      "manifest": "package.json",
+      "name": "kiln",
+      "observedDeps": ["@xterm/xterm", "pg", "better-auth"],
+      "missingFromDeclaredDeps": ["v86 not listed in package.json"],
+      "statusTag": "OBSERVED"
+    },
+    {
+      "repo": "Grasshopper",
+      "manifest": "package.json",
+      "name": "omnikali-reference",
+      "observedDeps": [],
+      "notes": "Scripts only; no npm runtime dependencies declared.",
+      "statusTag": "OBSERVED"
+    }
+  ]
+}
