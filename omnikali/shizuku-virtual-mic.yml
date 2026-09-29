@@ -1,0 +1,18 @@
+name: shizuku-virtual-mic
+url: https://github.com/onnxscibroccoli/shizuku-virtual-mic
+kind: omnikali-repo
+license: UNKNOWN
+ecosystem: GitHub
+maturity: empty
+visibility: private
+role: "Future Android virtual mic"
+state: "EMPTY / PRE-IMPLEMENTATION"
+statusTag: PLANNED
+description: "Shizuku-based virtual microphone injector concept."
+languages: []
+owners: [onnxscibroccoli]
+dependsOn: []
+relatedExternal: []
+openIssues: 0
+defaultBranch: main
+lastUpdated: 2026-09-28

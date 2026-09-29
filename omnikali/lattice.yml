@@ -1,0 +1,19 @@
+name: lattice
+url: https://github.com/onnxscibroccoli/lattice
+kind: omnikali-repo
+license: UNKNOWN
+ecosystem: GitHub
+maturity: experimental
+visibility: private
+role: "Rule-driven research engine"
+state: "ACTIVE DEVELOPMENT"
+statusTag: OBSERVED
+description: "Project LATTICE independent subsystem."
+languages: ["TypeScript"]
+owners: [onnxscibroccoli]
+dependsOn: []
+relatedExternal: []
+openIssues: 0
+defaultBranch: main
+integrationNotes: "Independent subsystem. Do not confuse with OmniKali runtime."
+lastUpdated: 2026-09-28

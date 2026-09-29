@@ -1,0 +1,18 @@
+name: half-a-mile
+url: https://github.com/onnxscibroccoli/half-a-mile
+kind: omnikali-repo
+license: UNKNOWN
+ecosystem: GitHub
+maturity: stable
+visibility: public
+role: "Long-form publication"
+state: "PUBLISHED / ACTIVE"
+statusTag: OBSERVED
+description: "Sourced essay publication. Independent of Kali runtime."
+languages: ["TypeScript"]
+owners: [onnxscibroccoli]
+dependsOn: []
+relatedExternal: []
+openIssues: 0
+defaultBranch: main
+lastUpdated: 2026-09-28

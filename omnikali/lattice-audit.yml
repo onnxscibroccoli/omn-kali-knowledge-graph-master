@@ -1,0 +1,18 @@
+name: lattice-audit
+url: https://github.com/onnxscibroccoli/lattice-audit
+kind: omnikali-repo
+license: UNKNOWN
+ecosystem: GitHub
+maturity: beta
+visibility: public
+role: "LATTICE public audit mirror"
+state: "PUBLIC AUDIT"
+statusTag: OBSERVED
+description: "Public audit mirror of Project LATTICE. Not a fund. Not advice."
+languages: []
+owners: [onnxscibroccoli]
+dependsOn: ["lattice"]
+relatedExternal: []
+openIssues: 0
+defaultBranch: main
+lastUpdated: 2026-09-28

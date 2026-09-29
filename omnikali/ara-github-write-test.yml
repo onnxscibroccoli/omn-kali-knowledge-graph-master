@@ -1,0 +1,19 @@
+name: ara-github-write-test
+url: https://github.com/onnxscibroccoli/ara-github-write-test
+kind: omnikali-repo
+license: UNKNOWN
+ecosystem: GitHub
+maturity: stable
+visibility: private
+role: "GitHub write capability proof"
+state: "COMPLETE TEST"
+statusTag: OBSERVED
+description: "Test repo to verify write access from Grok/Ara."
+languages: []
+owners: [onnxscibroccoli]
+dependsOn: []
+relatedExternal: []
+openIssues: 0
+defaultBranch: main
+integrationNotes: "Capability artifact only. Not a runtime component."
+lastUpdated: 2026-09-28

@@ -1,0 +1,18 @@
+name: onnxscibroccoli.github.io
+url: https://github.com/onnxscibroccoli/onnxscibroccoli.github.io
+kind: omnikali-repo
+license: UNKNOWN
+ecosystem: GitHub
+maturity: stable
+visibility: public
+role: "Public publication hub"
+state: "PUBLISHED / ACTIVE"
+statusTag: OBSERVED
+description: "GitHub Pages hub for publication surfaces."
+languages: ["HTML"]
+owners: [onnxscibroccoli]
+dependsOn: []
+relatedExternal: []
+openIssues: 0
+defaultBranch: main
+lastUpdated: 2026-09-28

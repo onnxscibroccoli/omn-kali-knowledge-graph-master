@@ -1,0 +1,19 @@
+name: shizuku-silent-mic
+url: https://github.com/onnxscibroccoli/shizuku-silent-mic
+kind: omnikali-repo
+license: UNKNOWN
+ecosystem: GitHub
+maturity: empty
+visibility: public
+role: "Future Android audio project"
+state: "EMPTY / PRE-IMPLEMENTATION"
+statusTag: PLANNED
+description: "Shizuku-powered Android silent virtual microphone concept."
+languages: []
+owners: [onnxscibroccoli]
+dependsOn: []
+relatedExternal: ["Shizuku"]
+openIssues: 0
+defaultBranch: main
+integrationNotes: "No capability exists until implemented and tested."
+lastUpdated: 2026-09-28

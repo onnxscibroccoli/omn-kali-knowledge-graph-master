@@ -1,0 +1,19 @@
+name: GPTOmniKali-full-stack
+url: https://github.com/onnxscibroccoli/GPTOmniKali-full-stack
+kind: omnikali-repo
+license: UNKNOWN
+ecosystem: GitHub
+maturity: experimental
+visibility: private
+role: "Recovered full-stack workspace"
+state: "RECOVERY / RECONSTRUCTION"
+statusTag: OBSERVED
+description: "Historical full-stack workspace used for recovery and provenance."
+languages: ["TypeScript"]
+owners: [onnxscibroccoli]
+dependsOn: []
+relatedExternal: []
+openIssues: 3
+defaultBranch: main
+integrationNotes: "Provenance, not production source of truth."
+lastUpdated: 2026-09-28
