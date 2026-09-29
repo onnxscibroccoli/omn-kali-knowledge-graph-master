@@ -8,24 +8,24 @@ visibility: public
 role: "Cloud desktop control plane"
 state: "ACTIVE PRODUCTION RECONSTRUCTION / VALIDATION"
 statusTag: OBSERVED
-description: "Persistent cloud desktop control plane serving OmniKali Cloud via CloudFront."
+description: "Authenticated control plane for Kali guest helix-omnikali. Separate unauthenticated /novnc path is the Debian EC2 host."
 languages: ["TypeScript"]
 owners: [onnxscibroccoli]
 dependsOn: ["kali-node", "Grasshopper"]
 relatedExternal: ["@novnc/novnc", "pg", "jose", "better-auth", "ws", "kysely", "Amazon Cognito", "AWS CloudFront", "libvirt/QEMU"]
 openIssues: 12
 defaultBranch: main
+publicPaths:
+  hostNovnc: "https://d22bad48irrbqe.cloudfront.net/novnc/vnc.html"
+  kaliLogin: "https://d22bad48irrbqe.cloudfront.net/auth/login"
 evidence:
-  - path: onnxscibroccoli/helix/.omnikali/PROJECT_KNOWLEDGE_GRAPH.md
-  - path: onnxscibroccoli/helix/package.json
+  - path: docs/path-split-novnc-vs-auth.md
   - path: onnxscibroccoli/helix/docs/ARCHITECTURE_VERIFICATION_2026-09-29.md
-  - path: onnxscibroccoli/helix/production/gateway/oauth.md
-  - note: "2026-09-29 public GET /health returned 200 {ok:true, oidcConfigured:true, publicOrigin:https://d22bad48irrbqe.cloudfront.net}"
-  - note: "2026-09-29 public GET /auth/login returned 200 OmniKali Cloud sign-in; Continue with email -> /auth/start?provider=COGNITO"
-  - note: "2026-09-29 public GET /novnc/vnc.html returned 200 noVNC page. That is page serve proof, not authenticated Kali-guest RFB proof."
-  - note: "Operator screenshots 2026-09-29 ~00:24 EDT show authenticated dashboard host helix-omnikali gateway online and XFCE lock screen for user kali."
-integrationNotes: "Current public HTTPS edge is CloudFront d22bad48irrbqe.cloudfront.net. Validated guest path is libvirt domain helix-omnikali, not the K3s prototype."
+  - path: onnxscibroccoli/helix/production/desktop/helix-novnc.service
+  - path: onnxscibroccoli/helix/production/gateway/helix-gateway.nginx.conf
+  - note: "Operator 2026-09-29: /novnc/vnc.html = Debian host; /auth/login = control plane opens Kali."
+integrationNotes: "Use /auth/login for the product Kali path. Treat /novnc/vnc.html as a host debug console."
 recommendations:
-  - Do not treat public /novnc/vnc.html as the validated Kali VM until authenticated RFB to the guest is re-proven.
-  - Do not promote statusTag to PROVEN for task lifecycle without a fresh authenticated acceptance run.
+  - Attach guest hostname/uname from the auth/login desktop to finish guest identity proof.
+  - Consider blocking or auth-gating public /novnc/ so the host console is not a second front door.
 lastUpdated: 2026-09-29
