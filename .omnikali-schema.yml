@@ -1,0 +1,14 @@
+version: 1
+graphTag: OMNIKALI-KG-2026-09-28
+releaseTag: omn-kali-kg-v2026-09-28
+required:
+  - name
+  - url
+  - kind
+  - statusTag
+  - lastUpdated
+enums:
+  kind: [omnikali-repo, external]
+  statusTag: [PROVEN, OBSERVED, HYPOTHESIS, PLANNED]
+  maturity: [empty, experimental, alpha, beta, stable, deprecated]
+  visibility: [public, private]
