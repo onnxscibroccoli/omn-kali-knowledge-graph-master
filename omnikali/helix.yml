@@ -8,7 +8,7 @@ visibility: public
 role: "Cloud desktop control plane"
 state: "ACTIVE PRODUCTION RECONSTRUCTION / VALIDATION"
 statusTag: OBSERVED
-description: "Authenticated control plane for Kali guest helix-omnikali. Separate unauthenticated /novnc path is the Debian EC2 host."
+description: "Authenticated control plane for Kali guest helix-omnikali. Separate /novnc path is the Debian EC2 host and is intentional hypervisor access."
 languages: ["TypeScript"]
 owners: [onnxscibroccoli]
 dependsOn: ["kali-node", "Grasshopper"]
@@ -20,12 +20,14 @@ publicPaths:
   kaliLogin: "https://d22bad48irrbqe.cloudfront.net/auth/login"
 evidence:
   - path: docs/path-split-novnc-vs-auth.md
+  - path: docs/live-evidence-desktop-session-2026-09-29.md
   - path: onnxscibroccoli/helix/docs/ARCHITECTURE_VERIFICATION_2026-09-29.md
-  - path: onnxscibroccoli/helix/production/desktop/helix-novnc.service
-  - path: onnxscibroccoli/helix/production/gateway/helix-gateway.nginx.conf
-  - note: "Operator 2026-09-29: /novnc/vnc.html = Debian host; /auth/login = control plane opens Kali."
-integrationNotes: "Use /auth/login for the product Kali path. Treat /novnc/vnc.html as a host debug console."
+  - note: "2026-09-29 guest-agent on domain helix-omnikali: Linux kali 7.1.5+kali-amd64. Recorded in commit 648346f."
+  - note: "2026-09-29 browser Zutty uname on /novnc path: Linux ip-172-31-8-59 deb13-cloud-amd64."
+  - note: "Operator: /novnc/vnc.html is intentional hypervisor access. Do not remove."
+integrationNotes: "Guest identity is proven from the hypervisor via QEMU guest agent. Full /auth/login → ticketed WSS → guest RFB chain is not independently replayed."
 recommendations:
-  - Attach guest hostname/uname from the auth/login desktop to finish guest identity proof.
-  - Consider blocking or auth-gating public /novnc/ so the host console is not a second front door.
+  - Replay authenticated CloudFront desktop to the guest and capture hostname/uname from that session.
+  - Do not gate or remove public /novnc unless the operator asks.
+  - Do not promote statusTag to PROVEN without a fresh task-lifecycle acceptance ID.
 lastUpdated: 2026-09-29
