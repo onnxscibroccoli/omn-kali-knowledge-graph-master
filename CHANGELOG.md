@@ -1,5 +1,15 @@
 # Changelog
 
+## OMNIKALI-KG-2026-09-29-GOALS
+
+- Inventoried 21 repositories under `onnxscibroccoli` via the connected GitHub account
+- Added knowledge and goals graph mapping transcendental ideas to owning repos
+- Added machine-readable production backlog and gate sequence A–H
+- Added Mermaid knowledge and goals diagrams
+- Connected Grasshopper #65, helix #21, and grasshopper-kubernetes #1 as live work items
+- Did not promote any statusTag to PROVEN
+- Did not change production ingress, IAM, or RDS
+
 ## omn-kali-kg-v2026-09-28
 
 - Created `onnxscibroccoli/omn-kali-knowledge-graph-master`

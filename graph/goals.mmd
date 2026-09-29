@@ -1,0 +1,15 @@
+flowchart LR
+  A[Gate A Proven core OBSERVED] --> B[Gate B Clean reconstruction OPEN]
+  B --> C[Gate C Machine-readable BIST PARTIAL]
+  C --> D[Gate D Bounded self-repair OPEN]
+  D --> E[Gate E Terminal independence OPEN]
+  E --> F[Gate F Second executor OPEN]
+  F --> G[Gate G Second substrate OPEN]
+  G --> H[Gate H Autonomous operations OPEN]
+
+  A -.-> V1[Protect CloudFront nginx Helix QEMU path]
+  B -.-> V2[No production credentials in reconstruction]
+  C -.-> V3[Fail-closed merge]
+  D -.-> V4[Eight resiliency scenarios]
+  E -.-> V5[Two terminal clients one contract]
+  H -.-> V6[Valuation thesis only after B plus C]

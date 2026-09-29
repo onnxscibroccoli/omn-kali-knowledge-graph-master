@@ -1,0 +1,58 @@
+flowchart TB
+  subgraph Intent[Intent and Memory]
+    Broccoli[broccoli-core]
+    KG[omn-kali-knowledge-graph-master]
+    Mem[Local memory / ingest PLANNED]
+  end
+
+  subgraph Control[Control Plane]
+    GH[Grasshopper]
+    BIST[BIST suite]
+    Repro[Clean-host reproducibility]
+  end
+
+  subgraph Runtime[Validated Runtime]
+    Helix[helix :8092]
+    PG[(PostgreSQL RDS)]
+    QEMU[libvirt / QEMU]
+    Guest[helix-omnikali guest]
+  end
+
+  subgraph DesktopAlt[Prototype Desktops]
+    GHK[grasshopper-kubernetes]
+    Guac[Apache Guacamole]
+    KaliNode[kali-node]
+    Kiln[kiln]
+  end
+
+  subgraph Edge[Public Edge]
+    CF[CloudFront]
+    Nginx[Nginx :80/:443]
+    Omni[omnikali Pages door]
+    Link[omnikali-link]
+  end
+
+  subgraph Value[Adjacent Value]
+    Lattice[lattice]
+    Audit[lattice-audit]
+  end
+
+  Broccoli -->|prompt loops / agent.md| GH
+  KG -->|ownership and gates| GH
+  Mem -.->|do not become SoT| KG
+  GH --> BIST
+  GH --> Repro
+  GH -->|contracts| Helix
+  CF --> Nginx
+  Nginx --> Helix
+  Helix --> PG
+  Helix --> QEMU
+  QEMU --> Guest
+  GHK --> Guac
+  Guac -.->|prototype only| Guest
+  KaliNode --> QEMU
+  Omni --> CF
+  Link --> Omni
+  Lattice -.->|Lane B| KG
+  Audit -.-> Lattice
+  Kiln -.->|not Kali path| GH
