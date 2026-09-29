@@ -33,3 +33,13 @@ Status of this evidence:
 - Authenticated dashboard + lock screen: OBSERVED from operator screenshots, not independently replayed here (no login performed).
 - Task lifecycle / fencing / worker replacement: still historical, not freshly re-run here.
 - Public `/novnc/vnc.html` != proven authenticated guest RFB path.
+
+
+## Fresh production reconciliation 2026-09-29 ~05:25 UTC
+
+- Current-source Grasshopper revision: 6c0aa647dd5f5d68352defa5235697343826f2b1.
+- Current-source Grasshopper test suite: 140/140 passed.
+- verify:live-acceptance correctly exits non-zero with all eight required scenarios OPEN; no live COMPLETE evidence was manufactured.
+- AWS Core reconciliation: helix-control-plane is available, private, encrypted, Multi-AZ, and deletion-protected. Backup retention remains 1 day.
+- AWS rejected an attempted 14-day retention change with FreeTierRestrictionError; this is an account limitation, not an architecture failure. The 14-day production resilience gate therefore remains BLOCKED.
+- CloudFront distribution is deployed and currently targets the established EC2/nginx origin. No public ingress architecture was changed.
