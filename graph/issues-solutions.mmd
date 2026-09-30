@@ -1,0 +1,39 @@
+flowchart LR
+  subgraph Protect[Protected baseline]
+    GH62[GH#62 80/443]
+    CF[CloudFront origin]
+  end
+  subgraph Control[Grasshopper]
+    GH65[GH#65 program]
+    GH13[GH#13 RDS 14d]
+    GH26[GH#26 backups]
+    GH86[GH#86 OCI]
+    GH87[GH#87 rebuild]
+  end
+  subgraph Helix[Helix]
+    HX21[HX#21 guest RFB]
+    HX36[HX#36 source parity]
+    HX38[HX#38 sessions]
+    HX40[HX#40 TTL]
+    HX54[HX#54 sandbox acct]
+  end
+  subgraph Proto[Prototypes]
+    GHK1[GHK#1 Guac]
+    KN21[KN#21 Track B]
+    GPT2[GPT#2 no QEMU on Vercel]
+  end
+  subgraph Device[broccoli-core]
+    BC28[#28 vision]
+    BC52[#52 kernel]
+    BC44[#44 bluetooth]
+  end
+  GH62 --> CF
+  GH62 -.-> GHK1
+  GH62 -.-> HX21
+  GH13 --> GH26
+  HX36 --> GH26
+  HX38 --> HX40
+  HX54 --> HX38
+  GH86 --> GH87
+  BC28 --> BC52
+  BC52 --> BC44
