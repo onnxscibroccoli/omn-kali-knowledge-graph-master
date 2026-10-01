@@ -1,0 +1,137 @@
+version: 2026-10-01
+graphTag: OMNIKALI-SYSTEM-KG-2026-10-01
+goalsTag: OMNIKALI-SYSTEM-GOALS-2026-10-01
+authority: live-acceptance-over-readme
+protectedCore:
+  path: CloudFront -> nginx :80 -> Helix :8092 -> libvirt/QEMU -> helix-omnikali
+  hypervisorConsole: CloudFront /novnc/vnc.html -> websockify :6080 -> host VNC :5900
+  constraint: no prototype ingress may bind production 80/443 without before-after acceptance
+
+phases:
+  - id: P0
+    name: Protect and observe
+    status: PROVEN_ONGOING
+    exit:
+      - current graph committed
+      - production restore point preserved
+      - known-good Rish transport preserved
+  - id: P1
+    name: Android executor completion
+    status: IN_PROGRESS
+    owners: [Grasshopper, broccoli-core]
+    depends_on: [P0]
+    next:
+      - run MCP/UI executor on Android/Termux
+      - snapshot real installed APK
+      - semantic locate
+      - act
+      - reobserve
+      - verify postcondition
+    exit:
+      - local MCP initialize
+      - real Rish action
+      - semantic selector evidence
+      - post-action verification
+  - id: P2
+    name: Persistent Grasshopper build substrate
+    status: BLOCKED
+    owners: [Grasshopper, helix]
+    depends_on: [P0]
+    blocker:
+      - OCI block storage permission or authorized storage workflow
+      - root filesystem is approximately 87 percent used
+    next:
+      - attach/provision persistent storage through authorized IAM
+      - create dedicated Grasshopper namespace
+      - install JDK 21
+      - redirect regenerable build caches
+    exit:
+      - persistent mount survives reboot
+      - root pressure reduced
+      - JDK verified
+  - id: P3
+    name: Universal machine-readable BIST
+    status: OPEN
+    owners: [Grasshopper]
+    depends_on: [P0]
+    next:
+      - strict PASS FAIL NOT_PROVEN NOT_APPLICABLE JSON
+      - schema validation
+      - fail-closed merge gate
+    exit:
+      - npm run bist emits validated JSON
+      - CI consumes the schema
+  - id: P4
+    name: Fresh production acceptance
+    status: OPEN
+    owners: [Helix, Grasshopper, kali-node]
+    depends_on: [P3]
+    human_required:
+      - authenticated browser session
+      - AWS capability for backup retention gate
+    next:
+      - auth login
+      - ticketed WSS
+      - guest desktop
+      - eight resilience scenarios
+    exit:
+      - named acceptance IDs for every scenario
+  - id: P5
+    name: Clean host reconstruction
+    status: OPEN
+    owners: [Grasshopper, Helix]
+    depends_on: [P3, P4]
+    next:
+      - clean-host dry run
+      - deterministic artifact verification
+      - secret references only
+      - authorized deployment
+    exit:
+      - clean reconstruction acceptance
+  - id: P6
+    name: Morphe source and runtime verification
+    status: IN_PROGRESS
+    owners: [morphe-manager, morphe-desktop, morphe-patches, morphe-patches-1, Morphe-Patches-2, Grasshopper, broccoli-core]
+    depends_on: [P1, P2]
+    next:
+      - verify source registry metadata
+      - verify release/signature evidence
+      - confirm source through Morphe UI
+      - post-install runtime verification
+      - build selected projects from source on Grasshopper
+    exit:
+      - at least one source end-to-end verified
+      - at least one source-built artifact hashed and tested
+  - id: P7
+    name: Portable executor/substrate expansion
+    status: PLANNED
+    owners: [Grasshopper, grasshopper-kubernetes, helix]
+    depends_on: [P5, P6]
+    next:
+      - second terminal
+      - second executor
+      - isolated Kubernetes or portable-cloud substrate
+    exit:
+      - conformance and acceptance evidence
+  - id: P8
+    name: Bounded autonomous operations
+    status: PLANNED
+    owners: [Grasshopper, omn-kali-knowledge-graph-master]
+    depends_on: [P7]
+    next:
+      - scoped sub-bots
+      - ownership leases
+      - bounded repair loops
+      - evidence write-back
+    exit:
+      - no overlapping writers
+      - rollback/recovery proof
+      - human checkpoints at security boundaries
+
+globalRules:
+  - never promote NOT_PROVEN to PROVEN by documentation alone
+  - never mutate production without restore point and acceptance plan
+  - never move active runtime state for storage cleanup without ownership/process/byte/rollback checks
+  - never treat repository existence as capability proof
+  - never merge duplicate implementations without explicit ownership decision
+  - human-only boundaries remain HUMAN_REQUIRED
