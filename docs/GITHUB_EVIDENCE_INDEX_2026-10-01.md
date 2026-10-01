@@ -72,3 +72,9 @@ The API-first path avoids that observed behavior for public repositories by obta
 
 One index root permits one active ingest worker per repository. The lock is an OS-level advisory file lock under `<index-root>/locks/`. Lock ownership is released automatically when the process exits, including abnormal process termination.
 
+
+## MCP query gate: 2026-10-01
+
+Grasshopper PR #121 adds a read-only `omnikali_search_github_evidence` facade over the derived SQLite/FTS index. Live OCI validation returned exact repository, historical commit, path, Git blob SHA, category, snippet, and provenance for Broccoli Core evidence. The full Grasshopper test suite completed 196/196 passing.
+
+The query layer does not execute Git commands and does not mutate the index. Android transport remains a separate boundary. The GCP deployment guide places this evidence worker on Compute Engine while keeping Termux/Rish/Shizuku/uiautomator on the Android device.
