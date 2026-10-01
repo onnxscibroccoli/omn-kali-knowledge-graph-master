@@ -1,76 +1,38 @@
 # OmniKali Knowledge Graph Master
 
-**Repository:** `onnxscibroccoli/omn-kali-knowledge-graph-master`  
-**Graph tag:** `OMNIKALI-KG-2026-09-28`  
-**Goals tag:** `OMNIKALI-KG-2026-09-29-GOALS`  
-**Release tag:** `omn-kali-kg-v2026-09-28`  
-**Owner account:** `onnxscibroccoli` (user, not an organization)
+**Current system graph:** OMNIKALI-SYSTEM-KG-2026-10-01
+**Current goals graph:** OMNIKALI-SYSTEM-GOALS-2026-10-01
+**Current documentation audit:** docs/REPOSITORY_DOCUMENTATION_AUDIT_2026-10-01.md
+**Historical graph:** OMNIKALI-KG-2026-09-28
+**Owner account:** onnxscibroccoli
 
 This is the centralized research and coordination graph for the OmniKali repository family.
 
-It does **not** replace live acceptance evidence. It is an index: ownership, state, dependencies, candidate tools, goals, and the agent workflow.
+The 2026-10-01 system graph is now the current coordination point. Historical graphs remain evidence and are not rewritten.
+
+## Start here
+
+1. docs/OMNIKALI_SYSTEM_KNOWLEDGE_GRAPH_2026-10-01.md
+2. docs/OMNIKALI_SYSTEM_GOALS_GRAPH_2026-10-01.md
+3. docs/REPOSITORY_DOCUMENTATION_AUDIT_2026-10-01.md
+4. docs/ORCHESTRATOR_CHARTER.md
+5. docs/RELEASE_READINESS_2026-09-29.md
+6. goals/production-backlog.yml
+7. Grasshopper program issue: https://github.com/onnxscibroccoli/Grasshopper/issues/65
 
 ## Authority order
 
-1. Live acceptance evidence and production runtime behavior
-2. Grasshopper production contracts and evidence documents
-3. Helix production implementation and infrastructure
-4. kali-node validated workstation implementation
-5. grasshopper-kubernetes validated Kubernetes implementation
-6. This master graph and per-repo `.omnikali` snapshots
-7. Historical / recovery repositories
-8. README descriptions and generated summaries
+1. Fresh live acceptance evidence and runtime behavior
+2. Production contracts and acceptance artifacts
+3. Verified source implementation
+4. Current system graph and goals graph
+5. README and generated summaries
+6. Historical/recovery material
 
 A README is never stronger evidence than an executable acceptance test.
 
-## Start here for production work
+## Operating rule
 
-1. `docs/ORCHESTRATOR_CHARTER.md` — what an agent may and may not touch
-2. `docs/RELEASE_READINESS_2026-09-29.md` — open production gates
-3. `docs/KNOWLEDGE_AND_GOALS_GRAPH_2026-09-29.md` — transcendental ideas mapped to repos
-4. `goals/production-backlog.yml` — machine-readable next steps
-5. `graph/knowledge.mmd` and `graph/goals.mmd`
-6. Grasshopper program issue: https://github.com/onnxscibroccoli/Grasshopper/issues/65
+Work the goals graph in dependency order. Preserve the validated Helix production path. Keep Android execution beside the proven Rish transport. Treat Morphe source verification and source builds as separate runtime/build gates. Record missing proof as NOT_PROVEN instead of promoting it by documentation.
 
-Sequence is fixed: **validated core → hardening → reproducibility → BIST → bounded self-repair → terminal independence → controlled generalization**.
-
-## What this repo contains
-
-| Path | Purpose |
-|---|---|
-| `omnikali/` | One metadata file per OmniKali repo |
-| `external/` | Candidate external OSS tools, ranked and tagged |
-| `graph/` | Mermaid diagrams for hierarchy, orchestration, knowledge, goals |
-| `goals/` | Production backlog and gate status |
-| `scripts/` | Crawl, registry search, ranking, schema validation |
-| `docs/` | Schema spec, search queries, CI, write-back protocol, goals graph |
-| `inventory/` | Point-in-time GitHub inventory snapshot |
-
-## Distinctions that must not be collapsed
-
-- QEMU running != desktop usable
-- Kubernetes pod Running != remote desktop working
-- HTTP health != authenticated session working
-- Authenticated API access != RFB/WebSocket desktop access
-- Fixture/unit test passing != live infrastructure acceptance
-- Historical code existing != current production capability
-- A repository name != an implemented feature
-- A browser emulator workstation != the persistent Kali KVM workstation
-- Helix guest RFB path != Kubernetes Guacamole path
-
-## Status tags
-
-Every claim in this graph is one of:
-
-- `PROVEN` - backed by named test, commit, acceptance ID, or evidence document
-- `OBSERVED` - seen in the wild, not yet explained or re-verified
-- `HYPOTHESIS` - plausible, unverified
-- `PLANNED` - intended work, not current capability
-
-Never promote a hypothesis to a proven fact.
-
-## Write-back policy
-
-Mass tagging every OmniKali repository is gated. This master repo is the first restore point.
-
-See `docs/write-back.md`. Do not push tags or README markers into production repos until that protocol is explicitly approved.
+Mass graph markers in production repositories remain gated. Use per-repository graph updates only when the repository is materially changed.
