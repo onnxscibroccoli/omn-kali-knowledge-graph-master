@@ -145,3 +145,38 @@ inspect -> establish provenance -> choose owner -> smallest change -> narrow tes
 When ownership is ambiguous, resolve ownership before implementing a second copy.
 
 When evidence is missing, record NOT_PROVEN; never promote by optimism.
+
+## Broccoli canonical iteration record
+
+The complete Broccoli/Rish/MCP iteration history is maintained in:
+`docs/BROCCOLI_ITERATION_KNOWLEDGE_2026-10-01.md`
+
+This document is not optional background. It is the transport preflight for future Android work.
+
+### Non-negotiable proven boundary
+
+`RDC/Termux -> broccoli-core -> lib/rish_run.sh -> Rish/Shizuku -> Android shell uid=2000`
+
+Known-good invocation:
+
+`RISH_PRESERVE_ENV=0 bash ./lib/rish_run.sh ...`
+
+The critical discovery was that the earlier RDC failure was a **caller environment boundary problem**, not a failure of the known-good Rish transport. The reduced RDC environment and non-TTY behavior caused silent RC=0/no-output behavior. The final wrapper restores only required runtime variables through a sanitized environment, fails closed when the snapshot is absent, and requires target evidence.
+
+Therefore future agents MUST NOT:
+- interpret RC=0 with empty output as success
+- modify Rish/Shizuku merely because an RDC caller failed
+- assume interactive Termux and RDC have equivalent environments
+- persist the entire Termux environment
+- create duplicate Rish wrappers
+- claim reboot/force-stop immunity from supervisor recovery
+
+The complete record also captures the supervisor PID/lock fixes, Termux:Boot limits, Android MCP tool contract, UI automation selector rules, APK-first inspection strategy, Morphe confirmation boundary, Broccoli philosophy, and the historical degradation failures that caused duplicate implementations and false milestones.
+
+### Evidence status carried forward
+
+PROVEN: API 35, direct Rish, noninteractive Rish with `RISH_PRESERVE_ENV=0`, tested RDC->Termux->Rish artifact proof, authenticated phone-local MCP, bounded MCP supervisor recovery, APK catalog, runtime UI snapshot.
+
+NOT_PROVEN: reboot restoration, battery optimization exemption, force-stop immunity, complete real-app MCP UI acceptance, Morphe source installation, Grasshopper source-built Morphe artifact.
+
+Future Android work begins by reading the Broccoli iteration record and identifying the exact missing evidence before running another experiment.
