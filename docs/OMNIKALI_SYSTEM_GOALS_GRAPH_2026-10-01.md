@@ -145,3 +145,67 @@ Exit evidence: persistent mount verified after reboot, root pressure reduced, bu
 ## Anti-regression rule
 
 No later goal may be marked complete because an earlier goal was skipped, renamed, simulated, or represented only by documentation.
+
+## Broccoli-specific execution gates
+
+The Android branch must not re-run solved transport experiments.
+
+### B0 Transport preflight
+Read `docs/BROCCOLI_ITERATION_KNOWLEDGE_2026-10-01.md`.
+
+Exit condition:
+- identify whether failure is caller, Termux, Rish, Android, or target app
+- identify the existing proof that already covers the suspected layer
+- define one new piece of evidence before executing
+
+### B1 Canonical Rish transport
+**Status: PROVEN**
+
+Required invariant:
+`RISH_PRESERVE_ENV=0`
+
+Required target proof:
+`uid=2000(shell)`, SDK 35, explicit artifact/marker.
+
+Regression response:
+restore the known-good transport before investigating higher layers.
+
+### B2 Android MCP
+**Status: IN_PROGRESS**
+
+The MCP server runs phone-local beside Broccoli/Rish. Mutations are confirmation-gated and fail closed.
+
+Exit:
+local initialize + real Rish action + durable evidence.
+
+### B3 UI automation
+**Status: IN_PROGRESS**
+
+Exit:
+observe -> semantic locate -> act -> reobserve -> verify, with selector recovery and no coordinate guessing unless evidence supports it.
+
+### B4 Supervisor lifecycle
+**Status: PROVEN for bounded recovery**
+
+Exit already demonstrated:
+one supervisor, one child, lock ownership, child termination and recreation, fresh MCP initialize.
+
+Still separate NOT_PROVEN gates:
+reboot restoration, battery exemption, force-stop immunity.
+
+### B5 Morphe
+**Status: IN_PROGRESS**
+
+A deep link or app launch is not source installation proof. Source confirmation UI and resulting runtime state must be observed.
+
+### B6 Regression guard
+**Status: REQUIRED FOR ALL BROCCOLI CHANGES**
+
+Every transport change follows:
+`.new -> syntax/self-test -> target artifact proof -> atomic promotion`
+
+No RC=0-only PASS.
+No duplicate `rish_run.sh`.
+No whole-environment persistence.
+No chat-only execution loop.
+No historical checkout modernization without an explicit goal.
