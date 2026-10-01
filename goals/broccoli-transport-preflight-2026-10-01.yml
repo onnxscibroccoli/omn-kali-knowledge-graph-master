@@ -1,0 +1,50 @@
+id: broccoli-transport-preflight-2026-10-01
+tag: BROCCOLI-TRANSPORT-CONTRACT-2026-10-01
+rule: answer every question before any new Rish, supervisor, or MCP transport experiment
+canonical_wrapper: broccoli-core/lib/rish_run.sh
+canonical_blob: 81414aa0f6a9f79db0a346fb8ab459824612cb64
+known_good:
+  preserve_env: "0"
+  expected_identity: uid=2000(shell)
+  expected_sdk_when_probed: "35"
+  env_file: "$HOME/.config/broccoli/rish/android-runtime.env"
+  rish_bin: /data/data/com.termux/files/usr/bin/rish
+fail_closed_exits:
+  usage: 2
+  env_missing: 78
+  bin_missing: 79
+questions:
+  - id: boundary
+    ask: Which boundary is failing: caller, env snapshot, Termux, rish_run.sh, rish binary, Shizuku, Android shell, MCP, or target app?
+  - id: existing_proof
+    ask: What existing artifact already covers this boundary?
+  - id: preserve_env
+    ask: Is RISH_PRESERVE_ENV still 0?
+  - id: caller_equivalence
+    ask: Is this caller equivalent to the proven caller, or is it a new caller?
+  - id: snapshot_origin
+    ask: Was android-runtime.env captured from interactive Termux with BOOTCLASSPATH, not from RDC?
+  - id: new_evidence
+    ask: What new target artifact will this run produce?
+  - id: no_duplicate
+    ask: Does this change add a second rish wrapper or event bus?
+  - id: success_artifact
+    ask: What stdout marker and identity prove success, other than RC=0?
+stop_if:
+  - no new evidence is defined
+  - the proposed fix edits Rish or Shizuku before the caller snapshot is compared
+  - the proposed fix persists the whole Termux environment
+  - the proposed fix treats RC=0 with empty stdout as pass
+open_gates:
+  - id: B2
+    status: IN_PROGRESS
+    evidence_needed: Grasshopper #115 real Android observe -> select -> act -> verify
+  - id: B4-reboot
+    status: NOT_PROVEN
+    evidence_needed: post-reboot supervisor and MCP initialize
+  - id: B5
+    status: NOT_PROVEN
+    evidence_needed: Morphe source confirmation UI, not a deep link
+  - id: G14
+    status: BLOCKED
+    evidence_needed: persistent Grasshopper build storage and JDK before Morphe source builds
