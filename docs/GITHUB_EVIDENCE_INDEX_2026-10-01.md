@@ -43,3 +43,32 @@ Repository metadata and path names may themselves reveal sensitive information. 
 
 The OCI \`oci-grasshopper-workstation\` is the preferred persistent development-side workspace for building this index. It is not production state.
 
+## Live validation: 2026-10-01
+
+Grasshopper PR #120 makes the ingest path API-first and concurrency-safe.
+
+Observed on OCI workstation `oci-grasshopper-workstation`:
+
+- source: GitHub Trees API
+- repository: `onnxscibroccoli/broccoli-core`
+- historical commit: `e8eff124000e8bfb0a9419281d065a493d880cc5`
+- tree entries indexed: 5,481
+- bounded text files indexed: 20
+- protected paths excluded: 3
+- recursive tree truncated: false
+- selected raw file bytes verified against exact Git blob SHA before indexing
+- SQLite status persisted with `status=OK`
+- FTS query `chat` returned exact repository/path evidence
+- a second worker attempting the same repository lock was rejected with `repository ingest already running`
+- clean rerun completed successfully in about 3 seconds
+
+### Learned failure boundary
+
+The earlier Git partial-clone implementation was tested against the same historical repository. It exposed repeated promisor fetches while `git ls-tree` and lazy blob access were operating on the partial clone. That behavior is now treated as a documented fallback limitation, not as proof that the original path is bounded.
+
+The API-first path avoids that observed behavior for public repositories by obtaining commit/tree metadata directly and retrieving only selected high-signal files. Git remains an explicit fallback. `OMNIKALI_GITHUB_API_ONLY=1` provides fail-closed validation when fallback must not occur.
+
+### Concurrency contract
+
+One index root permits one active ingest worker per repository. The lock is an OS-level advisory file lock under `<index-root>/locks/`. Lock ownership is released automatically when the process exits, including abnormal process termination.
+
