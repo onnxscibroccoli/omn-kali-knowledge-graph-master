@@ -59,7 +59,7 @@ jobs:
               name = repo.split('/', 1)[1]
               target = root / name
               subprocess.run([
-                  'git', 'clone', '--depth', '1',
+                  'git', 'clone', '--filter=blob:none',
                   f'https://x-access-token:{os.environ["GH_TOKEN"]}@github.com/{repo}.git',
                   str(target)
               ], check=True)
@@ -114,8 +114,12 @@ jobs:
           print(f"discovered {len(entries)} tool candidates")
           PY
 
+      - name: Index repository history
+        run: |
+          python tools/discovery/history_index.py             .discovery/output/tool_registry.json             .discovery/repos             tools/discovery/discovery_scope.json             .discovery/output/tool_registry_historical.json
+
       - name: Validate registry against adjacent schema
-        run: python tools/discovery/validate_registry.py tools/discovery/tool_manifest.schema.json .discovery/output/tool_registry.json
+        run: python tools/discovery/validate_registry.py tools/discovery/tool_manifest.schema.json .discovery/output/tool_registry_historical.json
 
       - name: Validate retest evidence
         run: |
