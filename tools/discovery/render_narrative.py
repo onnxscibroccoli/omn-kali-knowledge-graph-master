@@ -33,10 +33,17 @@ def render(registry: dict) -> str:
         for item in items:
             signals = item.get("discovery", {}).get("signals", [])
             signal_text = ", ".join(signals) if signals else "no additional discovery signals"
+            qualification = item.get("qualification", {})
+            quality = qualification.get("quality", "NOT_CLASSIFIED")
+            purpose = qualification.get("intended_purpose", "No intended purpose recorded.")
+            replacement = qualification.get("replacement_tool_id")
+            lineage = f" A related validated tool is {replacement}." if replacement else ""
             lines.append(
                 f"The tool at {item['path']} is classified as {item.get('kind', 'unknown')}. "
                 f"The scanner identified it using {signal_text}. "
                 f"Its runtime evidence status is {item.get('evidence', {}).get('status', 'NOT_PROVEN')}. "
+                f"Its qualification quality is {quality}. "
+                f"Its intended purpose is {purpose}.{lineage} "
                 f"The source reference is {item.get('source', {}).get('ref', 'unknown')} "
                 f"at commit {item.get('source', {}).get('sha', 'unknown')}."
             )
