@@ -248,6 +248,31 @@
           "type": "string"
         }
       }
+    },
+    "history": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "commit_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "first_seen_commit": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "last_changed_commit": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "historical_changes": {
+          "type": "boolean"
+        }
+      }
     }
   }
 }
