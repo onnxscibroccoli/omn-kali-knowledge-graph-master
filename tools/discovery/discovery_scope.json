@@ -2,34 +2,150 @@
   "schema_version": "omnikali.discovery-scope/v1",
   "owner": "onnxscibroccoli",
   "repositories": [
-    {"repository": "onnxscibroccoli/broccoli-core", "enabled": true},
-    {"repository": "onnxscibroccoli/Grasshopper", "enabled": true},
-    {"repository": "onnxscibroccoli/helix", "enabled": true},
-    {"repository": "onnxscibroccoli/kali-node", "enabled": true},
-    {"repository": "onnxscibroccoli/grasshopper-kubernetes", "enabled": true},
-    {"repository": "onnxscibroccoli/omnikali", "enabled": true},
-    {"repository": "onnxscibroccoli/omnikali-link", "enabled": true},
-    {"repository": "onnxscibroccoli/omn-kali-knowledge-graph-master", "enabled": true},
-    {"repository": "onnxscibroccoli/kiln", "enabled": true},
-    {"repository": "onnxscibroccoli/GPTOmniKali-full-stack", "enabled": true},
-    {"repository": "onnxscibroccoli/morphe-manager", "enabled": true},
-    {"repository": "onnxscibroccoli/morphe-desktop", "enabled": true},
-    {"repository": "onnxscibroccoli/morphe-patches", "enabled": true},
-    {"repository": "onnxscibroccoli/morphe-patches-1", "enabled": true},
-    {"repository": "onnxscibroccoli/Morphe-Patches-2", "enabled": true},
-    {"repository": "onnxscibroccoli/morphe-patches-template", "enabled": true},
-    {"repository": "onnxscibroccoli/noVNC", "enabled": true},
-    {"repository": "onnxscibroccoli/oauth2-proxy", "enabled": true},
-    {"repository": "onnxscibroccoli/lattice", "enabled": true},
-    {"repository": "onnxscibroccoli/lattice-audit", "enabled": true},
-    {"repository": "onnxscibroccoli/newsroom-desk", "enabled": true},
-    {"repository": "onnxscibroccoli/half-a-mile", "enabled": true},
-    {"repository": "onnxscibroccoli/dectalk-live", "enabled": true},
-    {"repository": "onnxscibroccoli/onnxscibroccoli.github.io", "enabled": true},
-    {"repository": "onnxscibroccoli/shizuku-silent-mic", "enabled": true},
-    {"repository": "onnxscibroccoli/android-virtual-mic-shizuku", "enabled": true},
-    {"repository": "onnxscibroccoli/shizuku-virtual-mic", "enabled": true},
-    {"repository": "onnxscibroccoli/ara-github-write-test", "enabled": true},
-    {"repository": "onnxscibroccoli/ara-github-write-test-2", "enabled": true}
+    {
+      "repository": "onnxscibroccoli/broccoli-core",
+      "enabled": true,
+      "access": "public"
+    },
+    {
+      "repository": "onnxscibroccoli/Grasshopper",
+      "enabled": true,
+      "access": "public"
+    },
+    {
+      "repository": "onnxscibroccoli/helix",
+      "enabled": true,
+      "access": "public"
+    },
+    {
+      "repository": "onnxscibroccoli/kali-node",
+      "enabled": true,
+      "access": "private"
+    },
+    {
+      "repository": "onnxscibroccoli/grasshopper-kubernetes",
+      "enabled": true,
+      "access": "private"
+    },
+    {
+      "repository": "onnxscibroccoli/omnikali",
+      "enabled": true,
+      "access": "public"
+    },
+    {
+      "repository": "onnxscibroccoli/omnikali-link",
+      "enabled": true,
+      "access": "public"
+    },
+    {
+      "repository": "onnxscibroccoli/omn-kali-knowledge-graph-master",
+      "enabled": true,
+      "access": "public"
+    },
+    {
+      "repository": "onnxscibroccoli/kiln",
+      "enabled": true,
+      "access": "public"
+    },
+    {
+      "repository": "onnxscibroccoli/GPTOmniKali-full-stack",
+      "enabled": true,
+      "access": "private"
+    },
+    {
+      "repository": "onnxscibroccoli/morphe-manager",
+      "enabled": true,
+      "access": "public"
+    },
+    {
+      "repository": "onnxscibroccoli/morphe-desktop",
+      "enabled": true,
+      "access": "public"
+    },
+    {
+      "repository": "onnxscibroccoli/morphe-patches",
+      "enabled": true,
+      "access": "public"
+    },
+    {
+      "repository": "onnxscibroccoli/morphe-patches-1",
+      "enabled": true,
+      "access": "public"
+    },
+    {
+      "repository": "onnxscibroccoli/Morphe-Patches-2",
+      "enabled": true,
+      "access": "public"
+    },
+    {
+      "repository": "onnxscibroccoli/morphe-patches-template",
+      "enabled": true,
+      "access": "public"
+    },
+    {
+      "repository": "onnxscibroccoli/noVNC",
+      "enabled": true,
+      "access": "public"
+    },
+    {
+      "repository": "onnxscibroccoli/oauth2-proxy",
+      "enabled": true,
+      "access": "public"
+    },
+    {
+      "repository": "onnxscibroccoli/lattice",
+      "enabled": true,
+      "access": "private"
+    },
+    {
+      "repository": "onnxscibroccoli/lattice-audit",
+      "enabled": true,
+      "access": "public"
+    },
+    {
+      "repository": "onnxscibroccoli/newsroom-desk",
+      "enabled": true,
+      "access": "public"
+    },
+    {
+      "repository": "onnxscibroccoli/half-a-mile",
+      "enabled": true,
+      "access": "public"
+    },
+    {
+      "repository": "onnxscibroccoli/dectalk-live",
+      "enabled": true,
+      "access": "public"
+    },
+    {
+      "repository": "onnxscibroccoli/onnxscibroccoli.github.io",
+      "enabled": true,
+      "access": "public"
+    },
+    {
+      "repository": "onnxscibroccoli/shizuku-silent-mic",
+      "enabled": true,
+      "access": "public"
+    },
+    {
+      "repository": "onnxscibroccoli/android-virtual-mic-shizuku",
+      "enabled": true,
+      "access": "private"
+    },
+    {
+      "repository": "onnxscibroccoli/shizuku-virtual-mic",
+      "enabled": true,
+      "access": "private"
+    },
+    {
+      "repository": "onnxscibroccoli/ara-github-write-test",
+      "enabled": true,
+      "access": "private"
+    },
+    {
+      "repository": "onnxscibroccoli/ara-github-write-test-2",
+      "enabled": true,
+      "access": "private"
+    }
   ]
 }
