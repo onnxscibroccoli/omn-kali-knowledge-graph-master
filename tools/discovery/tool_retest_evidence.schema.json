@@ -1,0 +1,31 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://github.com/onnxscibroccoli/omn-kali-knowledge-graph-master/blob/main/tools/discovery/tool_retest_evidence.schema.json",
+  "title":"OmniKali Tool Retest Evidence",
+  "type":"object",
+  "required":["schema_version","evidence"],
+  "additionalProperties":false,
+  "properties":{
+    "schema_version":{"const":"omnikali.tool-retest-evidence/v1"},
+    "generated_at":{"type":"string"},
+    "evidence":{
+      "type":"array",
+      "items":{
+        "type":"object",
+        "required":["tool_id","historical_proof","retest_status","quality","intended_purpose","improvement_strategy"],
+        "additionalProperties":false,
+        "properties":{
+          "tool_id":{"type":"string","minLength":1},
+          "historical_proof":{"type":"boolean"},
+          "historical_refs":{"type":"array","items":{"type":"string"}},
+          "retest_status":{"enum":["PASS","FAIL","BLOCKED","NOT_RUN"]},
+          "retest_refs":{"type":"array","items":{"type":"string"}},
+          "intended_purpose":{"type":"string","minLength":1},
+          "quality":{"enum":["HIGH","MEDIUM","LOW","HISTORICAL_RETEST_REQUIRED"]},
+          "improvement_strategy":{"enum":["REUSE_VALIDATED_TOOL","REPAIR_EXISTING","RETEST_REQUIRED","NEW_IMPLEMENTATION","ARCHIVE_ONLY","SUPPORTING_TEST"]},
+          "rationale":{"type":"string"}
+        }
+      }
+    }
+  }
+}
