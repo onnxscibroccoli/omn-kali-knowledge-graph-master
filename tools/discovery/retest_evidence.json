@@ -1,6 +1,6 @@
 {
   "schema_version": "omnikali.tool-retest-evidence/v1",
-  "generated_at": "2026-10-02T01:00:00Z",
+  "generated_at": "2026-10-02T02:12:00Z",
   "evidence": [
     {
       "tool_id": "onnxscibroccoli/helix/scripts/verify-public-health.mjs",
@@ -70,6 +70,54 @@
       "quality": "HIGH",
       "improvement_strategy": "REUSE_VALIDATED_TOOL",
       "rationale": "The verifier passed 199 tests and explicitly preserves OPEN status for unproven production/live gates."
+    },
+    {
+      "tool_id": "onnxscibroccoli/Grasshopper/scripts/oci-openclaw-verify.sh",
+      "historical_proof": true,
+      "historical_refs": [
+        "onnxscibroccoli/Grasshopper@a0423ee40287506843faff9b24989a1a37217441:scripts/oci-openclaw-verify.sh"
+      ],
+      "retest_status": "PASS",
+      "retest_refs": [
+        "RDC grasshopper-workstation: bash scripts/oci-openclaw-verify.sh against a0423ee40287506843faff9b24989a1a37217441",
+        "OPENCLAW_OCI_VERIFY=PASS; MODEL_SMOKE_TEST=PASS; gateway and Ollama listeners verified loopback/not-public; backup helper/timer/recent/verified checks passed"
+      ],
+      "intended_purpose": "Read-only OpenClaw/Ollama OCI workstation security, service, model, and backup verification gate.",
+      "quality": "HIGH",
+      "improvement_strategy": "REUSE_VALIDATED_TOOL",
+      "rationale": "Historical source plus a current read-only retest both passed end-to-end on the reachable Grasshopper workstation."
+    },
+    {
+      "tool_id": "onnxscibroccoli/Grasshopper/scripts/security-phase-verify.sh",
+      "historical_proof": true,
+      "historical_refs": [
+        "onnxscibroccoli/Grasshopper@a0423ee40287506843faff9b24989a1a37217441:scripts/security-phase-verify.sh"
+      ],
+      "retest_status": "FAIL",
+      "retest_refs": [
+        "RDC grasshopper-workstation: bash scripts/security-phase-verify.sh with default environment",
+        "FAIL security.phase.missing; FAIL backup.status; FAIL restore.status; network listener checks passed; exit 1"
+      ],
+      "intended_purpose": "Fail-closed security-phase, gateway exposure, backup, and restore status verifier.",
+      "quality": "LOW",
+      "improvement_strategy": "REPAIR_EXISTING",
+      "rationale": "The verifier executes and fails closed, but the default invocation cannot establish the required phase/backup/restore contract. Preserve the failure as evidence and repair or provide an explicit non-secret test fixture before treating it as a reusable high-quality gate."
+    },
+    {
+      "tool_id": "onnxscibroccoli/Grasshopper/scripts/verify-no-broccoli-degradation.mjs",
+      "historical_proof": true,
+      "historical_refs": [
+        "onnxscibroccoli/Grasshopper@a0423ee40287506843faff9b24989a1a37217441:scripts/verify-no-broccoli-degradation.mjs"
+      ],
+      "retest_status": "FAIL",
+      "retest_refs": [
+        "RDC grasshopper-workstation: node scripts/verify-no-broccoli-degradation.mjs against a0423ee40287506843faff9b24989a1a37217441",
+        "FAIL false_shipped:docs/BROCCOLI_KNOWLEDGE_GRAPH.md; FAIL false_shipped:docs/DEGRADATION_LESSONS.md; FAIL marker:docs/PORTABILITY_AND_EXECUTION_BOUNDARIES.md:host and target shells are separate runtimes"
+      ],
+      "intended_purpose": "Fail-closed regression guard against known Broccoli documentation and transport-boundary degradation patterns.",
+      "quality": "LOW",
+      "improvement_strategy": "REPAIR_EXISTING",
+      "rationale": "The guard correctly detected three concrete repository violations, so the failure is useful evidence, but the current implementation cannot qualify as a reusable passing gate until those violations are resolved and the guard is retested."
     }
   ]
 }
