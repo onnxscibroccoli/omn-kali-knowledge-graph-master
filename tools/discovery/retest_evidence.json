@@ -1,0 +1,57 @@
+{
+  "schema_version": "omnikali.tool-retest-evidence/v1",
+  "generated_at": "2026-10-02T01:00:00Z",
+  "evidence": [
+    {
+      "tool_id": "onnxscibroccoli/helix/scripts/verify-public-health.mjs",
+      "historical_proof": true,
+      "historical_refs": [
+        "onnxscibroccoli/helix@3a87c196bfb100ed3eda7ad20d7ad4b93e613443:scripts/verify-public-health.test.mjs",
+        "onnxscibroccoli/helix@3a87c196bfb100ed3eda7ad20d7ad4b93e613443:docs/LIVE_PATHS.md"
+      ],
+      "retest_status": "PASS",
+      "retest_refs": [
+        "RDC grasshopper-workstation: cloned helix at 3a87c196bfb100ed3eda7ad20d7ad4b93e613443 and ran OMNIKALI_PUBLIC_HEALTH_ENABLED=1 node scripts/verify-public-health.mjs",
+        "HTTP 200; ok=true; https://d22bad48irrbqe.cloudfront.net/health"
+      ],
+      "intended_purpose": "Read-only production public health verification.",
+      "quality": "HIGH",
+      "improvement_strategy": "REUSE_VALIDATED_TOOL",
+      "rationale": "Historical test coverage and live retest both prove the declared health contract."
+    },
+    {
+      "tool_id": "onnxscibroccoli/Grasshopper/bin/omnikali.mjs",
+      "historical_proof": true,
+      "historical_refs": [
+        "onnxscibroccoli/Grasshopper@a0423ee40287506843faff9b24989a1a37217441:README.md",
+        "onnxscibroccoli/Grasshopper@a0423ee40287506843faff9b24989a1a37217441:test/*.test.mjs"
+      ],
+      "retest_status": "PASS",
+      "retest_refs": [
+        "RDC grasshopper-workstation: npm test passed 23 tests in Grasshopper a0423ee40287506843faff9b24989a1a37217441",
+        "RDC grasshopper-workstation: node bin/omnikali.mjs status exited 0 and emitted valid empty control-plane state"
+      ],
+      "intended_purpose": "Reproducible Grasshopper control-plane CLI.",
+      "quality": "HIGH",
+      "improvement_strategy": "REUSE_VALIDATED_TOOL",
+      "rationale": "Repository tests and direct CLI execution both passed against the current main snapshot."
+    },
+    {
+      "tool_id": "onnxscibroccoli/broccoli-core/lib/rish_run.sh",
+      "historical_proof": true,
+      "historical_refs": [
+        "omn-kali-knowledge-graph-master@fd5cca1d4fed96cd552e08711885e5c9617c3fde:docs/BROCCOLI_TRANSPORT_CONTRACT_2026-10-01.md",
+        "omn-kali-knowledge-graph-master@fd5cca1d4fed96cd552e08711885e5c9617c3fde:docs/BROCCOLI_ITERATION_KNOWLEDGE_2026-10-01.md",
+        "omn-kali-knowledge-graph-master@fd5cca1d4fed96cd552e08711885e5c9617c3fde:goals/broccoli-transport-preflight-2026-10-01.yml"
+      ],
+      "retest_status": "BLOCKED",
+      "retest_refs": [
+        "Current RDC device is grasshopper-workstation, not the Android/Termux execution device required by the Rish contract."
+      ],
+      "intended_purpose": "Canonical sanitized Termux-to-Rish Android shell transport.",
+      "quality": "HISTORICAL_RETEST_REQUIRED",
+      "improvement_strategy": "RETEST_REQUIRED",
+      "rationale": "Strong historical proof exists, including the canonical wrapper blob and expected transport markers, but a same-session Android retest is not available from the current connected device."
+    }
+  ]
+}
