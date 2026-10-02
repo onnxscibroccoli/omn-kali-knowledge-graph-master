@@ -12,15 +12,17 @@ First, GitHub Actions checks out the knowledge graph repository and establishes 
 
 Second, the workflow reads the declared repository scope. Public repositories are cloned with the workflow read token. Private repositories are recorded as NOT_SCANNED unless a separately authorized credential integration is added.
 
-Third, the read-only discovery engine recursively walks each checked out repository. It identifies executable files, shebangs, Python CLI frameworks, MCP patterns, shell CLI patterns, Ansible playbook patterns, and workflow YAML.
+Third, the read-only discovery engine recursively walks each checked out repository. It identifies executable files, shebangs, Python CLI frameworks, Node CLI and MCP patterns, shell CLI patterns, Ansible playbook patterns, and workflow YAML.
 
-Fourth, each discovered candidate receives provenance containing the repository, source reference, and exact source commit. Runtime evidence defaults to NOT_PROVEN.
+Fourth, each discovered candidate receives provenance containing the repository, source reference, exact source commit, and Git path history. History is descriptive and does not prove capability.
 
 Fifth, the validator checks every generated manifest against `tools/discovery/tool_manifest.schema.json`. A validation failure fails the workflow.
 
 Sixth, the narrative renderer translates registry metadata into plain text. The narrative uses descriptive verbs and avoids diagrams and symbolic architecture notation so it can be read by text to speech systems.
 
-Seventh, the generated registry, narrative, and private-scope report are uploaded as workflow evidence. Repository writeback is deliberately not enabled because the workflow has contents read permission only.
+Seventh, the generated registry, historical registry, qualified registry, narrative, and private-scope report are uploaded as workflow evidence. Repository writeback is deliberately not enabled because the workflow has contents read permission only.
+
+Eighth, the qualification layer applies explicit retest evidence. A live PASS can promote a candidate to HIGH. Historical proof without a current retest becomes HISTORICAL_RETEST_REQUIRED. Weak, archived, mirrored, legacy, and template candidates receive an intended-purpose classification and a conservative improvement strategy. A replacement link is created only when meaningful semantic overlap with a HIGH implementation is established.
 
 ## Safety boundary
 
@@ -48,7 +50,9 @@ Ansible may be introduced for explicit host convergence when repeated configurat
 
 ## Verification status
 
-GitHub Actions run `36952135009` completed successfully on 2026-10-02. The run cloned 21 public repositories, recorded 8 private repositories as NOT_SCANNED, discovered 2,890 candidates, validated the generated registry against the adjacent schema, rendered the narrative, and uploaded the evidence artifact. The artifact was created as `omnikali-tool-discovery-33c002263b2a7646cef5b292da0a2c448bf0d3d6`.
+GitHub Actions run `36953078467` completed successfully on 2026-10-02 against head `e72c15f736db3fafbc2d40e2b5c50f6b4e4ef374`. It discovered 3,224 candidates across 21 public repositories, recorded 8 private repositories as NOT_SCANNED, indexed Git history, validated the registry, validated 4 explicit retest records, qualified the catalog, rendered the narrative, and uploaded artifact `omnikali-tool-discovery-e72c15f736db3fafbc2d40e2b5c50f6b4e4ef374`.
+
+The qualification result contains 3 HIGH candidates, 1 HISTORICAL_RETEST_REQUIRED candidate, 804 MEDIUM candidates, and 2,416 LOW candidates. The three HIGH candidates are the Grasshopper control-plane CLI, the Grasshopper reference verifier, and the Helix public-health verifier. Broccoli Core's canonical `lib/rish_run.sh` has strong historical proof but remains HISTORICAL_RETEST_REQUIRED because the connected retest device is not the Android/Termux execution device.
 
 The CI execution path is therefore PASS for this snapshot. Local container runtime validation remains NOT_PROVEN, and private repository discovery remains NOT_SCANNED by design.
 
