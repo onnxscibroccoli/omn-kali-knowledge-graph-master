@@ -8,7 +8,7 @@
   "additionalProperties": false,
   "properties": {
     "schema_version": {"const": "omnikali.tool-manifest/v1"},
-    "tool_id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9._/-]*$"},
+    "tool_id": {"type": "string", "minLength": 1, "maxLength": 1024},
     "repository": {"type": "string", "pattern": "^[^/]+/[^/]+$"},
     "path": {"type": "string", "minLength": 1},
     "kind": {"enum": ["script", "cli", "mcp", "workflow", "playbook", "library", "unknown"]},
