@@ -96,6 +96,14 @@ def qualify(registry: dict, evidence: dict) -> dict:
                     "meaningful path/purpose overlap. Prefer the validated implementation."
                 )
 
+        if q["retest_status"] == "PASS":
+            item.setdefault("evidence", {})["status"] = "PASS"
+            item["evidence"]["tests"] = q["retest_refs"]
+            item["evidence"]["last_verified_at"] = evidence.get("generated_at", "")
+            item["evidence"]["notes"] = q["rationale"]
+        elif q["retest_status"] == "FAIL":
+            item.setdefault("evidence", {})["status"] = "FAIL"
+            item["evidence"]["tests"] = q["retest_refs"]
         item["qualification"] = q
 
     registry["qualification"] = {
