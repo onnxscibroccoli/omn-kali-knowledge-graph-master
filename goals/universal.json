@@ -1,0 +1,1036 @@
+{
+  "schema": "omnikali.universal-goals/v1",
+  "revision": 0,
+  "repositories": [
+    {
+      "id": "1400128174",
+      "fullName": "onnxscibroccoli/morphe-patches",
+      "visibility": "public",
+      "currentBindings": {
+        "codeSha": "18ffc1f7b30219a70a4ab4f5d4d05b156b4a3fe3",
+        "transportContractHash": "597382637e4a820ac8baf84967d282527d9627f73b591bbfe0e516ee391424d2"
+      }
+    },
+    {
+      "id": "1371386327",
+      "fullName": "onnxscibroccoli/omnikali-link",
+      "visibility": "public",
+      "currentBindings": {
+        "codeSha": "98d8124791eca8530756c8302e7832981386c1a3",
+        "transportContractHash": "597382637e4a820ac8baf84967d282527d9627f73b591bbfe0e516ee391424d2"
+      }
+    },
+    {
+      "id": "1394231222",
+      "fullName": "onnxscibroccoli/omn-kali-knowledge-graph-master",
+      "visibility": "public",
+      "currentBindings": {
+        "codeSha": "fd5cca1d4fed96cd552e08711885e5c9617c3fde",
+        "transportContractHash": "597382637e4a820ac8baf84967d282527d9627f73b591bbfe0e516ee391424d2"
+      }
+    },
+    {
+      "id": "1357276506",
+      "fullName": "onnxscibroccoli/lattice-audit",
+      "visibility": "public",
+      "currentBindings": {
+        "codeSha": "858d6d4fc5f5f34f6e3823161ef70bfb43749483",
+        "transportContractHash": "597382637e4a820ac8baf84967d282527d9627f73b591bbfe0e516ee391424d2"
+      }
+    },
+    {
+      "id": "1363097521",
+      "fullName": "onnxscibroccoli/half-a-mile",
+      "visibility": "public",
+      "currentBindings": {
+        "codeSha": "9ccd14f49228f8d9ab64427b4023924cd4a9aa1c",
+        "transportContractHash": "597382637e4a820ac8baf84967d282527d9627f73b591bbfe0e516ee391424d2"
+      }
+    },
+    {
+      "id": "1400152912",
+      "fullName": "onnxscibroccoli/morphe-desktop",
+      "visibility": "public",
+      "currentBindings": {
+        "codeSha": "9bc059777b21b5f33fa8323b0b364bc92222b637",
+        "transportContractHash": "597382637e4a820ac8baf84967d282527d9627f73b591bbfe0e516ee391424d2"
+      }
+    },
+    {
+      "id": "1305206212",
+      "fullName": "onnxscibroccoli/broccoli-core",
+      "visibility": "public",
+      "currentBindings": {
+        "codeSha": "37bfee84ef29da016d73262b7b6f006468d101ed",
+        "transportContractHash": "597382637e4a820ac8baf84967d282527d9627f73b591bbfe0e516ee391424d2"
+      }
+    },
+    {
+      "id": "1400152880",
+      "fullName": "onnxscibroccoli/morphe-patches-template",
+      "visibility": "public",
+      "currentBindings": {
+        "codeSha": "57538a3b85ccd3c9a24ed3cc06ec722787563879",
+        "transportContractHash": "597382637e4a820ac8baf84967d282527d9627f73b591bbfe0e516ee391424d2"
+      }
+    },
+    {
+      "id": "1400126973",
+      "fullName": "onnxscibroccoli/noVNC",
+      "visibility": "public",
+      "currentBindings": {
+        "codeSha": "acca57b997f206683d27796829ee1f72da37002a",
+        "transportContractHash": "597382637e4a820ac8baf84967d282527d9627f73b591bbfe0e516ee391424d2"
+      }
+    },
+    {
+      "id": "1400127009",
+      "fullName": "onnxscibroccoli/oauth2-proxy",
+      "visibility": "public",
+      "currentBindings": {
+        "codeSha": "bea3f04bf87b93f5354f392fe2216a88e6031350",
+        "transportContractHash": "597382637e4a820ac8baf84967d282527d9627f73b591bbfe0e516ee391424d2"
+      }
+    },
+    {
+      "id": "1400126817",
+      "fullName": "onnxscibroccoli/morphe-manager",
+      "visibility": "public",
+      "currentBindings": {
+        "codeSha": "2d9e7f65af9e03370650d7840d20a47096def3be",
+        "transportContractHash": "597382637e4a820ac8baf84967d282527d9627f73b591bbfe0e516ee391424d2"
+      }
+    },
+    {
+      "id": "1400128239",
+      "fullName": "onnxscibroccoli/Morphe-Patches-2",
+      "visibility": "public",
+      "currentBindings": {
+        "codeSha": "fb52a3e46a7bf6aadef9e2a648bdea2131951f39",
+        "transportContractHash": "597382637e4a820ac8baf84967d282527d9627f73b591bbfe0e516ee391424d2"
+      }
+    },
+    {
+      "id": "1388355758",
+      "fullName": "onnxscibroccoli/Grasshopper",
+      "visibility": "public",
+      "currentBindings": {
+        "codeSha": "a0423ee40287506843faff9b24989a1a37217441",
+        "transportContractHash": "597382637e4a820ac8baf84967d282527d9627f73b591bbfe0e516ee391424d2"
+      }
+    },
+    {
+      "id": "1370065661",
+      "fullName": "onnxscibroccoli/dectalk-live",
+      "visibility": "public",
+      "currentBindings": {
+        "codeSha": "a6c603481bf7c0ad4c469612d2cf6adefca8b2ad",
+        "transportContractHash": "597382637e4a820ac8baf84967d282527d9627f73b591bbfe0e516ee391424d2"
+      }
+    },
+    {
+      "id": "1400128205",
+      "fullName": "onnxscibroccoli/morphe-patches-1",
+      "visibility": "public",
+      "currentBindings": {
+        "codeSha": "d60e85c68ab6c268b497f849000645da263c3b4d",
+        "transportContractHash": "597382637e4a820ac8baf84967d282527d9627f73b591bbfe0e516ee391424d2"
+      }
+    },
+    {
+      "id": "1380712368",
+      "fullName": "onnxscibroccoli/kiln",
+      "visibility": "public",
+      "currentBindings": {
+        "codeSha": "fed47797e3cbde14fee7b0634bb688f7125f0081",
+        "transportContractHash": "597382637e4a820ac8baf84967d282527d9627f73b591bbfe0e516ee391424d2"
+      }
+    },
+    {
+      "id": "1361573997",
+      "fullName": "onnxscibroccoli/shizuku-silent-mic",
+      "visibility": "public",
+      "currentBindings": {
+        "codeSha": "6fe4ad8801e6e6537e51096166812d3366a3ec8f",
+        "transportContractHash": "597382637e4a820ac8baf84967d282527d9627f73b591bbfe0e516ee391424d2"
+      }
+    },
+    {
+      "id": "1363273416",
+      "fullName": "onnxscibroccoli/newsroom-desk",
+      "visibility": "public",
+      "currentBindings": {
+        "codeSha": "ebe418d02e9051eaeff95f834bedfe94d8993120",
+        "transportContractHash": "597382637e4a820ac8baf84967d282527d9627f73b591bbfe0e516ee391424d2"
+      }
+    },
+    {
+      "id": "1363115269",
+      "fullName": "onnxscibroccoli/onnxscibroccoli.github.io",
+      "visibility": "public",
+      "currentBindings": {
+        "codeSha": "40de96bfd1071c5de77d31dcec386a91f65647d4",
+        "transportContractHash": "597382637e4a820ac8baf84967d282527d9627f73b591bbfe0e516ee391424d2"
+      }
+    },
+    {
+      "id": "1382126784",
+      "fullName": "onnxscibroccoli/helix",
+      "visibility": "public",
+      "currentBindings": {
+        "codeSha": "3a87c196bfb100ed3eda7ad20d7ad4b93e613443",
+        "transportContractHash": "597382637e4a820ac8baf84967d282527d9627f73b591bbfe0e516ee391424d2"
+      }
+    },
+    {
+      "id": "1380586130",
+      "fullName": "onnxscibroccoli/omnikali",
+      "visibility": "public",
+      "currentBindings": {
+        "codeSha": "3943b1b5dd941d8a6ef2138fec79db58b648d9fe",
+        "transportContractHash": "597382637e4a820ac8baf84967d282527d9627f73b591bbfe0e516ee391424d2"
+      }
+    }
+  ],
+  "goals": [
+    {
+      "id": "GH-BROWSER-001",
+      "title": "Operate provider browser sessions without OpenClaw",
+      "requestKey": "user-20261002:GH-BROWSER-001",
+      "requestedAt": "2026-10-02T17:12:58Z",
+      "requestedBy": "user",
+      "sourceRequestRef": "request:2026-10-02:browser-and-account-goals",
+      "ownerRepositoryId": "1388355758",
+      "affectedRepositories": [
+        "1388355758"
+      ],
+      "capability": "Operate provider browser sessions without OpenClaw",
+      "targetArchitecture": "Operate provider browser sessions without OpenClaw",
+      "dependencies": [
+        "GH-BROWSER-002",
+        "GH-BROWSER-003"
+      ],
+      "acceptanceCriteria": [
+        {
+          "id": "GH-BROWSER-001:1",
+          "description": "Real provider prompt and fresh assistant response without OpenClaw",
+          "requiredScope": "LIVE"
+        },
+        {
+          "id": "GH-BROWSER-001:2",
+          "description": "Same contract proven with a second provider",
+          "requiredScope": "LIVE"
+        }
+      ],
+      "implementationRefs": [],
+      "evidenceRefs": [],
+      "status": "PLANNED",
+      "blockers": [],
+      "nextAction": "Implement and verify acceptance criteria",
+      "revision": 0,
+      "supersedes": []
+    },
+    {
+      "id": "GH-BROWSER-002",
+      "title": "Persist private provider/account profiles and reconcile uncertain submissions",
+      "requestKey": "user-20261002:GH-BROWSER-002",
+      "requestedAt": "2026-10-02T17:12:58Z",
+      "requestedBy": "user",
+      "sourceRequestRef": "request:2026-10-02:browser-and-account-goals",
+      "ownerRepositoryId": "1388355758",
+      "affectedRepositories": [
+        "1388355758"
+      ],
+      "capability": "Persist private provider/account profiles and reconcile uncertain submissions",
+      "targetArchitecture": "Persist private provider/account profiles and reconcile uncertain submissions",
+      "dependencies": [],
+      "acceptanceCriteria": [
+        {
+          "id": "GH-BROWSER-002:1",
+          "description": "Exclusive profile lease",
+          "requiredScope": "LIVE"
+        },
+        {
+          "id": "GH-BROWSER-002:2",
+          "description": "Crash after submit does not duplicate prompt",
+          "requiredScope": "LIVE"
+        },
+        {
+          "id": "GH-BROWSER-002:3",
+          "description": "Unknown submission remains unknown",
+          "requiredScope": "LIVE"
+        }
+      ],
+      "implementationRefs": [],
+      "evidenceRefs": [],
+      "status": "PLANNED",
+      "blockers": [],
+      "nextAction": "Implement and verify acceptance criteria",
+      "revision": 0,
+      "supersedes": []
+    },
+    {
+      "id": "GH-BROWSER-003",
+      "title": "Pause and resume browser human gates with durable checkpoints",
+      "requestKey": "user-20261002:GH-BROWSER-003",
+      "requestedAt": "2026-10-02T17:12:58Z",
+      "requestedBy": "user",
+      "sourceRequestRef": "request:2026-10-02:browser-and-account-goals",
+      "ownerRepositoryId": "1388355758",
+      "affectedRepositories": [
+        "1388355758"
+      ],
+      "capability": "Pause and resume browser human gates with durable checkpoints",
+      "targetArchitecture": "Pause and resume browser human gates with durable checkpoints",
+      "dependencies": [],
+      "acceptanceCriteria": [
+        {
+          "id": "GH-BROWSER-003:1",
+          "description": "User completion plus two valid gate-free observations",
+          "requiredScope": "LIVE"
+        },
+        {
+          "id": "GH-BROWSER-003:2",
+          "description": "Timeout preserves checkpoint",
+          "requiredScope": "LIVE"
+        }
+      ],
+      "implementationRefs": [
+        "Draft PR #115 contains related Android human-gate code; browser acceptance unproven"
+      ],
+      "evidenceRefs": [],
+      "status": "PLANNED",
+      "blockers": [],
+      "nextAction": "Implement and verify acceptance criteria",
+      "revision": 0,
+      "supersedes": []
+    },
+    {
+      "id": "KG-GOALS-001",
+      "title": "Maintain one universal goals registry linked from the knowledge graph",
+      "requestKey": "user-20261002:KG-GOALS-001",
+      "requestedAt": "2026-10-02T17:12:58Z",
+      "requestedBy": "user",
+      "sourceRequestRef": "request:2026-10-02:browser-and-account-goals",
+      "ownerRepositoryId": "1394231222",
+      "affectedRepositories": [
+        "1394231222"
+      ],
+      "capability": "Maintain one universal goals registry linked from the knowledge graph",
+      "targetArchitecture": "Maintain one universal goals registry linked from the knowledge graph",
+      "dependencies": [],
+      "acceptanceCriteria": [
+        {
+          "id": "KG-GOALS-001:1",
+          "description": "New authorized requests saved idempotently",
+          "requiredScope": "INTEGRATION"
+        },
+        {
+          "id": "KG-GOALS-001:2",
+          "description": "Duplicate/cyclic/dangling definitions rejected",
+          "requiredScope": "INTEGRATION"
+        },
+        {
+          "id": "KG-GOALS-001:3",
+          "description": "Generated graph and speech-ready narrative",
+          "requiredScope": "INTEGRATION"
+        }
+      ],
+      "implementationRefs": [],
+      "evidenceRefs": [],
+      "status": "PLANNED",
+      "blockers": [],
+      "nextAction": "Implement and verify acceptance criteria",
+      "revision": 0,
+      "supersedes": []
+    },
+    {
+      "id": "KG-GOALS-002",
+      "title": "Bind goal promotion to criterion-level exact-code evidence",
+      "requestKey": "user-20261002:KG-GOALS-002",
+      "requestedAt": "2026-10-02T17:12:58Z",
+      "requestedBy": "user",
+      "sourceRequestRef": "request:2026-10-02:browser-and-account-goals",
+      "ownerRepositoryId": "1394231222",
+      "affectedRepositories": [
+        "1394231222"
+      ],
+      "capability": "Bind goal promotion to criterion-level exact-code evidence",
+      "targetArchitecture": "Bind goal promotion to criterion-level exact-code evidence",
+      "dependencies": [
+        "KG-GOALS-001"
+      ],
+      "acceptanceCriteria": [
+        {
+          "id": "KG-GOALS-002:1",
+          "description": "Skipped jobs cannot prove completion",
+          "requiredScope": "INTEGRATION"
+        },
+        {
+          "id": "KG-GOALS-002:2",
+          "description": "Code or transport drift invalidates proof binding",
+          "requiredScope": "INTEGRATION"
+        },
+        {
+          "id": "KG-GOALS-002:3",
+          "description": "Regression preserves historical evidence",
+          "requiredScope": "INTEGRATION"
+        }
+      ],
+      "implementationRefs": [],
+      "evidenceRefs": [],
+      "status": "PLANNED",
+      "blockers": [],
+      "nextAction": "Implement and verify acceptance criteria",
+      "revision": 0,
+      "supersedes": []
+    },
+    {
+      "id": "KG-INVENTORY-001",
+      "title": "Index account repository trees with explicit coverage",
+      "requestKey": "user-20261002:KG-INVENTORY-001",
+      "requestedAt": "2026-10-02T17:12:58Z",
+      "requestedBy": "user",
+      "sourceRequestRef": "request:2026-10-02:browser-and-account-goals",
+      "ownerRepositoryId": "1394231222",
+      "affectedRepositories": [
+        "1394231222"
+      ],
+      "capability": "Index account repository trees with explicit coverage",
+      "targetArchitecture": "Index account repository trees with explicit coverage",
+      "dependencies": [],
+      "acceptanceCriteria": [
+        {
+          "id": "KG-INVENTORY-001:1",
+          "description": "Accessible owner repositories default-branch trees indexed",
+          "requiredScope": "INTEGRATION"
+        },
+        {
+          "id": "KG-INVENTORY-001:2",
+          "description": "Associated organization/collaborator coverage classified",
+          "requiredScope": "INTEGRATION"
+        },
+        {
+          "id": "KG-INVENTORY-001:3",
+          "description": "Non-default branch coverage classified",
+          "requiredScope": "INTEGRATION"
+        }
+      ],
+      "implementationRefs": [],
+      "evidenceRefs": [],
+      "status": "IN_PROGRESS",
+      "blockers": [],
+      "nextAction": "Implement and verify acceptance criteria",
+      "revision": 0,
+      "supersedes": []
+    },
+    {
+      "id": "GH-ARTIFACT-001",
+      "title": "Verify workstation task results independently of model replies",
+      "requestKey": "user-20261002:GH-ARTIFACT-001",
+      "requestedAt": "2026-10-02T17:12:58Z",
+      "requestedBy": "user",
+      "sourceRequestRef": "request:2026-10-02:browser-and-account-goals",
+      "ownerRepositoryId": "1388355758",
+      "affectedRepositories": [
+        "1388355758"
+      ],
+      "capability": "Verify workstation task results independently of model replies",
+      "targetArchitecture": "Verify workstation task results independently of model replies",
+      "dependencies": [
+        "GH-BROWSER-001"
+      ],
+      "acceptanceCriteria": [
+        {
+          "id": "GH-ARTIFACT-001:1",
+          "description": "Named resulting file or application state verified",
+          "requiredScope": "LIVE"
+        },
+        {
+          "id": "GH-ARTIFACT-001:2",
+          "description": "Timeout never implies completion",
+          "requiredScope": "LIVE"
+        },
+        {
+          "id": "GH-ARTIFACT-001:3",
+          "description": "Observation never replays task",
+          "requiredScope": "LIVE"
+        }
+      ],
+      "implementationRefs": [],
+      "evidenceRefs": [],
+      "status": "PLANNED",
+      "blockers": [],
+      "nextAction": "Implement and verify acceptance criteria",
+      "revision": 0,
+      "supersedes": []
+    },
+    {
+      "id": "GH-BIST-001",
+      "title": "Preserve explicit unproven production gates",
+      "requestKey": "user-20261002:GH-BIST-001",
+      "requestedAt": "2026-10-02T17:12:58Z",
+      "requestedBy": "user",
+      "sourceRequestRef": "request:2026-10-02:browser-and-account-goals",
+      "ownerRepositoryId": "1388355758",
+      "affectedRepositories": [
+        "1388355758"
+      ],
+      "capability": "Preserve explicit unproven production gates",
+      "targetArchitecture": "Preserve explicit unproven production gates",
+      "dependencies": [],
+      "acceptanceCriteria": [
+        {
+          "id": "GH-BIST-001:1",
+          "description": "Self-test emits PASS_WITH_NOT_PROVEN instead of production-ready claim",
+          "requiredScope": "INTEGRATION"
+        }
+      ],
+      "implementationRefs": [],
+      "evidenceRefs": [],
+      "status": "IMPLEMENTED",
+      "blockers": [
+        "Independent artifact provenance not ingested"
+      ],
+      "nextAction": "Verify criterion-level evidence",
+      "revision": 0,
+      "supersedes": []
+    },
+    {
+      "id": "ARCH-G0",
+      "title": "Protect and observe",
+      "requestKey": "migration-20261001:G0",
+      "requestedAt": "2026-10-01T00:00:00Z",
+      "requestedBy": "historical-roadmap",
+      "sourceRequestRef": "docs/OMNIKALI_SYSTEM_GOALS_GRAPH_2026-10-01.md#g0",
+      "ownerRepositoryId": "1382126784",
+      "affectedRepositories": [
+        "1382126784",
+        "1388355758",
+        "1305206212"
+      ],
+      "capability": "Protect and observe",
+      "targetArchitecture": "Protect and observe",
+      "dependencies": [],
+      "acceptanceCriteria": [
+        {
+          "id": "ARCH-G0:1",
+          "description": "no unapproved production listener changes, current health/acceptance evidence, protected restore point.",
+          "requiredScope": "LIVE"
+        }
+      ],
+      "implementationRefs": [
+        "docs/OMNIKALI_SYSTEM_GOALS_GRAPH_2026-10-01.md",
+        "goals/system-execution-plan-2026-10-01.yml"
+      ],
+      "evidenceRefs": [],
+      "status": "PLANNED",
+      "blockers": [],
+      "nextAction": "Reconcile historical goal with exact acceptance evidence",
+      "revision": 0,
+      "supersedes": []
+    },
+    {
+      "id": "ARCH-G1",
+      "title": "Canonical contracts",
+      "requestKey": "migration-20261001:G1",
+      "requestedAt": "2026-10-01T00:00:00Z",
+      "requestedBy": "historical-roadmap",
+      "sourceRequestRef": "docs/OMNIKALI_SYSTEM_GOALS_GRAPH_2026-10-01.md#g1",
+      "ownerRepositoryId": "1388355758",
+      "affectedRepositories": [
+        "1388355758",
+        "1382126784",
+        "1305206212"
+      ],
+      "capability": "Canonical contracts",
+      "targetArchitecture": "Canonical contracts",
+      "dependencies": [
+        "ARCH-G0"
+      ],
+      "acceptanceCriteria": [
+        {
+          "id": "ARCH-G1:1",
+          "description": "one machine-readable contract per boundary and no duplicate owner for the same capability.",
+          "requiredScope": "LIVE"
+        }
+      ],
+      "implementationRefs": [
+        "docs/OMNIKALI_SYSTEM_GOALS_GRAPH_2026-10-01.md",
+        "goals/system-execution-plan-2026-10-01.yml"
+      ],
+      "evidenceRefs": [],
+      "status": "IN_PROGRESS",
+      "blockers": [],
+      "nextAction": "Reconcile historical goal with exact acceptance evidence",
+      "revision": 0,
+      "supersedes": []
+    },
+    {
+      "id": "ARCH-G2",
+      "title": "Production acceptance",
+      "requestKey": "migration-20261001:G2",
+      "requestedAt": "2026-10-01T00:00:00Z",
+      "requestedBy": "historical-roadmap",
+      "sourceRequestRef": "docs/OMNIKALI_SYSTEM_GOALS_GRAPH_2026-10-01.md#g2",
+      "ownerRepositoryId": "1382126784",
+      "affectedRepositories": [
+        "1382126784",
+        "1388355758"
+      ],
+      "capability": "Production acceptance",
+      "targetArchitecture": "Production acceptance",
+      "dependencies": [
+        "ARCH-G1"
+      ],
+      "acceptanceCriteria": [
+        {
+          "id": "ARCH-G2:1",
+          "description": "named acceptance IDs, user-visible browser proof, all scenarios classified.",
+          "requiredScope": "LIVE"
+        }
+      ],
+      "implementationRefs": [
+        "docs/OMNIKALI_SYSTEM_GOALS_GRAPH_2026-10-01.md",
+        "goals/system-execution-plan-2026-10-01.yml"
+      ],
+      "evidenceRefs": [],
+      "status": "PLANNED",
+      "blockers": [],
+      "nextAction": "Reconcile historical goal with exact acceptance evidence",
+      "revision": 0,
+      "supersedes": []
+    },
+    {
+      "id": "ARCH-G3",
+      "title": "Reproducible reconstruction",
+      "requestKey": "migration-20261001:G3",
+      "requestedAt": "2026-10-01T00:00:00Z",
+      "requestedBy": "historical-roadmap",
+      "sourceRequestRef": "docs/OMNIKALI_SYSTEM_GOALS_GRAPH_2026-10-01.md#g3",
+      "ownerRepositoryId": "1388355758",
+      "affectedRepositories": [
+        "1388355758",
+        "1382126784"
+      ],
+      "capability": "Reproducible reconstruction",
+      "targetArchitecture": "Reproducible reconstruction",
+      "dependencies": [
+        "ARCH-G2"
+      ],
+      "acceptanceCriteria": [
+        {
+          "id": "ARCH-G3:1",
+          "description": "clean-host dry-run, deterministic artifact acquisition, source SHA/config manifest, successful authorized deployment acceptance.",
+          "requiredScope": "LIVE"
+        }
+      ],
+      "implementationRefs": [
+        "docs/OMNIKALI_SYSTEM_GOALS_GRAPH_2026-10-01.md",
+        "goals/system-execution-plan-2026-10-01.yml"
+      ],
+      "evidenceRefs": [],
+      "status": "PLANNED",
+      "blockers": [],
+      "nextAction": "Reconcile historical goal with exact acceptance evidence",
+      "revision": 0,
+      "supersedes": []
+    },
+    {
+      "id": "ARCH-G4",
+      "title": "Machine-readable BIST",
+      "requestKey": "migration-20261001:G4",
+      "requestedAt": "2026-10-01T00:00:00Z",
+      "requestedBy": "historical-roadmap",
+      "sourceRequestRef": "docs/OMNIKALI_SYSTEM_GOALS_GRAPH_2026-10-01.md#g4",
+      "ownerRepositoryId": "1388355758",
+      "affectedRepositories": [
+        "1388355758"
+      ],
+      "capability": "Machine-readable BIST",
+      "targetArchitecture": "Machine-readable BIST",
+      "dependencies": [
+        "ARCH-G3"
+      ],
+      "acceptanceCriteria": [
+        {
+          "id": "ARCH-G4:1",
+          "description": "schema validation, fail-closed behavior, no text-only PASS ambiguity.",
+          "requiredScope": "LIVE"
+        }
+      ],
+      "implementationRefs": [
+        "docs/OMNIKALI_SYSTEM_GOALS_GRAPH_2026-10-01.md",
+        "goals/system-execution-plan-2026-10-01.yml"
+      ],
+      "evidenceRefs": [],
+      "status": "PLANNED",
+      "blockers": [],
+      "nextAction": "Reconcile historical goal with exact acceptance evidence",
+      "revision": 0,
+      "supersedes": []
+    },
+    {
+      "id": "ARCH-G5",
+      "title": "Bounded self-repair",
+      "requestKey": "migration-20261001:G5",
+      "requestedAt": "2026-10-01T00:00:00Z",
+      "requestedBy": "historical-roadmap",
+      "sourceRequestRef": "docs/OMNIKALI_SYSTEM_GOALS_GRAPH_2026-10-01.md#g5",
+      "ownerRepositoryId": "1388355758",
+      "affectedRepositories": [
+        "1388355758",
+        "1382126784"
+      ],
+      "capability": "Bounded self-repair",
+      "targetArchitecture": "Bounded self-repair",
+      "dependencies": [
+        "ARCH-G4"
+      ],
+      "acceptanceCriteria": [
+        {
+          "id": "ARCH-G5:1",
+          "description": "eight-scenario mapping, repair policy, recovery evidence, loop cap and human checkpoint.",
+          "requiredScope": "LIVE"
+        }
+      ],
+      "implementationRefs": [
+        "docs/OMNIKALI_SYSTEM_GOALS_GRAPH_2026-10-01.md",
+        "goals/system-execution-plan-2026-10-01.yml"
+      ],
+      "evidenceRefs": [],
+      "status": "PLANNED",
+      "blockers": [],
+      "nextAction": "Reconcile historical goal with exact acceptance evidence",
+      "revision": 0,
+      "supersedes": []
+    },
+    {
+      "id": "ARCH-G6",
+      "title": "Terminal independence",
+      "requestKey": "migration-20261001:G6",
+      "requestedAt": "2026-10-01T00:00:00Z",
+      "requestedBy": "historical-roadmap",
+      "sourceRequestRef": "docs/OMNIKALI_SYSTEM_GOALS_GRAPH_2026-10-01.md#g6",
+      "ownerRepositoryId": "1388355758",
+      "affectedRepositories": [
+        "1388355758",
+        "1305206212"
+      ],
+      "capability": "Terminal independence",
+      "targetArchitecture": "Terminal independence",
+      "dependencies": [
+        "ARCH-G5"
+      ],
+      "acceptanceCriteria": [
+        {
+          "id": "ARCH-G6:1",
+          "description": "Verify explicit architecture acceptance criteria",
+          "requiredScope": "LIVE"
+        }
+      ],
+      "implementationRefs": [
+        "docs/OMNIKALI_SYSTEM_GOALS_GRAPH_2026-10-01.md",
+        "goals/system-execution-plan-2026-10-01.yml"
+      ],
+      "evidenceRefs": [],
+      "status": "PLANNED",
+      "blockers": [],
+      "nextAction": "Reconcile historical goal with exact acceptance evidence",
+      "revision": 0,
+      "supersedes": []
+    },
+    {
+      "id": "ARCH-G7",
+      "title": "Second executor",
+      "requestKey": "migration-20261001:G7",
+      "requestedAt": "2026-10-01T00:00:00Z",
+      "requestedBy": "historical-roadmap",
+      "sourceRequestRef": "docs/OMNIKALI_SYSTEM_GOALS_GRAPH_2026-10-01.md#g7",
+      "ownerRepositoryId": "1388355758",
+      "affectedRepositories": [
+        "1388355758"
+      ],
+      "capability": "Second executor",
+      "targetArchitecture": "Second executor",
+      "dependencies": [
+        "ARCH-G6"
+      ],
+      "acceptanceCriteria": [
+        {
+          "id": "ARCH-G7:1",
+          "description": "Verify explicit architecture acceptance criteria",
+          "requiredScope": "LIVE"
+        }
+      ],
+      "implementationRefs": [
+        "docs/OMNIKALI_SYSTEM_GOALS_GRAPH_2026-10-01.md",
+        "goals/system-execution-plan-2026-10-01.yml"
+      ],
+      "evidenceRefs": [],
+      "status": "PLANNED",
+      "blockers": [],
+      "nextAction": "Reconcile historical goal with exact acceptance evidence",
+      "revision": 0,
+      "supersedes": []
+    },
+    {
+      "id": "ARCH-G8",
+      "title": "Second substrate",
+      "requestKey": "migration-20261001:G8",
+      "requestedAt": "2026-10-01T00:00:00Z",
+      "requestedBy": "historical-roadmap",
+      "sourceRequestRef": "docs/OMNIKALI_SYSTEM_GOALS_GRAPH_2026-10-01.md#g8",
+      "ownerRepositoryId": "1388355758",
+      "affectedRepositories": [
+        "1388355758",
+        "1382126784"
+      ],
+      "capability": "Second substrate",
+      "targetArchitecture": "Second substrate",
+      "dependencies": [
+        "ARCH-G7"
+      ],
+      "acceptanceCriteria": [
+        {
+          "id": "ARCH-G8:1",
+          "description": "Verify explicit architecture acceptance criteria",
+          "requiredScope": "LIVE"
+        }
+      ],
+      "implementationRefs": [
+        "docs/OMNIKALI_SYSTEM_GOALS_GRAPH_2026-10-01.md",
+        "goals/system-execution-plan-2026-10-01.yml"
+      ],
+      "evidenceRefs": [],
+      "status": "PLANNED",
+      "blockers": [],
+      "nextAction": "Reconcile historical goal with exact acceptance evidence",
+      "revision": 0,
+      "supersedes": []
+    },
+    {
+      "id": "ARCH-G9",
+      "title": "Autonomous operations",
+      "requestKey": "migration-20261001:G9",
+      "requestedAt": "2026-10-01T00:00:00Z",
+      "requestedBy": "historical-roadmap",
+      "sourceRequestRef": "docs/OMNIKALI_SYSTEM_GOALS_GRAPH_2026-10-01.md#g9",
+      "ownerRepositoryId": "1388355758",
+      "affectedRepositories": [
+        "1388355758",
+        "1394231222"
+      ],
+      "capability": "Autonomous operations",
+      "targetArchitecture": "Autonomous operations",
+      "dependencies": [
+        "ARCH-G8"
+      ],
+      "acceptanceCriteria": [
+        {
+          "id": "ARCH-G9:1",
+          "description": "Verify explicit architecture acceptance criteria",
+          "requiredScope": "LIVE"
+        }
+      ],
+      "implementationRefs": [
+        "docs/OMNIKALI_SYSTEM_GOALS_GRAPH_2026-10-01.md",
+        "goals/system-execution-plan-2026-10-01.yml"
+      ],
+      "evidenceRefs": [],
+      "status": "PLANNED",
+      "blockers": [],
+      "nextAction": "Reconcile historical goal with exact acceptance evidence",
+      "revision": 0,
+      "supersedes": []
+    },
+    {
+      "id": "ARCH-G10",
+      "title": "Android agent executor",
+      "requestKey": "migration-20261001:G10",
+      "requestedAt": "2026-10-01T00:00:00Z",
+      "requestedBy": "historical-roadmap",
+      "sourceRequestRef": "docs/OMNIKALI_SYSTEM_GOALS_GRAPH_2026-10-01.md#g10",
+      "ownerRepositoryId": "1388355758",
+      "affectedRepositories": [
+        "1388355758",
+        "1305206212"
+      ],
+      "capability": "Android agent executor",
+      "targetArchitecture": "Android agent executor",
+      "dependencies": [
+        "ARCH-G1"
+      ],
+      "acceptanceCriteria": [
+        {
+          "id": "ARCH-G10:1",
+          "description": "supervisor recovery, local MCP initialize, phone-local Rish action, durable evidence.",
+          "requiredScope": "LIVE"
+        }
+      ],
+      "implementationRefs": [
+        "docs/OMNIKALI_SYSTEM_GOALS_GRAPH_2026-10-01.md",
+        "goals/system-execution-plan-2026-10-01.yml"
+      ],
+      "evidenceRefs": [],
+      "status": "IN_PROGRESS",
+      "blockers": [],
+      "nextAction": "Reconcile historical goal with exact acceptance evidence",
+      "revision": 0,
+      "supersedes": []
+    },
+    {
+      "id": "ARCH-G11",
+      "title": "APK/UI automation loop",
+      "requestKey": "migration-20261001:G11",
+      "requestedAt": "2026-10-01T00:00:00Z",
+      "requestedBy": "historical-roadmap",
+      "sourceRequestRef": "docs/OMNIKALI_SYSTEM_GOALS_GRAPH_2026-10-01.md#g11",
+      "ownerRepositoryId": "1388355758",
+      "affectedRepositories": [
+        "1388355758",
+        "1305206212"
+      ],
+      "capability": "APK/UI automation loop",
+      "targetArchitecture": "APK/UI automation loop",
+      "dependencies": [
+        "ARCH-G10"
+      ],
+      "acceptanceCriteria": [
+        {
+          "id": "ARCH-G11:1",
+          "description": "semantic selector proof, action proof, post-action state proof, selector recovery path.",
+          "requiredScope": "LIVE"
+        }
+      ],
+      "implementationRefs": [
+        "docs/OMNIKALI_SYSTEM_GOALS_GRAPH_2026-10-01.md",
+        "goals/system-execution-plan-2026-10-01.yml"
+      ],
+      "evidenceRefs": [],
+      "status": "IN_PROGRESS",
+      "blockers": [],
+      "nextAction": "Reconcile historical goal with exact acceptance evidence",
+      "revision": 0,
+      "supersedes": []
+    },
+    {
+      "id": "ARCH-G12",
+      "title": "Verified Morphe source ecosystem",
+      "requestKey": "migration-20261001:G12",
+      "requestedAt": "2026-10-01T00:00:00Z",
+      "requestedBy": "historical-roadmap",
+      "sourceRequestRef": "docs/OMNIKALI_SYSTEM_GOALS_GRAPH_2026-10-01.md#g12",
+      "ownerRepositoryId": "1400126817",
+      "affectedRepositories": [
+        "1400126817",
+        "1400152912",
+        "1400128174",
+        "1400128205",
+        "1400128239",
+        "1388355758",
+        "1305206212"
+      ],
+      "capability": "Verified Morphe source ecosystem",
+      "targetArchitecture": "Verified Morphe source ecosystem",
+      "dependencies": [
+        "ARCH-G11"
+      ],
+      "acceptanceCriteria": [
+        {
+          "id": "ARCH-G12:1",
+          "description": "at least one source fully verified end-to-end and registry records source, target, release, signature, and runtime confirmation.",
+          "requiredScope": "LIVE"
+        }
+      ],
+      "implementationRefs": [
+        "docs/OMNIKALI_SYSTEM_GOALS_GRAPH_2026-10-01.md",
+        "goals/system-execution-plan-2026-10-01.yml"
+      ],
+      "evidenceRefs": [],
+      "status": "IN_PROGRESS",
+      "blockers": [],
+      "nextAction": "Reconcile historical goal with exact acceptance evidence",
+      "revision": 0,
+      "supersedes": []
+    },
+    {
+      "id": "ARCH-G13",
+      "title": "Source-build reproducibility",
+      "requestKey": "migration-20261001:G13",
+      "requestedAt": "2026-10-01T00:00:00Z",
+      "requestedBy": "historical-roadmap",
+      "sourceRequestRef": "docs/OMNIKALI_SYSTEM_GOALS_GRAPH_2026-10-01.md#g13",
+      "ownerRepositoryId": "1388355758",
+      "affectedRepositories": [
+        "1388355758",
+        "1400152912",
+        "1400126817"
+      ],
+      "capability": "Source-build reproducibility",
+      "targetArchitecture": "Source-build reproducibility",
+      "dependencies": [
+        "ARCH-G12"
+      ],
+      "acceptanceCriteria": [
+        {
+          "id": "ARCH-G13:1",
+          "description": "JDK prerequisites, persistent storage, deterministic build, artifact hash, runtime installation/acceptance.",
+          "requiredScope": "LIVE"
+        }
+      ],
+      "implementationRefs": [
+        "docs/OMNIKALI_SYSTEM_GOALS_GRAPH_2026-10-01.md",
+        "goals/system-execution-plan-2026-10-01.yml"
+      ],
+      "evidenceRefs": [],
+      "status": "BLOCKED",
+      "blockers": [
+        "Historical build-host gate: JDK 21/toolchain and persistent build storage require fresh verification"
+      ],
+      "nextAction": "Reconcile historical goal with exact acceptance evidence",
+      "revision": 0,
+      "supersedes": []
+    },
+    {
+      "id": "ARCH-G14",
+      "title": "Persistent development substrate",
+      "requestKey": "migration-20261001:G14",
+      "requestedAt": "2026-10-01T00:00:00Z",
+      "requestedBy": "historical-roadmap",
+      "sourceRequestRef": "docs/OMNIKALI_SYSTEM_GOALS_GRAPH_2026-10-01.md#g14",
+      "ownerRepositoryId": "1388355758",
+      "affectedRepositories": [
+        "1388355758",
+        "1382126784"
+      ],
+      "capability": "Persistent development substrate",
+      "targetArchitecture": "Persistent development substrate",
+      "dependencies": [
+        "ARCH-G0"
+      ],
+      "acceptanceCriteria": [
+        {
+          "id": "ARCH-G14:1",
+          "description": "persistent mount verified after reboot, root pressure reduced, build/cache paths redirected, no production disruption.",
+          "requiredScope": "LIVE"
+        }
+      ],
+      "implementationRefs": [
+        "docs/OMNIKALI_SYSTEM_GOALS_GRAPH_2026-10-01.md",
+        "goals/system-execution-plan-2026-10-01.yml"
+      ],
+      "evidenceRefs": [],
+      "status": "BLOCKED",
+      "blockers": [
+        "Historical OCI block storage permission or authorized storage workflow gate",
+        "Historical root usage approximately 87 percent; requires fresh observation"
+      ],
+      "nextAction": "Reconcile historical goal with exact acceptance evidence",
+      "revision": 0,
+      "supersedes": []
+    }
+  ],
+  "evidence": [],
+  "audit": []
+}
