@@ -15,9 +15,10 @@ from pathlib import Path
 ARCHIVE_MARKERS = ("backup", "archive", "mirror", "legacy", "quarantine", "template")
 TEST_MARKERS = ("/test/", "/tests/", "test-suite/", ".test.", "_test.", "smoke")
 PURPOSE_WORDS = re.compile(r"[a-z0-9]+")
+STOPWORDS = {"scripts", "script", "tools", "tool", "bin", "src", "lib", "production", "reference", "test", "tests", "sh", "py", "mjs", "js"}
 
 def tokens(path: str) -> set[str]:
-    return set(PURPOSE_WORDS.findall(path.lower()))
+    return {x for x in PURPOSE_WORDS.findall(path.lower()) if x not in STOPWORDS}
 
 def similarity(a: str, b: str) -> float:
     aa, bb = tokens(a), tokens(b)
@@ -87,7 +88,9 @@ def qualify(registry: dict, evidence: dict) -> dict:
                 and h["tool_id"] != item["tool_id"]
             ]
             best = max(candidates, key=lambda h: similarity(item["path"], h["path"]), default=None)
-            if best and similarity(item["path"], best["path"]) >= 0.35:
+            shared = tokens(item["path"]) & tokens(best["path"]) if best else set()
+            same_stem = Path(item["path"]).stem.lower() == Path(best["path"]).stem.lower() if best else False
+            if best and (same_stem or len(shared) >= 2) and similarity(item["path"], best["path"]) >= 0.5:
                 q["lineage_relation"] = "likely_related"
                 q["replacement_tool_id"] = best["tool_id"]
                 q["improvement_strategy"] = "REUSE_VALIDATED_TOOL"
