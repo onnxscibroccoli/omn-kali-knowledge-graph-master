@@ -75,9 +75,13 @@ The scanner is intentionally read-only and conservative. False negatives are pre
 
 ## Verification status
 
-GitHub Actions run `36953078467` completed successfully on 2026-10-02 against the final branch head. It discovered 3,224 candidates across 21 public repositories, recorded 8 private repositories as NOT_SCANNED, indexed Git history, passed both registry and retest-evidence schema validation, qualified the catalog, rendered the plain-text narrative, and uploaded the generated evidence artifact.
+GitHub Actions run `36954491001` completed successfully on 2026-10-02 against head `a99c844f4d6fc250045aad68b3aa4628f692b651`. It discovered 3,224 candidates across 21 public repositories, recorded 8 private repositories as NOT_SCANNED, indexed Git history, passed registry and retest-evidence schema validation, qualified the catalog, rendered the plain-text narrative, and uploaded the generated evidence artifact.
 
-The repository-wide discovery and qualification gate is PASS for this snapshot. Three tools have HIGH quality based on explicit live retests. One historically proven Broccoli transport tool remains HISTORICAL_RETEST_REQUIRED because an Android/Termux retest device is not currently connected. Local container runtime validation remains NOT_PROVEN. Private repository discovery remains NOT_SCANNED until a separately authorized credential boundary exists.
+The repository-wide qualification gate currently contains 4 HIGH tools, 1 HISTORICAL_RETEST_REQUIRED tool, 801 MEDIUM tools, and 2,418 LOW tools. The HIGH set now includes the Grasshopper OCI/OpenClaw verifier after a successful read-only end-to-end retest. The Broccoli Core Rish transport remains HISTORICAL_RETEST_REQUIRED because no reachable RDC execution target is Android/Termux.
+
+The current low-quality evidence is actionable rather than discarded: Grasshopper's security-phase verifier fails closed when required phase/backup/restore inputs are not supplied, and its Broccoli-degradation guard detects three current repository violations. These records point to repair/retest work rather than replacement by unrelated tools.
+
+The repository-wide discovery and qualification gate is PASS for this snapshot. Local container runtime validation remains NOT_PROVEN. Private repository discovery remains NOT_SCANNED until a separately authorized credential boundary exists.
 
 ## Next gate
 
