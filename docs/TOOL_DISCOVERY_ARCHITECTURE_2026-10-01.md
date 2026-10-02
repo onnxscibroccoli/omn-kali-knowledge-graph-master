@@ -56,7 +56,7 @@ A discovered tool is a description, not an authorization.
 
 Every manifest records a source reference and source SHA. Runtime evidence defaults to NOT_PROVEN.
 
-The registry is generated data and must never outrank executable acceptance evidence or the owning control-plane contract.
+The registry is generated data and must never outrank executable acceptance evidence or the owning control-plane contract. Qualification adds a second evidence layer: explicit live retests can promote a candidate to HIGH, while historical proof without retest remains HISTORICAL_RETEST_REQUIRED.
 
 ## First implementation
 
@@ -75,9 +75,9 @@ The scanner is intentionally read-only and conservative. False negatives are pre
 
 ## Verification status
 
-GitHub Actions run `36952135009` completed successfully on 2026-10-02. It discovered 2,890 candidates across 21 public repositories, recorded 8 private repositories as NOT_SCANNED, passed registry schema validation, rendered the plain-text narrative, and uploaded the generated evidence artifact.
+GitHub Actions run `36953078467` completed successfully on 2026-10-02 against the final branch head. It discovered 3,224 candidates across 21 public repositories, recorded 8 private repositories as NOT_SCANNED, indexed Git history, passed both registry and retest-evidence schema validation, qualified the catalog, rendered the plain-text narrative, and uploaded the generated evidence artifact.
 
-The repository-wide CI discovery gate is PASS for this snapshot. Local container runtime validation remains NOT_PROVEN. Private repository discovery remains NOT_SCANNED until a separately authorized credential boundary exists.
+The repository-wide discovery and qualification gate is PASS for this snapshot. Three tools have HIGH quality based on explicit live retests. One historically proven Broccoli transport tool remains HISTORICAL_RETEST_REQUIRED because an Android/Termux retest device is not currently connected. Local container runtime validation remains NOT_PROVEN. Private repository discovery remains NOT_SCANNED until a separately authorized credential boundary exists.
 
 ## Next gate
 
