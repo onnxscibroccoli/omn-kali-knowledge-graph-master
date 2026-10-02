@@ -59,7 +59,7 @@
       "required": ["method"],
       "additionalProperties": false,
       "properties": {
-        "method": {"enum": ["shebang", "cli-framework", "mcp-schema", "yaml-playbook", "explicit-annotation", "unknown"]},
+        "method": {"enum": ["shebang", "cli-framework", "node-cli-framework", "mcp-schema", "yaml-playbook", "explicit-annotation", "unknown"]},
         "confidence": {"enum": ["high", "medium", "low"]},
         "signals": {"type": "array", "items": {"type": "string"}}
       }
