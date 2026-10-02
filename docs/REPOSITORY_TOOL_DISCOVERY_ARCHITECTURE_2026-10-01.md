@@ -20,7 +20,7 @@ Fifth, the validator checks every generated manifest against `tools/discovery/to
 
 Sixth, the narrative renderer translates registry metadata into plain text. The narrative uses descriptive verbs and avoids diagrams and symbolic architecture notation so it can be read by text to speech systems.
 
-Seventh, the generated registry, narrative, and private-scope report are uploaded as workflow evidence. On pushes to main, changed registry and narrative files are committed by the workflow bot.
+Seventh, the generated registry, narrative, and private-scope report are uploaded as workflow evidence. Repository writeback is deliberately not enabled because the workflow has contents read permission only.
 
 ## Safety boundary
 
@@ -48,5 +48,7 @@ Ansible may be introduced for explicit host convergence when repeated configurat
 
 ## Verification status
 
-The GitHub workflow definition and repository-side source changes are present on the feature branch. CI execution has not yet been observed from this environment, so end to end workflow execution remains NOT_PROVEN until GitHub Actions produces a successful run artifact.
+GitHub Actions run `36952135009` completed successfully on 2026-10-02. The run cloned 21 public repositories, recorded 8 private repositories as NOT_SCANNED, discovered 2,890 candidates, validated the generated registry against the adjacent schema, rendered the narrative, and uploaded the evidence artifact. The artifact was created as `omnikali-tool-discovery-33c002263b2a7646cef5b292da0a2c448bf0d3d6`.
+
+The CI execution path is therefore PASS for this snapshot. Local container runtime validation remains NOT_PROVEN, and private repository discovery remains NOT_SCANNED by design.
 
