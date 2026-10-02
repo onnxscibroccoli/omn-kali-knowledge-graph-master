@@ -26,7 +26,8 @@ The dependency narrative is a companion text representation of the current syste
 8. docs/ORCHESTRATOR_CHARTER.md
 9. docs/RELEASE_READINESS_2026-09-29.md
 10. goals/production-backlog.yml
-11. Grasshopper program issue: https://github.com/onnxscibroccoli/Grasshopper/issues/65
+11. tools/discovery/README.md
+12. Grasshopper program issue: https://github.com/onnxscibroccoli/Grasshopper/issues/65
 
 ## Authority order
 
