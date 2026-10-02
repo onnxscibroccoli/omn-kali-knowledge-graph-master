@@ -117,8 +117,28 @@ jobs:
       - name: Validate registry against adjacent schema
         run: python tools/discovery/validate_registry.py tools/discovery/tool_manifest.schema.json .discovery/output/tool_registry.json
 
+      - name: Validate retest evidence
+        run: |
+          python - <<'PY'
+          import json
+          from jsonschema import Draft202012Validator
+          schema=json.load(open("tools/discovery/tool_retest_evidence.schema.json"))
+          evidence=json.load(open("tools/discovery/retest_evidence.json"))
+          errors=list(Draft202012Validator(schema).iter_errors(evidence))
+          if errors:
+              raise SystemExit("\n".join(e.message for e in errors))
+          print(f"validated {len(evidence['evidence'])} explicit retest evidence records")
+          PY
+
+      - name: Qualify discovered tools
+        run: |
+          python tools/discovery/qualify_registry.py             .discovery/output/tool_registry.json             tools/discovery/retest_evidence.json             .discovery/output/qualified_tool_registry.json
+
+      - name: Validate qualified registry
+        run: python tools/discovery/validate_registry.py tools/discovery/tool_manifest.schema.json .discovery/output/qualified_tool_registry.json
+
       - name: Render knowledge graph narrative
-        run: python tools/discovery/render_narrative.py .discovery/output/tool_registry.json .discovery/output/OMNIKALI_SYSTEM_TOOL_DISCOVERY_NARRATIVE_2026-10-01.txt
+        run: python tools/discovery/render_narrative.py .discovery/output/qualified_tool_registry.json .discovery/output/OMNIKALI_SYSTEM_TOOL_DISCOVERY_NARRATIVE_2026-10-01.txt
 
       - name: Upload discovery evidence
         uses: actions/upload-artifact@v4
