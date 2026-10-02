@@ -50,9 +50,11 @@ Ansible may be introduced for explicit host convergence when repeated configurat
 
 ## Verification status
 
-GitHub Actions run `36953078467` completed successfully on 2026-10-02 against head `e72c15f736db3fafbc2d40e2b5c50f6b4e4ef374`. It discovered 3,224 candidates across 21 public repositories, recorded 8 private repositories as NOT_SCANNED, indexed Git history, validated the registry, validated 4 explicit retest records, qualified the catalog, rendered the narrative, and uploaded artifact `omnikali-tool-discovery-e72c15f736db3fafbc2d40e2b5c50f6b4e4ef374`.
+GitHub Actions run `36954491001` completed successfully on 2026-10-02 against head `a99c844f4d6fc250045aad68b3aa4628f692b651`. It discovered 3,224 candidates across 21 public repositories, recorded 8 private repositories as NOT_SCANNED, indexed Git history, validated the registry, validated 7 explicit retest records, qualified the catalog, rendered the narrative, and uploaded artifact evidence.
 
-The qualification result contains 3 HIGH candidates, 1 HISTORICAL_RETEST_REQUIRED candidate, 804 MEDIUM candidates, and 2,416 LOW candidates. The three HIGH candidates are the Grasshopper control-plane CLI, the Grasshopper reference verifier, and the Helix public-health verifier. Broccoli Core's canonical `lib/rish_run.sh` has strong historical proof but remains HISTORICAL_RETEST_REQUIRED because the connected retest device is not the Android/Termux execution device.
+The qualification result contains 4 HIGH candidates, 1 HISTORICAL_RETEST_REQUIRED candidate, 801 MEDIUM candidates, and 2,418 LOW candidates. The four HIGH candidates are the Grasshopper control-plane CLI, Grasshopper reference verifier, Grasshopper OCI/OpenClaw verifier, and Helix public-health verifier. Broccoli Core's canonical `lib/rish_run.sh` has strong historical proof but remains HISTORICAL_RETEST_REQUIRED because the connected retest devices are not Android/Termux execution devices.
+
+Two additional Grasshopper validators were directly retested and recorded as LOW because they failed their current contracts: `scripts/security-phase-verify.sh` fails closed when required phase/backup/restore inputs are absent, and `scripts/verify-no-broccoli-degradation.mjs` detects three current repository violations. These failures are retained as repair evidence rather than hidden.
 
 The CI execution path is therefore PASS for this snapshot. Local container runtime validation remains NOT_PROVEN, and private repository discovery remains NOT_SCANNED by design.
 
