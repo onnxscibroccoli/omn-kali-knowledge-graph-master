@@ -51,3 +51,20 @@ Run:
 `python3 tools/discovery/discovery_engine.py <repository> --repository owner/name --ref main --source-sha <commit>`
 
 Then validate the emitted JSON against `tool_manifest.schema.json` using the repository's available JSON Schema tooling. The scanner itself remains dependency-light and does not require third-party packages.
+
+## Qualification and self-testing
+
+Discovery is followed by a separate qualification layer.
+
+Historical source history is indexed without treating history as proof of capability. Explicit retest evidence is the only mechanism that can promote a candidate to `HIGH`.
+
+A candidate with strong historical proof but no available current retest is marked `HISTORICAL_RETEST_REQUIRED`. Weak, archived, mirrored, legacy, or template candidates are marked `LOW` and receive an inferred intended purpose. When a semantically related `HIGH` implementation exists, the candidate receives a lineage link to that validated implementation. Otherwise the qualification layer records `NEW_IMPLEMENTATION` rather than silently inventing an executable replacement.
+
+The qualification layer never executes arbitrary discovered candidates. Retests are explicit, separately recorded evidence.
+
+Files:
+
+- `tool_retest_evidence.schema.json` defines explicit retest evidence.
+- `retest_evidence.json` records approved retests and historical proof references.
+- `history_index.py` records Git path history without promoting it to capability proof.
+- `qualify_registry.py` assigns quality, intended purpose, and validated lineage.
