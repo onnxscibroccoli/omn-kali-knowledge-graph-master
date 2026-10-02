@@ -1,0 +1,5 @@
+
+# Python caches and runtime registry locks
+__pycache__/
+*.pyc
+*.json.lock

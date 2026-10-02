@@ -1,0 +1,100 @@
+Universal goals. Registry revision 0.
+onnxscibroccoli/helix owns goal ARCH-G0: Protect and observe. Evidence status is PLANNED.
+Criterion ARCH-G0:1 requires LIVE evidence. Its result is NOT_PROVEN.
+Next action: Reconcile historical goal with exact acceptance evidence.
+onnxscibroccoli/Grasshopper owns goal ARCH-G1: Canonical contracts. Evidence status is IN_PROGRESS.
+Criterion ARCH-G1:1 requires LIVE evidence. Its result is NOT_PROVEN.
+Goal ARCH-G1 depends on goal ARCH-G0.
+Next action: Reconcile historical goal with exact acceptance evidence.
+onnxscibroccoli/Grasshopper owns goal ARCH-G10: Android agent executor. Evidence status is IN_PROGRESS.
+Criterion ARCH-G10:1 requires LIVE evidence. Its result is NOT_PROVEN.
+Goal ARCH-G10 depends on goal ARCH-G1.
+Next action: Reconcile historical goal with exact acceptance evidence.
+onnxscibroccoli/Grasshopper owns goal ARCH-G11: APK/UI automation loop. Evidence status is IN_PROGRESS.
+Criterion ARCH-G11:1 requires LIVE evidence. Its result is NOT_PROVEN.
+Goal ARCH-G11 depends on goal ARCH-G10.
+Next action: Reconcile historical goal with exact acceptance evidence.
+onnxscibroccoli/morphe-manager owns goal ARCH-G12: Verified Morphe source ecosystem. Evidence status is IN_PROGRESS.
+Criterion ARCH-G12:1 requires LIVE evidence. Its result is NOT_PROVEN.
+Goal ARCH-G12 depends on goal ARCH-G11.
+Next action: Reconcile historical goal with exact acceptance evidence.
+onnxscibroccoli/Grasshopper owns goal ARCH-G13: Source-build reproducibility. Evidence status is BLOCKED.
+Criterion ARCH-G13:1 requires LIVE evidence. Its result is NOT_PROVEN.
+Goal ARCH-G13 depends on goal ARCH-G12.
+Next action: Reconcile historical goal with exact acceptance evidence.
+onnxscibroccoli/Grasshopper owns goal ARCH-G14: Persistent development substrate. Evidence status is BLOCKED.
+Criterion ARCH-G14:1 requires LIVE evidence. Its result is NOT_PROVEN.
+Goal ARCH-G14 depends on goal ARCH-G0.
+Next action: Reconcile historical goal with exact acceptance evidence.
+onnxscibroccoli/helix owns goal ARCH-G2: Production acceptance. Evidence status is PLANNED.
+Criterion ARCH-G2:1 requires LIVE evidence. Its result is NOT_PROVEN.
+Goal ARCH-G2 depends on goal ARCH-G1.
+Next action: Reconcile historical goal with exact acceptance evidence.
+onnxscibroccoli/Grasshopper owns goal ARCH-G3: Reproducible reconstruction. Evidence status is PLANNED.
+Criterion ARCH-G3:1 requires LIVE evidence. Its result is NOT_PROVEN.
+Goal ARCH-G3 depends on goal ARCH-G2.
+Next action: Reconcile historical goal with exact acceptance evidence.
+onnxscibroccoli/Grasshopper owns goal ARCH-G4: Machine-readable BIST. Evidence status is PLANNED.
+Criterion ARCH-G4:1 requires LIVE evidence. Its result is NOT_PROVEN.
+Goal ARCH-G4 depends on goal ARCH-G3.
+Next action: Reconcile historical goal with exact acceptance evidence.
+onnxscibroccoli/Grasshopper owns goal ARCH-G5: Bounded self-repair. Evidence status is PLANNED.
+Criterion ARCH-G5:1 requires LIVE evidence. Its result is NOT_PROVEN.
+Goal ARCH-G5 depends on goal ARCH-G4.
+Next action: Reconcile historical goal with exact acceptance evidence.
+onnxscibroccoli/Grasshopper owns goal ARCH-G6: Terminal independence. Evidence status is PLANNED.
+Criterion ARCH-G6:1 requires LIVE evidence. Its result is NOT_PROVEN.
+Goal ARCH-G6 depends on goal ARCH-G5.
+Next action: Reconcile historical goal with exact acceptance evidence.
+onnxscibroccoli/Grasshopper owns goal ARCH-G7: Second executor. Evidence status is PLANNED.
+Criterion ARCH-G7:1 requires LIVE evidence. Its result is NOT_PROVEN.
+Goal ARCH-G7 depends on goal ARCH-G6.
+Next action: Reconcile historical goal with exact acceptance evidence.
+onnxscibroccoli/Grasshopper owns goal ARCH-G8: Second substrate. Evidence status is PLANNED.
+Criterion ARCH-G8:1 requires LIVE evidence. Its result is NOT_PROVEN.
+Goal ARCH-G8 depends on goal ARCH-G7.
+Next action: Reconcile historical goal with exact acceptance evidence.
+onnxscibroccoli/Grasshopper owns goal ARCH-G9: Autonomous operations. Evidence status is PLANNED.
+Criterion ARCH-G9:1 requires LIVE evidence. Its result is NOT_PROVEN.
+Goal ARCH-G9 depends on goal ARCH-G8.
+Next action: Reconcile historical goal with exact acceptance evidence.
+onnxscibroccoli/Grasshopper owns goal GH-ARTIFACT-001: Verify workstation task results independently of model replies. Evidence status is PLANNED.
+Criterion GH-ARTIFACT-001:1 requires LIVE evidence. Its result is NOT_PROVEN.
+Criterion GH-ARTIFACT-001:2 requires LIVE evidence. Its result is NOT_PROVEN.
+Criterion GH-ARTIFACT-001:3 requires LIVE evidence. Its result is NOT_PROVEN.
+Goal GH-ARTIFACT-001 depends on goal GH-BROWSER-001.
+Next action: Implement and verify acceptance criteria.
+onnxscibroccoli/Grasshopper owns goal GH-BIST-001: Preserve explicit unproven production gates. Evidence status is IMPLEMENTED.
+Criterion GH-BIST-001:1 requires INTEGRATION evidence. Its result is NOT_PROVEN.
+Next action: Verify criterion-level evidence.
+onnxscibroccoli/Grasshopper owns goal GH-BROWSER-001: Operate provider browser sessions without OpenClaw. Evidence status is PLANNED.
+Criterion GH-BROWSER-001:1 requires LIVE evidence. Its result is NOT_PROVEN.
+Criterion GH-BROWSER-001:2 requires LIVE evidence. Its result is NOT_PROVEN.
+Goal GH-BROWSER-001 depends on goal GH-BROWSER-002.
+Goal GH-BROWSER-001 depends on goal GH-BROWSER-003.
+Next action: Implement and verify acceptance criteria.
+onnxscibroccoli/Grasshopper owns goal GH-BROWSER-002: Persist private provider/account profiles and reconcile uncertain submissions. Evidence status is PLANNED.
+Criterion GH-BROWSER-002:1 requires LIVE evidence. Its result is NOT_PROVEN.
+Criterion GH-BROWSER-002:2 requires LIVE evidence. Its result is NOT_PROVEN.
+Criterion GH-BROWSER-002:3 requires LIVE evidence. Its result is NOT_PROVEN.
+Next action: Implement and verify acceptance criteria.
+onnxscibroccoli/Grasshopper owns goal GH-BROWSER-003: Pause and resume browser human gates with durable checkpoints. Evidence status is PLANNED.
+Criterion GH-BROWSER-003:1 requires LIVE evidence. Its result is NOT_PROVEN.
+Criterion GH-BROWSER-003:2 requires LIVE evidence. Its result is NOT_PROVEN.
+Next action: Implement and verify acceptance criteria.
+onnxscibroccoli/omn-kali-knowledge-graph-master owns goal KG-GOALS-001: Maintain one universal goals registry linked from the knowledge graph. Evidence status is PLANNED.
+Criterion KG-GOALS-001:1 requires INTEGRATION evidence. Its result is NOT_PROVEN.
+Criterion KG-GOALS-001:2 requires INTEGRATION evidence. Its result is NOT_PROVEN.
+Criterion KG-GOALS-001:3 requires INTEGRATION evidence. Its result is NOT_PROVEN.
+Next action: Implement and verify acceptance criteria.
+onnxscibroccoli/omn-kali-knowledge-graph-master owns goal KG-GOALS-002: Bind goal promotion to criterion-level exact-code evidence. Evidence status is PLANNED.
+Criterion KG-GOALS-002:1 requires INTEGRATION evidence. Its result is NOT_PROVEN.
+Criterion KG-GOALS-002:2 requires INTEGRATION evidence. Its result is NOT_PROVEN.
+Criterion KG-GOALS-002:3 requires INTEGRATION evidence. Its result is NOT_PROVEN.
+Goal KG-GOALS-002 depends on goal KG-GOALS-001.
+Next action: Implement and verify acceptance criteria.
+onnxscibroccoli/omn-kali-knowledge-graph-master owns goal KG-INVENTORY-001: Index account repository trees with explicit coverage. Evidence status is IN_PROGRESS.
+Criterion KG-INVENTORY-001:1 requires INTEGRATION evidence. Its result is NOT_PROVEN.
+Criterion KG-INVENTORY-001:2 requires INTEGRATION evidence. Its result is NOT_PROVEN.
+Criterion KG-INVENTORY-001:3 requires INTEGRATION evidence. Its result is NOT_PROVEN.
+Next action: Implement and verify acceptance criteria.

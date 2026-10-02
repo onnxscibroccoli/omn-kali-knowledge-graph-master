@@ -1,0 +1,115 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Universal goals registry",
+  "type": "object",
+  "required": [
+    "schema",
+    "revision",
+    "repositories",
+    "goals",
+    "evidence",
+    "audit"
+  ],
+  "properties": {
+    "schema": {
+      "const": "omnikali.universal-goals/v1"
+    },
+    "revision": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "repositories": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "fullName",
+          "visibility",
+          "currentBindings"
+        ]
+      }
+    },
+    "goals": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "title",
+          "requestKey",
+          "requestedAt",
+          "requestedBy",
+          "sourceRequestRef",
+          "ownerRepositoryId",
+          "affectedRepositories",
+          "capability",
+          "targetArchitecture",
+          "dependencies",
+          "acceptanceCriteria",
+          "implementationRefs",
+          "evidenceRefs",
+          "status",
+          "blockers",
+          "nextAction",
+          "revision",
+          "supersedes"
+        ],
+        "properties": {
+          "status": {
+            "enum": [
+              "PLANNED",
+              "IN_PROGRESS",
+              "BLOCKED",
+              "IMPLEMENTED",
+              "TEST_PROVEN",
+              "LIVE_PROVEN",
+              "REGRESSED",
+              "RETIRED"
+            ]
+          }
+        }
+      }
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "repositoryId",
+          "codeSha",
+          "transportContractHash",
+          "criterionId",
+          "scope",
+          "timestamp",
+          "result",
+          "scenario",
+          "environmentId"
+        ],
+        "properties": {
+          "scope": {
+            "enum": [
+              "UNIT",
+              "INTEGRATION",
+              "LIVE",
+              "RECONSTRUCTION"
+            ]
+          },
+          "result": {
+            "enum": [
+              "PASS",
+              "FAIL",
+              "NOT_PROVEN",
+              "NOT_APPLICABLE",
+              "SKIPPED"
+            ]
+          }
+        }
+      }
+    },
+    "audit": {
+      "type": "array"
+    }
+  }
+}

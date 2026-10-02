@@ -14,3 +14,10 @@ Workflow: `.github/workflows/refresh.yml`
 - Does **not** write back to sibling repos
 
 Unreviewed machine edits to architectural memory create split-brain documentation.
+
+## Universal goals self-test
+
+`.github/workflows/universal-goals.yml` runs on PRs, main pushes and manual dispatch.
+It runs unittest, structural/semantic goal validation, generated-view drift detection,
+and the existing repository schema check. Permissions are read-only. It neither
+imports private inventories nor performs deployment or automatic merges.
