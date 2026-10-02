@@ -36,8 +36,15 @@ def python_signals(path: Path, text: str) -> list[str]:
     except SyntaxError:
         return signals
     names = {node.id for node in ast.walk(tree) if isinstance(node, ast.Name)}
-    imports = {node.name.split(".")[0] for node in ast.walk(tree) if isinstance(node, ast.Import)}
-    imports |= {node.module.split(".")[0] for node in ast.walk(tree) if isinstance(node, ast.ImportFrom) and node.module}
+    imports = {
+        alias.name.split(".")[0]
+        for node in ast.walk(tree) if isinstance(node, ast.Import)
+        for alias in node.names
+    }
+    imports |= {
+        node.module.split(".")[0]
+        for node in ast.walk(tree) if isinstance(node, ast.ImportFrom) and node.module
+    }
     if names & {"ArgumentParser", "click", "typer"} or imports & {"argparse", "click", "typer"}:
         signals.append("python-cli-framework")
     if "FastMCP" in text or "mcp.server" in text or "tools/list" in text:
