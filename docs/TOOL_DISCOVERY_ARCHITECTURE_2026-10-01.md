@@ -65,12 +65,22 @@ The first implementation consists of:
 - tools/discovery/tool_manifest.schema.json
 - tools/discovery/discovery_engine.py
 - tools/discovery/tool_registry.json
+- tools/discovery/discovery_scope.json
+- tools/discovery/validate_registry.py
+- tools/discovery/render_narrative.py
 - tools/discovery/README.md
+- .github/workflows/tool-discovery.yml
 
 The scanner is intentionally read-only and conservative. False negatives are preferable to inventing executable capabilities.
 
+## Verification status
+
+GitHub Actions run `36952135009` completed successfully on 2026-10-02. It discovered 2,890 candidates across 21 public repositories, recorded 8 private repositories as NOT_SCANNED, passed registry schema validation, rendered the plain-text narrative, and uploaded the generated evidence artifact.
+
+The repository-wide CI discovery gate is PASS for this snapshot. Local container runtime validation remains NOT_PROVEN. Private repository discovery remains NOT_SCANNED until a separately authorized credential boundary exists.
+
 ## Next gate
 
-Before generating a repository-wide registry, run the scanner against a clean local snapshot of each in-scope repository, preserve the exact source SHA, validate emitted manifests, review sensitive paths, and record the result as evidence.
+Review the generated catalog for false positives and sensitive-path noise before any downstream consumer is allowed to treat a discovered candidate as operationally useful.
 
-No production routing should consume the registry until that gate passes.
+No production routing should consume the registry until that review and an explicit ownership decision are complete.
