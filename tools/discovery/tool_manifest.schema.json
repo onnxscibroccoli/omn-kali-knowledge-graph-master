@@ -1,0 +1,278 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/onnxscibroccoli/omn-kali-knowledge-graph-master/blob/main/tools/discovery/tool_manifest.schema.json",
+  "title": "OmniKali Tool Manifest",
+  "description": "Evidence-aware metadata for a discoverable repository tool. Discovery describes tools; it does not grant execution authority.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "tool_id",
+    "repository",
+    "path",
+    "kind",
+    "source",
+    "discovery"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "omnikali.tool-manifest/v1"
+    },
+    "tool_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1024
+    },
+    "repository": {
+      "type": "string",
+      "pattern": "^[^/]+/[^/]+$"
+    },
+    "path": {
+      "type": "string",
+      "minLength": 1
+    },
+    "kind": {
+      "enum": [
+        "script",
+        "cli",
+        "mcp",
+        "workflow",
+        "playbook",
+        "library",
+        "unknown"
+      ]
+    },
+    "language": {
+      "enum": [
+        "python",
+        "bash",
+        "sh",
+        "yaml",
+        "json",
+        "javascript",
+        "typescript",
+        "other",
+        "unknown"
+      ]
+    },
+    "source": {
+      "type": "object",
+      "required": [
+        "ref",
+        "sha"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "ref": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sha": {
+          "type": "string",
+          "pattern": "^[0-9a-fA-F]{7,64}$"
+        }
+      }
+    },
+    "interface": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "framework": {
+          "type": "string"
+        },
+        "entrypoint": {
+          "type": "string"
+        },
+        "arguments": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "environment": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "stdin": {
+          "type": "string"
+        },
+        "stdout": {
+          "type": "string"
+        },
+        "exit_codes": {
+          "type": "array",
+          "items": {
+            "type": "integer"
+          }
+        }
+      }
+    },
+    "ownership": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "owner": {
+          "type": "string"
+        },
+        "execution_boundary": {
+          "type": "string"
+        },
+        "authority": {
+          "type": "string"
+        }
+      }
+    },
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "status": {
+          "enum": [
+            "PASS",
+            "FAIL",
+            "NOT_PROVEN",
+            "NOT_APPLICABLE"
+          ]
+        },
+        "tests": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "last_verified_at": {
+          "type": "string"
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    },
+    "discovery": {
+      "type": "object",
+      "required": [
+        "method"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "method": {
+          "enum": [
+            "shebang",
+            "cli-framework",
+            "node-cli-framework",
+            "mcp-schema",
+            "yaml-playbook",
+            "explicit-annotation",
+            "unknown"
+          ]
+        },
+        "confidence": {
+          "enum": [
+            "high",
+            "medium",
+            "low"
+          ]
+        },
+        "signals": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "qualification": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "quality": {
+          "enum": [
+            "HIGH",
+            "MEDIUM",
+            "LOW",
+            "HISTORICAL_RETEST_REQUIRED"
+          ]
+        },
+        "historical_proof": {
+          "type": "boolean"
+        },
+        "historical_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "retest_status": {
+          "enum": [
+            "PASS",
+            "FAIL",
+            "BLOCKED",
+            "NOT_RUN"
+          ]
+        },
+        "retest_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "intended_purpose": {
+          "type": "string"
+        },
+        "lineage_relation": {
+          "enum": [
+            "validated_equivalent",
+            "likely_related",
+            "none"
+          ]
+        },
+        "replacement_tool_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "improvement_strategy": {
+          "enum": [
+            "REUSE_VALIDATED_TOOL",
+            "REPAIR_EXISTING",
+            "RETEST_REQUIRED",
+            "NEW_IMPLEMENTATION",
+            "ARCHIVE_ONLY",
+            "SUPPORTING_TEST"
+          ]
+        },
+        "rationale": {
+          "type": "string"
+        }
+      }
+    },
+    "history": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "commit_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "first_seen_commit": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "last_changed_commit": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "historical_changes": {
+          "type": "boolean"
+        }
+      }
+    }
+  }
+}

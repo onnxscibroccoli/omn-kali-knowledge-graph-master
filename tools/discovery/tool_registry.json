@@ -1,0 +1,8 @@
+{
+  "schema_version": "omnikali.tool-registry/v1",
+  "status": "NOT_GENERATED",
+  "authority": "omn-kali-knowledge-graph-master",
+  "execution_authority": "none",
+  "entries": [],
+  "notes": "This file is a generated catalog target. An empty registry is intentional until a repository snapshot is scanned and its source SHA is recorded. Discovery never grants execution authority."
+}

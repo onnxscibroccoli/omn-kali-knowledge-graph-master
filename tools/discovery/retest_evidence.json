@@ -1,0 +1,143 @@
+{
+  "schema_version": "omnikali.tool-retest-evidence/v1",
+  "generated_at": "2026-10-02T02:40:00Z",
+  "evidence": [
+    {
+      "tool_id": "onnxscibroccoli/helix/scripts/verify-public-health.mjs",
+      "historical_proof": true,
+      "historical_refs": [
+        "onnxscibroccoli/helix@3a87c196bfb100ed3eda7ad20d7ad4b93e613443:scripts/verify-public-health.test.mjs",
+        "onnxscibroccoli/helix@3a87c196bfb100ed3eda7ad20d7ad4b93e613443:docs/LIVE_PATHS.md"
+      ],
+      "retest_status": "PASS",
+      "retest_refs": [
+        "RDC grasshopper-workstation: cloned helix at 3a87c196bfb100ed3eda7ad20d7ad4b93e613443 and ran OMNIKALI_PUBLIC_HEALTH_ENABLED=1 node scripts/verify-public-health.mjs",
+        "HTTP 200; ok=true; https://d22bad48irrbqe.cloudfront.net/health"
+      ],
+      "intended_purpose": "Read-only production public health verification.",
+      "quality": "HIGH",
+      "improvement_strategy": "REUSE_VALIDATED_TOOL",
+      "rationale": "Historical test coverage and live retest both prove the declared health contract."
+    },
+    {
+      "tool_id": "onnxscibroccoli/Grasshopper/bin/omnikali.mjs",
+      "historical_proof": true,
+      "historical_refs": [
+        "onnxscibroccoli/Grasshopper@a0423ee40287506843faff9b24989a1a37217441:README.md",
+        "onnxscibroccoli/Grasshopper@a0423ee40287506843faff9b24989a1a37217441:test/*.test.mjs"
+      ],
+      "retest_status": "PASS",
+      "retest_refs": [
+        "RDC grasshopper-workstation: npm test passed 23 tests in Grasshopper a0423ee40287506843faff9b24989a1a37217441",
+        "RDC grasshopper-workstation: node bin/omnikali.mjs status exited 0 and emitted valid empty control-plane state"
+      ],
+      "intended_purpose": "Reproducible Grasshopper control-plane CLI.",
+      "quality": "HIGH",
+      "improvement_strategy": "REUSE_VALIDATED_TOOL",
+      "rationale": "Repository tests and direct CLI execution both passed against the current main snapshot."
+    },
+    {
+      "tool_id": "onnxscibroccoli/broccoli-core/lib/rish_run.sh",
+      "historical_proof": true,
+      "historical_refs": [
+        "omn-kali-knowledge-graph-master@fd5cca1d4fed96cd552e08711885e5c9617c3fde:docs/BROCCOLI_TRANSPORT_CONTRACT_2026-10-01.md",
+        "omn-kali-knowledge-graph-master@fd5cca1d4fed96cd552e08711885e5c9617c3fde:docs/BROCCOLI_ITERATION_KNOWLEDGE_2026-10-01.md",
+        "omn-kali-knowledge-graph-master@fd5cca1d4fed96cd552e08711885e5c9617c3fde:goals/broccoli-transport-preflight-2026-10-01.yml"
+      ],
+      "retest_status": "PASS",
+      "retest_refs": [
+        "RDC localhost (Android/Termux): Broccoli Core HEAD d9a8d01ab2cccd989fe330f2c648a60af5d0ec8a",
+        "RISH_PRESERVE_ENV=0 bash ./lib/rish_run.sh 'echo BROCCOLI_RISH_OK; id; getprop ro.build.version.sdk' => BROCCOLI_RISH_OK; uid=2000(shell); SDK 35; exit 0",
+        "Fail-closed usage gate: no command => exit 2",
+        "Fail-closed missing runtime environment gate: missing BROCCOLI_RISH_ENV => exit 78",
+        "Fail-closed missing binary gate: missing BROCCOLI_RISH_BIN => exit 79"
+      ],
+      "intended_purpose": "Canonical sanitized Termux-to-Rish Android shell transport.",
+      "quality": "HIGH",
+      "improvement_strategy": "REUSE_VALIDATED_TOOL",
+      "rationale": "Historical contract plus a current Android/Termux retest passed the canonical transport and all three documented fail-closed gates. The device-side Broccoli tree was already dirty with unrelated untracked files; no changes were made."
+    },
+    {
+      "tool_id": "onnxscibroccoli/Grasshopper/scripts/verify-reference.sh",
+      "historical_proof": true,
+      "historical_refs": [
+        "onnxscibroccoli/Grasshopper@a0423ee40287506843faff9b24989a1a37217441:README.md",
+        "onnxscibroccoli/Grasshopper@a0423ee40287506843faff9b24989a1a37217441:scripts/verify-reference.sh"
+      ],
+      "retest_status": "PASS",
+      "retest_refs": [
+        "RDC grasshopper-workstation: sh ./scripts/verify-reference.sh against a0423ee40287506843faff9b24989a1a37217441",
+        "199 tests passed; reference verification passed",
+        "Canonical/deployed production artifacts were byte-identical and credential scan passed"
+      ],
+      "intended_purpose": "Comprehensive local reference-control-plane verification gate.",
+      "quality": "HIGH",
+      "improvement_strategy": "REUSE_VALIDATED_TOOL",
+      "rationale": "The verifier passed 199 tests and explicitly preserves OPEN status for unproven production/live gates."
+    },
+    {
+      "tool_id": "onnxscibroccoli/Grasshopper/scripts/oci-openclaw-verify.sh",
+      "historical_proof": true,
+      "historical_refs": [
+        "onnxscibroccoli/Grasshopper@a0423ee40287506843faff9b24989a1a37217441:scripts/oci-openclaw-verify.sh"
+      ],
+      "retest_status": "PASS",
+      "retest_refs": [
+        "RDC grasshopper-workstation: bash scripts/oci-openclaw-verify.sh against a0423ee40287506843faff9b24989a1a37217441",
+        "OPENCLAW_OCI_VERIFY=PASS; MODEL_SMOKE_TEST=PASS; gateway and Ollama listeners verified loopback/not-public; backup helper/timer/recent/verified checks passed"
+      ],
+      "intended_purpose": "Read-only OpenClaw/Ollama OCI workstation security, service, model, and backup verification gate.",
+      "quality": "HIGH",
+      "improvement_strategy": "REUSE_VALIDATED_TOOL",
+      "rationale": "Historical source plus a current read-only retest both passed end-to-end on the reachable Grasshopper workstation."
+    },
+    {
+      "tool_id": "onnxscibroccoli/Grasshopper/scripts/security-phase-verify.sh",
+      "historical_proof": true,
+      "historical_refs": [
+        "onnxscibroccoli/Grasshopper@a0423ee40287506843faff9b24989a1a37217441:scripts/security-phase-verify.sh"
+      ],
+      "retest_status": "FAIL",
+      "retest_refs": [
+        "RDC grasshopper-workstation: bash scripts/security-phase-verify.sh with default environment",
+        "FAIL security.phase.missing; FAIL backup.status; FAIL restore.status; network listener checks passed; exit 1"
+      ],
+      "intended_purpose": "Fail-closed security-phase, gateway exposure, backup, and restore status verifier.",
+      "quality": "LOW",
+      "improvement_strategy": "REPAIR_EXISTING",
+      "rationale": "The verifier executes and fails closed, but the default invocation cannot establish the required phase/backup/restore contract. Preserve the failure as evidence and repair or provide an explicit non-secret test fixture before treating it as a reusable high-quality gate."
+    },
+    {
+      "tool_id": "onnxscibroccoli/Grasshopper/scripts/verify-no-broccoli-degradation.mjs",
+      "historical_proof": true,
+      "historical_refs": [
+        "onnxscibroccoli/Grasshopper@a0423ee40287506843faff9b24989a1a37217441:scripts/verify-no-broccoli-degradation.mjs"
+      ],
+      "retest_status": "FAIL",
+      "retest_refs": [
+        "RDC grasshopper-workstation: node scripts/verify-no-broccoli-degradation.mjs against a0423ee40287506843faff9b24989a1a37217441",
+        "FAIL false_shipped:docs/BROCCOLI_KNOWLEDGE_GRAPH.md; FAIL false_shipped:docs/DEGRADATION_LESSONS.md; FAIL marker:docs/PORTABILITY_AND_EXECUTION_BOUNDARIES.md:host and target shells are separate runtimes"
+      ],
+      "intended_purpose": "Fail-closed regression guard against known Broccoli documentation and transport-boundary degradation patterns.",
+      "quality": "LOW",
+      "improvement_strategy": "REPAIR_EXISTING",
+      "rationale": "The guard correctly detected three concrete repository violations, so the failure is useful evidence, but the current implementation cannot qualify as a reusable passing gate until those violations are resolved and the guard is retested."
+    },
+    {
+      "tool_id": "onnxscibroccoli/broccoli-core/smoke_fast.py",
+      "historical_proof": true,
+      "historical_refs": [
+        "onnxscibroccoli/broccoli-core@d9a8d01ab2cccd989fe330f2c648a60af5d0ec8a:smoke_fast.py"
+      ],
+      "retest_status": "FAIL",
+      "retest_refs": [
+        "RDC localhost Android/Termux: python3 smoke_fast.py from broccoli-core d9a8d01ab2cccd989fe330f2c648a60af5d0ec8a",
+        "ModuleNotFoundError: No module named 'grok_xml_parse'; exit 1"
+      ],
+      "intended_purpose": "Fast UI smoke verification with cached PASS and automatic recovery.",
+      "quality": "LOW",
+      "improvement_strategy": "REPAIR_EXISTING",
+      "rationale": "The historical smoke path is present, but its current import path assumes a separate $HOME/broccoli tree and fails immediately in the canonical broccoli-core checkout. Repair the module boundary or replace it with the validated transport-aware UI smoke path before promotion."
+    }
+  ]
+}
