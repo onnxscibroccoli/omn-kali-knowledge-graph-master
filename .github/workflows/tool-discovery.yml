@@ -81,6 +81,11 @@ jobs:
           engine = pathlib.Path('tools/discovery/discovery_engine.py')
           entries = []
           scanned = []
+          skipped = [
+              item['repository']
+              for item in scope['repositories']
+              if item.get('enabled', True) and item.get('access') != 'public'
+          ]
           for item in scope['repositories']:
               if not item.get('enabled', True) or item.get('access') != 'public':
                   continue
@@ -113,24 +118,7 @@ jobs:
         run: python tools/discovery/validate_registry.py tools/discovery/tool_manifest.schema.json .discovery/output/tool_registry.json
 
       - name: Render knowledge graph narrative
-        run: python tools/discovery/render_narrative.py .discovery/output/tool_registry.json .discovery/output/OMNIKALI_SYSTEM_TOOL_DISCOVERY_NARRATIVE.txt
-
-      - name: Persist generated registry and narrative on main
-        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-        shell: bash
-        run: |
-          set -euo pipefail
-          cp .discovery/output/tool_registry.json tools/discovery/tool_registry.json
-          cp .discovery/output/OMNIKALI_SYSTEM_TOOL_DISCOVERY_NARRATIVE_2026-10-01.txt docs/OMNIKALI_SYSTEM_TOOL_DISCOVERY_NARRATIVE_2026-10-01.txt
-          if git diff --quiet -- tools/discovery/tool_registry.json docs/OMNIKALI_SYSTEM_TOOL_DISCOVERY_NARRATIVE_2026-10-01.txt; then
-            echo "Generated discovery outputs are unchanged."
-            exit 0
-          fi
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add tools/discovery/tool_registry.json docs/OMNIKALI_SYSTEM_TOOL_DISCOVERY_NARRATIVE_2026-10-01.txt
-          git commit -m "docs(discovery): refresh generated tool catalog"
-          git push
+        run: python tools/discovery/render_narrative.py .discovery/output/tool_registry.json .discovery/output/OMNIKALI_SYSTEM_TOOL_DISCOVERY_NARRATIVE_2026-10-01.txt
 
       - name: Upload discovery evidence
         uses: actions/upload-artifact@v4
