@@ -1,6 +1,6 @@
 {
   "schema_version": "omnikali.tool-retest-evidence/v1",
-  "generated_at": "2026-10-02T02:35:00Z",
+  "generated_at": "2026-10-02T02:40:00Z",
   "evidence": [
     {
       "tool_id": "onnxscibroccoli/helix/scripts/verify-public-health.mjs",
@@ -122,6 +122,22 @@
       "quality": "LOW",
       "improvement_strategy": "REPAIR_EXISTING",
       "rationale": "The guard correctly detected three concrete repository violations, so the failure is useful evidence, but the current implementation cannot qualify as a reusable passing gate until those violations are resolved and the guard is retested."
+    },
+    {
+      "tool_id": "onnxscibroccoli/broccoli-core/smoke_fast.py",
+      "historical_proof": true,
+      "historical_refs": [
+        "onnxscibroccoli/broccoli-core@d9a8d01ab2cccd989fe330f2c648a60af5d0ec8a:smoke_fast.py"
+      ],
+      "retest_status": "FAIL",
+      "retest_refs": [
+        "RDC localhost Android/Termux: python3 smoke_fast.py from broccoli-core d9a8d01ab2cccd989fe330f2c648a60af5d0ec8a",
+        "ModuleNotFoundError: No module named 'grok_xml_parse'; exit 1"
+      ],
+      "intended_purpose": "Fast UI smoke verification with cached PASS and automatic recovery.",
+      "quality": "LOW",
+      "improvement_strategy": "REPAIR_EXISTING",
+      "rationale": "The historical smoke path is present, but its current import path assumes a separate $HOME/broccoli tree and fails immediately in the canonical broccoli-core checkout. Repair the module boundary or replace it with the validated transport-aware UI smoke path before promotion."
     }
   ]
 }
