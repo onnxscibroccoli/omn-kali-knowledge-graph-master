@@ -1,6 +1,6 @@
 {
   "schema_version": "omnikali.tool-retest-evidence/v1",
-  "generated_at": "2026-10-02T02:12:00Z",
+  "generated_at": "2026-10-02T02:35:00Z",
   "evidence": [
     {
       "tool_id": "onnxscibroccoli/helix/scripts/verify-public-health.mjs",
@@ -44,14 +44,18 @@
         "omn-kali-knowledge-graph-master@fd5cca1d4fed96cd552e08711885e5c9617c3fde:docs/BROCCOLI_ITERATION_KNOWLEDGE_2026-10-01.md",
         "omn-kali-knowledge-graph-master@fd5cca1d4fed96cd552e08711885e5c9617c3fde:goals/broccoli-transport-preflight-2026-10-01.yml"
       ],
-      "retest_status": "BLOCKED",
+      "retest_status": "PASS",
       "retest_refs": [
-        "Current RDC device is grasshopper-workstation, not the Android/Termux execution device required by the Rish contract."
+        "RDC localhost (Android/Termux): Broccoli Core HEAD d9a8d01ab2cccd989fe330f2c648a60af5d0ec8a",
+        "RISH_PRESERVE_ENV=0 bash ./lib/rish_run.sh 'echo BROCCOLI_RISH_OK; id; getprop ro.build.version.sdk' => BROCCOLI_RISH_OK; uid=2000(shell); SDK 35; exit 0",
+        "Fail-closed usage gate: no command => exit 2",
+        "Fail-closed missing runtime environment gate: missing BROCCOLI_RISH_ENV => exit 78",
+        "Fail-closed missing binary gate: missing BROCCOLI_RISH_BIN => exit 79"
       ],
       "intended_purpose": "Canonical sanitized Termux-to-Rish Android shell transport.",
-      "quality": "HISTORICAL_RETEST_REQUIRED",
-      "improvement_strategy": "RETEST_REQUIRED",
-      "rationale": "Strong historical proof exists, including the canonical wrapper blob and expected transport markers, but a same-session Android retest is not available from the current connected device."
+      "quality": "HIGH",
+      "improvement_strategy": "REUSE_VALIDATED_TOOL",
+      "rationale": "Historical contract plus a current Android/Termux retest passed the canonical transport and all three documented fail-closed gates. The device-side Broccoli tree was already dirty with unrelated untracked files; no changes were made."
     },
     {
       "tool_id": "onnxscibroccoli/Grasshopper/scripts/verify-reference.sh",
