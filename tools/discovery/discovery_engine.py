@@ -10,10 +10,8 @@ from __future__ import annotations
 import argparse
 import ast
 import json
-import os
 import re
 import stat
-import subprocess
 import sys
 from pathlib import Path
 
@@ -80,7 +78,7 @@ def executable_candidate(path: Path, text: str) -> bool:
         return False
     return bool(mode & stat.S_IXUSR) or text.startswith("#!")
 
-def manifest(repo: str, ref: str, source_sha: str, path: Path) -> dict:
+def manifest(repo: str, ref: str, source_sha: str, root: Path, path: Path) -> dict:
     text = read_text(path)
     kind, language, signals = classify(path, text)
     method = (
@@ -90,12 +88,13 @@ def manifest(repo: str, ref: str, source_sha: str, path: Path) -> dict:
         "shebang" if text.startswith("#!") else
         "unknown"
     )
-    tool_id = f"{repo}/{path.as_posix()}"
+    relative_path = path.relative_to(root).as_posix()
+    tool_id = f"{repo}/{relative_path}"
     return {
         "schema_version": SCHEMA_VERSION,
         "tool_id": tool_id.lower(),
         "repository": repo,
-        "path": path.as_posix(),
+        "path": relative_path,
         "kind": kind,
         "language": language,
         "source": {"ref": ref, "sha": source_sha},
@@ -120,7 +119,7 @@ def scan(root: Path, repo: str, ref: str, source_sha: str) -> list[dict]:
             continue
         text = read_text(path)
         if executable_candidate(path, text) or path.suffix.lower() in {".py", ".sh", ".bash", ".yml", ".yaml"}:
-            item = manifest(repo, ref, source_sha, path)
+            item = manifest(repo, ref, source_sha, root, path)
             if item["kind"] != "unknown" or item["discovery"]["signals"]:
                 results.append(item)
     return results
