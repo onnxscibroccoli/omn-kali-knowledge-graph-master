@@ -52,6 +52,24 @@
       "quality": "HISTORICAL_RETEST_REQUIRED",
       "improvement_strategy": "RETEST_REQUIRED",
       "rationale": "Strong historical proof exists, including the canonical wrapper blob and expected transport markers, but a same-session Android retest is not available from the current connected device."
+    },
+    {
+      "tool_id": "onnxscibroccoli/Grasshopper/scripts/verify-reference.sh",
+      "historical_proof": true,
+      "historical_refs": [
+        "onnxscibroccoli/Grasshopper@a0423ee40287506843faff9b24989a1a37217441:README.md",
+        "onnxscibroccoli/Grasshopper@a0423ee40287506843faff9b24989a1a37217441:scripts/verify-reference.sh"
+      ],
+      "retest_status": "PASS",
+      "retest_refs": [
+        "RDC grasshopper-workstation: sh ./scripts/verify-reference.sh against a0423ee40287506843faff9b24989a1a37217441",
+        "199 tests passed; reference verification passed",
+        "Canonical/deployed production artifacts were byte-identical and credential scan passed"
+      ],
+      "intended_purpose": "Comprehensive local reference-control-plane verification gate.",
+      "quality": "HIGH",
+      "improvement_strategy": "REUSE_VALIDATED_TOOL",
+      "rationale": "The verifier passed 199 tests and explicitly preserves OPEN status for unproven production/live gates."
     }
   ]
 }
