@@ -57,6 +57,14 @@ def classify(path: Path, text: str) -> tuple[str, str, list[str]]:
     suffix = path.suffix.lower()
     first = text.splitlines()[0] if text.splitlines() else ""
     signals = []
+    if suffix in {".js", ".mjs", ".cjs"}:
+        if re.search(r"(?m)\bcommander\b|\byargs\b|\byargs-parser\b|\bminimist\b|\bprocess\.argv\b", text):
+            signals.append("node-cli-pattern")
+            return "cli", "javascript", signals
+        if "MCP" in text or "@modelcontextprotocol" in text or "tools/list" in text:
+            signals.append("mcp-pattern")
+            return "mcp", "javascript", signals
+        return "script", "javascript", signals
     if suffix == ".py":
         signals = python_signals(path, text)
         if "mcp-pattern" in signals:
@@ -90,7 +98,7 @@ def manifest(repo: str, ref: str, source_sha: str, root: Path, path: Path) -> di
     kind, language, signals = classify(path, text)
     method = (
         "mcp-schema" if "mcp-pattern" in signals else
-        "cli-framework" if "python-cli-framework" in signals else
+        "cli-framework" if ("python-cli-framework" in signals or "node-cli-pattern" in signals) else
         "yaml-playbook" if "ansible-pattern" in signals else
         "shebang" if text.startswith("#!") else
         "unknown"
@@ -125,7 +133,7 @@ def scan(root: Path, repo: str, ref: str, source_sha: str) -> list[dict]:
         if not path.is_file() or any(part in DEFAULT_IGNORES for part in path.parts):
             continue
         text = read_text(path)
-        if executable_candidate(path, text) or path.suffix.lower() in {".py", ".sh", ".bash", ".yml", ".yaml"}:
+        if executable_candidate(path, text) or path.suffix.lower() in {".py", ".js", ".mjs", ".cjs", ".sh", ".bash", ".yml", ".yaml"}:
             item = manifest(repo, ref, source_sha, root, path)
             if item["kind"] != "unknown" or item["discovery"]["signals"]:
                 results.append(item)
