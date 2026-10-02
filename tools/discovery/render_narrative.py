@@ -21,6 +21,9 @@ def render(registry: dict) -> str:
         "",
         f"Repository count is {len(by_repo)}.",
         f"Discovered tool count is {len(entries)}.",
+        f"High-quality validated tool count is {sum(1 for e in entries if e.get('qualification', {}).get('quality') == 'HIGH')}.",
+        f"Historical-proof retest-required count is {sum(1 for e in entries if e.get('qualification', {}).get('quality') == 'HISTORICAL_RETEST_REQUIRED')}.",
+        f"Low-quality candidate count is {sum(1 for e in entries if e.get('qualification', {}).get('quality') == 'LOW')}.",
         "",
     ]
 
