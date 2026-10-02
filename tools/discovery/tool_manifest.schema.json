@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/onnxscibroccoli/omn-kali-knowledge-graph-master/blob/main/tools/discovery/tool_manifest.schema.json",
+  "title": "OmniKali Tool Manifest",
+  "description": "Evidence-aware metadata for a discoverable repository tool. Discovery describes tools; it does not grant execution authority.",
+  "type": "object",
+  "required": ["schema_version", "tool_id", "repository", "path", "kind", "source", "discovery"],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {"const": "omnikali.tool-manifest/v1"},
+    "tool_id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9._/-]*$"},
+    "repository": {"type": "string", "pattern": "^[^/]+/[^/]+$"},
+    "path": {"type": "string", "minLength": 1},
+    "kind": {"enum": ["script", "cli", "mcp", "workflow", "playbook", "library", "unknown"]},
+    "language": {"enum": ["python", "bash", "sh", "yaml", "json", "javascript", "typescript", "other", "unknown"]},
+    "source": {
+      "type": "object",
+      "required": ["ref", "sha"],
+      "additionalProperties": false,
+      "properties": {
+        "ref": {"type": "string", "minLength": 1},
+        "sha": {"type": "string", "pattern": "^[0-9a-fA-F]{7,64}$"}
+      }
+    },
+    "interface": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "framework": {"type": "string"},
+        "entrypoint": {"type": "string"},
+        "arguments": {"type": "array", "items": {"type": "string"}},
+        "environment": {"type": "array", "items": {"type": "string"}},
+        "stdin": {"type": "string"},
+        "stdout": {"type": "string"},
+        "exit_codes": {"type": "array", "items": {"type": "integer"}}
+      }
+    },
+    "ownership": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "owner": {"type": "string"},
+        "execution_boundary": {"type": "string"},
+        "authority": {"type": "string"}
+      }
+    },
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "status": {"enum": ["PASS", "FAIL", "NOT_PROVEN", "NOT_APPLICABLE"]},
+        "tests": {"type": "array", "items": {"type": "string"}},
+        "last_verified_at": {"type": "string"},
+        "notes": {"type": "string"}
+      }
+    },
+    "discovery": {
+      "type": "object",
+      "required": ["method"],
+      "additionalProperties": false,
+      "properties": {
+        "method": {"enum": ["shebang", "cli-framework", "mcp-schema", "yaml-playbook", "explicit-annotation", "unknown"]},
+        "confidence": {"enum": ["high", "medium", "low"]},
+        "signals": {"type": "array", "items": {"type": "string"}}
+      }
+    }
+  }
+}
