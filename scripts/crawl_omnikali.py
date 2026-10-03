@@ -17,9 +17,11 @@ def session() -> requests.Session:
     s.headers.update(headers)
     return s
 
-def get_json(s: requests.Session, url: str) -> Any:
+def get_json(s: requests.Session, url: str, allow_auth_failure: bool = False) -> Any:
     resp = s.get(url, timeout=30)
     if resp.status_code == 404:
+        return None
+    if allow_auth_failure and resp.status_code in (401, 403):
         return None
     resp.raise_for_status()
     return resp.json()
@@ -40,12 +42,15 @@ def _paginate(s: requests.Session, url: str):
 
 def list_repos(s: requests.Session, owner: str):
     token = os.environ.get("GITHUB_TOKEN") or os.environ.get("GH_TOKEN")
-    # /users/{owner}/repos is public-only even with a token. Authenticated
-    # /user/repos?affiliation=owner includes private owner repositories.
+    # /users/{owner}/repos is public-only even with a token.
+    # /user/repos?affiliation=owner includes private repos only when the
+    # token is that owner (user PAT). GitHub Actions GITHUB_TOKEN is an
+    # installation identity and must not take this path.
     if token:
-        repos = _paginate(s, f"{API}/user/repos?per_page=100&affiliation=owner&sort=updated")
-        wanted = owner.lower()
-        return [r for r in repos if (r.get("owner") or {}).get("login", "").lower() == wanted]
+        me = get_json(s, f"{API}/user", allow_auth_failure=True) or {}
+        login = str(me.get("login") or "")
+        if login.lower() == owner.lower():
+            return _paginate(s, f"{API}/user/repos?per_page=100&affiliation=owner&sort=updated")
     return _paginate(s, f"{API}/users/{quote(owner)}/repos?per_page=100&type=all&sort=updated")
 
 def main() -> int:
