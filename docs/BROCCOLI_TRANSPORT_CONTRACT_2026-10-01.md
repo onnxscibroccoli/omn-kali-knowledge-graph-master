@@ -103,4 +103,5 @@ Do not promote because the script exited 0.
 - Morphe source build
 - Grasshopper persistent build storage / JDK gate
 
-Those remain open. Documentation does not pass them.
+Those remain open. Documentation does not pass them.\n## Current implementation provenance
+\n\nThe canonical Android action layer was updated in `onnxscibroccoli/broccoli-core` commit `785f73315893b4917ceac23552f818ef94dd6982` (2026-10-02): `display.list` now uses `cmd display get-displays` instead of `dumpsys display`, because the latter can remain suspended when invoked through the background Rish path on Samsung Android 15. The focused Android contract/CLI/transport/action test set passed 21/21 with this implementation.\n\nThis change does **not** create a second transport and does not modify `lib/rish_run.sh`. The canonical boundary above remains authoritative.\n\nCurrent physical-device transport status remains **NOT_PROVEN** in this session: the installed Rish binary and dex are present, but the live Shizuku service is not currently producing stdout from `rish -c`. A zero exit code without the required marker is not a transport pass.\n
