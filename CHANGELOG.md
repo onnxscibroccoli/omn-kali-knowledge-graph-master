@@ -1,5 +1,14 @@
 # Changelog
 
+## OMNIKALI-MODULARIZATION-2026-10-04
+
+- Inventoried 29 repositories visible to the linked GitHub account
+- Added agentic modularization plan: one owner per capability, extract-not-clean for broccoli-core
+- Froze Helix/CloudFront production path as not-to-split
+- Did not create, archive, or delete repositories
+- Did not promote any statusTag to PROVEN
+- Did not change production ingress, IAM, or RDS
+
 ## OMNIKALI-KG-2026-09-29-GOALS
 
 - Inventoried 21 repositories under `onnxscibroccoli` via the connected GitHub account
