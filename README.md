@@ -5,6 +5,7 @@
 **Current Broccoli transport contract:** BROCCOLI-TRANSPORT-CONTRACT-2026-10-01
 **Current documentation audit:** docs/REPOSITORY_DOCUMENTATION_AUDIT_2026-10-01.md
 **Current dependency narrative:** docs/OMNIKALI_SYSTEM_DEPENDENCY_NARRATIVE_2026-10-01.txt
+**Current modularization plan:** docs/MODULARIZATION_PLAN_2026-10-04.md
 **Historical graph:** OMNIKALI-KG-2026-09-28
 **Owner account:** onnxscibroccoli
 
@@ -13,6 +14,8 @@ This is the centralized research and coordination graph for the OmniKali reposit
 The 2026-10-01 system graph is now the current coordination point. Historical graphs remain evidence and are not rewritten.
 
 The dependency narrative is a companion text representation of the current system graph. It exists for human reading, text to speech, agent orientation, and narrative architecture review. It does not replace the machine readable graph, goals, contracts, or evidence documents.
+
+The 2026-10-04 modularization plan records ownership collisions and extract-not-clean splits for agentic implementation. It does not archive repositories or change production.
 
 ## Start here
 
@@ -23,10 +26,11 @@ The dependency narrative is a companion text representation of the current syste
 5. docs/BROCCOLI_TRANSPORT_CONTRACT_2026-10-01.md
 6. goals/broccoli-transport-preflight-2026-10-01.yml
 7. docs/REPOSITORY_DOCUMENTATION_AUDIT_2026-10-01.md
-8. docs/ORCHESTRATOR_CHARTER.md
-9. docs/RELEASE_READINESS_2026-09-29.md
-10. goals/production-backlog.yml
-11. Grasshopper program issue: https://github.com/onnxscibroccoli/Grasshopper/issues/65
+8. docs/MODULARIZATION_PLAN_2026-10-04.md
+9. docs/ORCHESTRATOR_CHARTER.md
+10. docs/RELEASE_READINESS_2026-09-29.md
+11. goals/production-backlog.yml
+12. Grasshopper program issue: https://github.com/onnxscibroccoli/Grasshopper/issues/65
 
 ## Authority order
 
