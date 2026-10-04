@@ -1,0 +1,75 @@
+tag: OMNIKALI-MODULARIZATION-2026-10-04
+status: PLANNED
+companion_graph: OMNIKALI-SYSTEM-KG-2026-10-01
+companion_goals: OMNIKALI-SYSTEM-GOALS-2026-10-01
+program_issue: https://github.com/onnxscibroccoli/Grasshopper/issues/65
+authority: docs/ORCHESTRATOR_CHARTER.md
+
+north_star: >-
+  Authorized agents can implement OmniKali changes against one owner per
+  capability without loading unrelated history or substituting the proven
+  Helix production path.
+
+frozen_production_path:
+  - omnikali
+  - CloudFront
+  - nginx:80
+  - helix:8092
+  - libvirt/QEMU
+  - helix-omnikali
+
+capability_owners:
+  task_lifecycle: Grasshopper
+  desktop_session: helix
+  kali_guest: kali-node
+  public_discovery: omnikali
+  bist_schema: omn-kali-knowledge-graph-master
+  android_rish_transport: broccoli-rish   # proposed extract; currently broccoli-core
+  android_mcp: broccoli-mcp              # proposed extract; currently broccoli-core
+  k8s_substrate: grasshopper-kubernetes
+  browser_vm: kiln
+  recovery_provenance: GPTOmniKali-full-stack
+
+do_not_split:
+  - helix
+  - Grasshopper
+  - kali-node
+  - omnikali
+  - lattice
+  - morphe-*
+
+extract_not_clean:
+  - broccoli-core
+
+human_gate_before:
+  - create_repository
+  - archive_repository
+  - delete_repository
+  - production_ingress_change
+  - status_promote_to_PROVEN
+
+milestones:
+  M0:
+    name: graph_and_ownership_freeze
+    status: IN_PROGRESS
+  M1:
+    name: extract_broccoli_rish
+    status: PLANNED
+    requires: operator_approval_to_create_repo
+  M2:
+    name: point_consumers_at_broccoli_rish
+    status: PLANNED
+    requires: M1
+  M3:
+    name: extract_broccoli_mcp
+    status: PLANNED
+    requires: M2_live_uid2000_evidence
+  M4:
+    name: helix_kali_gpt_ownership_alignment
+    status: PLANNED
+  M5:
+    name: k8s_helm_as_default_agent_surface
+    status: PLANNED
+  M6:
+    name: kiln_native_path_non_owner
+    status: PLANNED
