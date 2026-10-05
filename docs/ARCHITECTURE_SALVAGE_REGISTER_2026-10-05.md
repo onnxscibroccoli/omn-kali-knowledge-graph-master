@@ -222,6 +222,30 @@ The previous K3s/Traefik collision remains a permanent regression lesson.
 14. Durable knowledge graph and provenance across all implementation lanes.
 15. Persistent/reconnectable remote sessions independent of chat/token lifetime.
 
+## Live gate update 2026-10-05
+
+### R1 Persistent development storage
+**Status: PASS / OPERATIONAL**
+- Grasshopper has a persistent `/srv/grasshopper` filesystem backed by `/dev/sdb`, approximately 112G.
+- The mount is present in `/etc/fstab` with `nofail` and device timeout settings.
+- Root pressure was reduced from 98% to 86% by quarantining disposable container-image storage with matching SHA-256 hashes before deletion and removing an unreferenced DNF temporary cache.
+- A durable agent workspace/cache/artifact/log area exists under the user-owned `/srv/grasshopper/backups/` subtree because the mount root itself is root-owned.
+
+### R2 Cloud Android
+**Screen transport status: PASS / PROVEN**
+- QEMU Android guest boots.
+- VNC/RFB handshake succeeds on loopback.
+- token-gated websockify serves noVNC.
+- VNC keyboard input can switch from the stale SeaBIOS framebuffer to the Android graphical surface.
+- VNC pointer input reaches the Android graphical surface.
+- websockify restart preserves the QEMU guest and bearer token.
+
+**ADB agent status: BROKEN_NEEDS_REIMPLEMENTATION**
+- The Android guest remains `offline` to host ADB on `127.0.0.1:5555`.
+- Multiple standard Android-x86/AOSP adbd init triggers and the required `qemu=1` boot property were tested without producing an online ADB transport.
+- Do not change the proven screen transport to compensate for this failure.
+- Next implementation must establish a guest-side adbd lifecycle proof or deliberately replace ADB with a formally equivalent agent transport while preserving the MCP control goal.
+
 ## Rebuild queue
 
 ### R0 Protect
