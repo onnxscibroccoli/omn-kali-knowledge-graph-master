@@ -255,6 +255,26 @@ The previous K3s/Traefik collision remains a permanent regression lesson.
 - This is intentionally not accepted as PASS. The existing proof artifact from earlier runs is historical evidence only.
 - The next gate is to restore the Shizuku runtime service, then rerun the canonical probe and require target uid=2000 plus SDK 35 before any UI automation promotion.
 
+### R4 Machine-readable BIST
+**Status: PASS / CONTRACT VERIFIED**
+- Live BIST emitted `omnikali-bist/v1` JSON on the Grasshopper workstation.
+- Schema validation passed for report and evidence fixtures.
+- All 10 BIST contract/schema tests passed.
+- Current BIST overall result is correctly `PASS_WITH_NOT_PROVEN` because six production checks remain `NOT_PROVEN`.
+- The live evidence artifact is committed to the salvage branch as `evidence/bist-live-20261005.json`.
+
+### R5 Production desktop acceptance
+**Status: NOT_PROVEN / OPEN**
+- The fail-closed live acceptance harness currently reports all eight critical scenarios OPEN.
+- No new production acceptance evidence was fabricated.
+- Required scenarios remain normal execution, worker termination, stale lease reclaim, replacement completion, duplicate fencing, gateway restart, database failure, and network interruption.
+
+### R6 Clean-host reconstruction
+**Status: BLOCKED**
+- Static clean-host dry-run is fail-closed.
+- Validation modules pass, but agentic deploy readiness remains OPEN on clean lineage, live secrets cutover re-verification, live acceptance automation, backup retention (1/14 verified restore points), and clean-host reconstruction.
+- Optional Grok control-plane client is still absent on the current branch under the static readiness check.
+
 ## Rebuild queue
 
 ### R0 Protect
