@@ -246,6 +246,15 @@ The previous K3s/Traefik collision remains a permanent regression lesson.
 - Do not change the proven screen transport to compensate for this failure.
 - Next implementation must establish a guest-side adbd lifecycle proof or deliberately replace ADB with a formally equivalent agent transport while preserving the MCP control goal.
 
+### R3 Physical Android Rish/Shizuku
+**Status: NOT_PROVEN / HUMAN-SERVICE PREREQUISITE**
+- The physical Android is connected through the Termux Desktop Commander surface.
+- Rish executable and Shizuku 13.6.0 package are present.
+- The canonical transport probe was executed exactly against the pinned wrapper.
+- Current result is `RISH_TRANSPORT_NOT_PROVEN` with RC=12 because Rish returns RC=0 but produces no target artifact.
+- This is intentionally not accepted as PASS. The existing proof artifact from earlier runs is historical evidence only.
+- The next gate is to restore the Shizuku runtime service, then rerun the canonical probe and require target uid=2000 plus SDK 35 before any UI automation promotion.
+
 ## Rebuild queue
 
 ### R0 Protect
