@@ -275,6 +275,15 @@ The previous K3s/Traefik collision remains a permanent regression lesson.
 - Validation modules pass, but agentic deploy readiness remains OPEN on clean lineage, live secrets cutover re-verification, live acceptance automation, backup retention (1/14 verified restore points), and clean-host reconstruction.
 - Optional Grok control-plane client is still absent on the current branch under the static readiness check.
 
+### R7 Morphe source/build/runtime
+**Status: IN_PROGRESS / BUILD ENVIRONMENT RESTORED**
+- Grasshopper is ARM64/aarch64.
+- Native Temurin JDK 21.0.12.1 is installed on persistent storage at `/srv/grasshopper/backups/agent-workspace/toolchains/jdk21`.
+- Morphe Desktop source was cloned to persistent storage at `/srv/grasshopper/backups/agent-workspace/morphe/morphe-desktop`.
+- Gradle 9.7.1 wrapper configuration has started successfully under JDK 21; the source-level task/configuration run is still in progress.
+- Future Gradle work must set `GRADLE_USER_HOME` on the persistent disk. The first configuration run used the default home cache and raised root usage only from 86% to 87%, so it remains bounded but should not be allowed to grow unchecked.
+- Runtime artifact verification and Android installation remain NOT_PROVEN until a completed build produces a hashable artifact and a device-side install/runtime proof.
+
 ## Rebuild queue
 
 ### R0 Protect
