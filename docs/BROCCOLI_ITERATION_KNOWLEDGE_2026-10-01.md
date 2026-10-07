@@ -1,5 +1,7 @@
 # Broccoli Iteration Knowledge and Transport Record
 
+> 2026-10-07 launcher supersession: this dated record retains historical evidence. Physical automation uses broccoli-core `lib/rish_run.sh` (or its delegating `bin/broccoli-rish` entry point); raw Rish paths and direct launch examples below are historical/internal-driver descriptions, not supported public launch instructions. See [current policy](PHYSICAL_ANDROID_TRANSPORT_2026-10-07.md). Remote Android transport remains explicitly configurable.
+
 **Graph tag:** BROCCOLI-KG-2026-10-01
 **Scope:** broccoli-core, Android/Termux/Rish/Shizuku/RDC execution, OmniKali MCP, and recovered Broccoli philosophy
 **Purpose:** preserve the actual lessons from the iterative transport work so future agents do not repeat already-resolved experiments or regress into previously rejected designs.

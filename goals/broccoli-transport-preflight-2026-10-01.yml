@@ -2,13 +2,17 @@ id: broccoli-transport-preflight-2026-10-01
 tag: BROCCOLI-TRANSPORT-CONTRACT-2026-10-01
 rule: answer every question before any new Rish, supervisor, or MCP transport experiment
 canonical_wrapper: broccoli-core/lib/rish_run.sh
-canonical_blob: 81414aa0f6a9f79db0a346fb8ab459824612cb64
+historical_canonical_blob: 81414aa0f6a9f79db0a346fb8ab459824612cb64
+current_policy: docs/PHYSICAL_ANDROID_TRANSPORT_2026-10-07.md
+public_launcher: broccoli-core/bin/broccoli-rish
+raw_driver_role: internal-only; configure via broccoli-core BROCCOLI_RISH_BIN
+remote_android_transport: explicitly configurable; independently verified
 known_good:
   preserve_env: "0"
   expected_identity: uid=2000(shell)
   expected_sdk_when_probed: "35"
   env_file: "$HOME/.config/broccoli/rish/android-runtime.env"
-  rish_bin: /data/data/com.termux/files/usr/bin/rish
+  historical_raw_driver: /data/data/com.termux/files/usr/bin/rish # Not a public launcher
 fail_closed_exits:
   usage: 2
   env_missing: 78

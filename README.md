@@ -14,6 +14,10 @@ The 2026-10-01 system graph is now the current coordination point. Historical gr
 
 The dependency narrative is a companion text representation of the current system graph. It exists for human reading, text to speech, agent orientation, and narrative architecture review. It does not replace the machine readable graph, goals, contracts, or evidence documents.
 
+## Physical Android launcher
+
+Read [the current physical transport policy](docs/PHYSICAL_ANDROID_TRANSPORT_2026-10-07.md) before dated transport records. Use broccoli-core `lib/rish_run.sh`; `bin/broccoli-rish` delegates to it. Remote Android transports remain explicitly configurable.
+
 ## Start here
 
 1. docs/OMNIKALI_SYSTEM_KNOWLEDGE_GRAPH_2026-10-01.md
