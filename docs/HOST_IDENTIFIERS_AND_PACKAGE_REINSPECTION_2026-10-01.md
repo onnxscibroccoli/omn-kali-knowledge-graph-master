@@ -1,5 +1,7 @@
 # Host identifiers and package reinspection - 2026-10-01
 
+> 2026-10-07 launcher supersession: this dated record retains historical evidence. Physical automation uses broccoli-core `lib/rish_run.sh` (or its delegating `bin/broccoli-rish` entry point); raw Rish paths and direct launch examples below are historical/internal-driver descriptions, not supported public launch instructions. See [current policy](PHYSICAL_ANDROID_TRANSPORT_2026-10-07.md). Remote Android transport remains explicitly configurable.
+
 Snapshot time: 2026-10-01T17:12Z to 2026-10-01T17:20Z.
 Status vocabulary: PROVEN, OBSERVED, NOT_PROVEN, PLANNED.
 
