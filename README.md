@@ -16,6 +16,9 @@ The 2026-10-01 system graph is now the current coordination point. Historical gr
 
 The dependency narrative is a companion text representation of the current system graph. It exists for human reading, text to speech, agent orientation, and narrative architecture review. It does not replace the machine readable graph, goals, contracts, or evidence documents.
 
+
+**Unified multi-device accessibility north star (2026-10-13):** [Persistent cross-repository goals and typed semantic intent schema](docs/UNIFIED_ACCESSIBLE_RUNTIME_GOALS_2026-10-13.md). This adds G15–G22 without renumbering or erasing G0–G14: physical Android, persistent OCI Android, accessible Linux/Kali windows, secure biometric/OAuth gateway, model/API/MCP federation, signed APK workflows, chat/voice development, self-hostable free-tier operation, and fail-closed privacy. The original 2026-10-01 graph remains historical evidence. Agent source reads must always target `main`, not raw commit SHAs or unmerged branches; human approval governs merges.
+
 ## Start here
 
 1. docs/OMNIKALI_SYSTEM_KNOWLEDGE_GRAPH_2026-10-01.md
