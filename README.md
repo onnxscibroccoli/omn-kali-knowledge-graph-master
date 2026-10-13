@@ -12,6 +12,8 @@ This is the centralized research and coordination graph for the OmniKali reposit
 
 The 2026-10-01 system graph is now the current coordination point. Historical graphs remain evidence and are not rewritten.
 
+**Cross-project progress journal:** [docs/operations/journal/2026-10-12.md](docs/operations/journal/2026-10-12.md) — chronological verified operations; never store secrets or private inventories in this public repository.
+
 The dependency narrative is a companion text representation of the current system graph. It exists for human reading, text to speech, agent orientation, and narrative architecture review. It does not replace the machine readable graph, goals, contracts, or evidence documents.
 
 ## Start here
