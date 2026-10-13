@@ -1,0 +1,85 @@
+{
+  "schema": "broccoli.bot/v1",
+  "id": "oci-admission-preflight",
+  "version": "1.0.0",
+  "description": "Read-only admission and recovery-readiness checks before an OCI Android change; this template is not evidence of a completed deployment.",
+  "owner_repo": "onnxscibroccoli/Grasshopper",
+  "source_ref": "main",
+  "platforms": [
+    "oci-api",
+    "linux-desktop"
+  ],
+  "capabilities": [
+    "oci.read",
+    "host.health",
+    "recovery.verify"
+  ],
+  "preconditions": [
+    "Valid device-scoped OCI principal or operator OAuth",
+    "Protected desktop routes respond",
+    "No privileged changes authorized"
+  ],
+  "steps": [
+    {
+      "id": "check_oci",
+      "platform": "oci-api",
+      "action": "observe",
+      "capability": "oci.read",
+      "expected_postcondition": "Signed nonmutating API response verified",
+      "risk": "read-only"
+    },
+    {
+      "id": "check_desktop",
+      "platform": "linux-desktop",
+      "action": "observe",
+      "capability": "host.health",
+      "expected_postcondition": "Existing desktop health contract independently checked",
+      "risk": "read-only"
+    },
+    {
+      "id": "verify_auth",
+      "platform": "oci-api",
+      "action": "verify",
+      "capability": "oci.read",
+      "expected_postcondition": "Independent OCI identity/API acceptance artifact exists",
+      "risk": "read-only"
+    },
+    {
+      "id": "verify_desktop",
+      "platform": "linux-desktop",
+      "action": "verify",
+      "capability": "recovery.verify",
+      "expected_postcondition": "Independent remote reconnect evidence exists",
+      "risk": "read-only"
+    }
+  ],
+  "milestones": [
+    {
+      "id": "oci_authenticated",
+      "after_step": "verify_auth",
+      "requires_human": false,
+      "acceptance_gate": "Signed API response and masked identity"
+    },
+    {
+      "id": "access_preserved",
+      "after_step": "verify_desktop",
+      "requires_human": true,
+      "acceptance_gate": "Human-visible remote input/reconnect acceptance"
+    }
+  ],
+  "recovery": [
+    "Stop without repeating a non-idempotent action",
+    "Restore last known-good desktop configuration only under authorization"
+  ],
+  "checkin_policy": {
+    "mode": "milestone",
+    "on_failure": "pause",
+    "on_sensitive": "user_approval",
+    "on_completion": "summary"
+  },
+  "secret_refs": [],
+  "acceptance": {
+    "status": "NOT_PROVEN",
+    "evidence": "Requires a real independent end-to-end run before promotion"
+  }
+}
