@@ -11,6 +11,7 @@
 - [README.md](https://github.com/onnxscibroccoli/omn-kali-knowledge-graph-master/blob/main/README.md)
 
 **Scoped reference workflow run:** [Inspect the historical GitHub Actions result](https://github.com/onnxscibroccoli/omn-kali-knowledge-graph-master/actions/runs/43029344795). Verify its SHA/branch before attributing it to current source; CI success is not live/production evidence.
+Recorded 2026-11-11: run 43029344795 is `refresh-graph` (`workflow_dispatch`) at `main` `ded4da9decb92fde91180515c484f3cc4faa8a67`, which is the current `main` head; conclusion success. It covers schema validation, candidate ranking and a public-inventory crawl, with permissions `contents: read`. It has no `pull_request` trigger, so readiness PRs carry no CI check.
 
 ## First reviewer command (check prerequisites before executing)
 
