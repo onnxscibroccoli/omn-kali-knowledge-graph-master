@@ -1,5 +1,8 @@
 # OmniKali Knowledge Graph Master
 
+
+> **Technical reviewers:** [Source-linked engineering evidence and ordered next steps](docs/PORTFOLIO_READINESS.md) · [tracking issue](https://github.com/onnxscibroccoli/omn-kali-knowledge-graph-master/issues/15). These records do not certify production behavior.
+
 **Current system graph:** OMNIKALI-SYSTEM-KG-2026-10-01
 **Current goals graph:** OMNIKALI-SYSTEM-GOALS-2026-10-01
 **Current Broccoli transport contract:** BROCCOLI-TRANSPORT-CONTRACT-2026-10-01
